@@ -93,6 +93,8 @@ $no_peserta = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
                         <option value="8">PPPK Teknis - Pengelola Layanan Operasional</option>
                         <option value="9">PPPK Teknis - Operator Layanan Operasional</option>
                         <option value="10">PPKK Teknis - Pengelola Umum Operasional</option>
+                        <option value="11">PPKK Teknis - Penelaah Teknis Kebijakan</option>
+                        <option value="12">PPKK Teknis - Pengolah Data dan Informasi</option>
                     </select>
                     <small class="help-block"></small>
                 </div>
