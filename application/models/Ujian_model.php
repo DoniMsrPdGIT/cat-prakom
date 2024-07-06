@@ -29,6 +29,9 @@ class Ujian_model extends CI_Model {
         //$this->datatables->where('DATE(a.tgl_mulai)', $tgl);
 		//$this->datatables->where('h.mahasiswa_id', $id);
 		$this->datatables->where('a.token!=', 'TOLIV');
+        $this->datatables->where('a.token!=', 'SOSIO');
+        $this->datatables->where('a.token!=', 'MANAJ');
+        $this->datatables->where('a.token!=', 'WAWAN');
 		$this->datatables->group_by('a.id_ujian');
 		$this->db->order_by('a.id_ujian','ASC');
         return $this->datatables->generate();
@@ -47,6 +50,60 @@ class Ujian_model extends CI_Model {
         $this->datatables->where('d.id_kelas', $kelas);
         //$this->datatables->where('DATE(a.tgl_mulai)', $tgl);
 		$this->datatables->where('a.token', 'TOLIV');
+		$this->datatables->group_by('a.id_ujian');
+		$this->db->order_by('a.id_ujian','DESC');
+        return $this->datatables->generate();
+    }
+
+    public function getListUjianSosio($id, $kelas)
+    {
+        $tgl = date('Y-m-d');
+        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada, h.nilai, h.jml_benar , h.id");
+        $this->datatables->from('m_ujian a');
+        $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
+        $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
+        $this->datatables->join('kelas d', 'c.kelas_id = d.id_kelas');
+        $this->datatables->join('dosen e', 'e.id_dosen = c.dosen_id');
+	   $this->datatables->join('h_ujian h', "a.id_ujian = h.ujian_id AND h.mahasiswa_id = {$id} ",'LEFT');
+        $this->datatables->where('d.id_kelas', $kelas);
+        //$this->datatables->where('DATE(a.tgl_mulai)', $tgl);
+		$this->datatables->where('a.token', 'SOSIO');
+		$this->datatables->group_by('a.id_ujian');
+		$this->db->order_by('a.id_ujian','DESC');
+        return $this->datatables->generate();
+    }
+
+    public function getListUjianManaj($id, $kelas)
+    {
+        $tgl = date('Y-m-d');
+        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada, h.nilai, h.jml_benar , h.id");
+        $this->datatables->from('m_ujian a');
+        $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
+        $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
+        $this->datatables->join('kelas d', 'c.kelas_id = d.id_kelas');
+        $this->datatables->join('dosen e', 'e.id_dosen = c.dosen_id');
+	   $this->datatables->join('h_ujian h', "a.id_ujian = h.ujian_id AND h.mahasiswa_id = {$id} ",'LEFT');
+        $this->datatables->where('d.id_kelas', $kelas);
+        //$this->datatables->where('DATE(a.tgl_mulai)', $tgl);
+		$this->datatables->where('a.token', 'MANAJ');
+		$this->datatables->group_by('a.id_ujian');
+		$this->db->order_by('a.id_ujian','DESC');
+        return $this->datatables->generate();
+    }
+
+    public function getListUjianWawan($id, $kelas)
+    {
+        $tgl = date('Y-m-d');
+        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada, h.nilai, h.jml_benar , h.id");
+        $this->datatables->from('m_ujian a');
+        $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
+        $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
+        $this->datatables->join('kelas d', 'c.kelas_id = d.id_kelas');
+        $this->datatables->join('dosen e', 'e.id_dosen = c.dosen_id');
+	   $this->datatables->join('h_ujian h', "a.id_ujian = h.ujian_id AND h.mahasiswa_id = {$id} ",'LEFT');
+        $this->datatables->where('d.id_kelas', $kelas);
+        //$this->datatables->where('DATE(a.tgl_mulai)', $tgl);
+		$this->datatables->where('a.token', 'WAWAN');
 		$this->datatables->group_by('a.id_ujian');
 		$this->db->order_by('a.id_ujian','DESC');
         return $this->datatables->generate();

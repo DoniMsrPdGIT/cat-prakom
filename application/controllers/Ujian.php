@@ -215,7 +215,31 @@ class Ujian extends CI_Controller {
 		$list = $this->ujian->getListUjianLive($this->mhs->id_mahasiswa, $this->mhs->kelas_id);
 		$this->output_json($list, false);
 	}
+
+	public function list_sosio_json()
+	{
+		$this->akses_mahasiswa();
+		
+		$list = $this->ujian->getListUjianSosio($this->mhs->id_mahasiswa, $this->mhs->kelas_id);
+		$this->output_json($list, false);
+	}
+
+	public function list_manaj_json()
+	{
+		$this->akses_mahasiswa();
+		
+		$list = $this->ujian->getListUjianManaj($this->mhs->id_mahasiswa, $this->mhs->kelas_id);
+		$this->output_json($list, false);
+	}
 	
+	public function list_wawan_json()
+	{
+		$this->akses_mahasiswa();
+		
+		$list = $this->ujian->getListUjianWawan($this->mhs->id_mahasiswa, $this->mhs->kelas_id);
+		$this->output_json($list, false);
+	}
+
 	public function list()
 	{
 		$this->akses_mahasiswa();
@@ -247,6 +271,57 @@ class Ujian extends CI_Controller {
 		];
 		$this->load->view('_templates/dashboard/_header.php', $data);
 		$this->load->view('ujian/list_live');
+		$this->load->view('_templates/dashboard/_footer.php');
+	}
+
+	public function list_sosio()
+	{
+		$this->akses_mahasiswa();
+
+		$user = $this->ion_auth->user()->row();
+		
+		$data = [
+			'user' 		=> $user,
+			'judul'		=> 'SOSIOKULTURAL',
+			'subjudul'	=> 'List Sosiokultural',
+			'mhs' 		=> $this->ujian->getIdMahasiswa($user->username),
+		];
+		$this->load->view('_templates/dashboard/_header.php', $data);
+		$this->load->view('ujian/list_sosio');
+		$this->load->view('_templates/dashboard/_footer.php');
+	}
+
+	public function list_manaj()
+	{
+		$this->akses_mahasiswa();
+
+		$user = $this->ion_auth->user()->row();
+		
+		$data = [
+			'user' 		=> $user,
+			'judul'		=> 'Manajerial',
+			'subjudul'	=> 'List Manajerial',
+			'mhs' 		=> $this->ujian->getIdMahasiswa($user->username),
+		];
+		$this->load->view('_templates/dashboard/_header.php', $data);
+		$this->load->view('ujian/list_manaj');
+		$this->load->view('_templates/dashboard/_footer.php');
+	}
+
+	public function list_wawan()
+	{
+		$this->akses_mahasiswa();
+
+		$user = $this->ion_auth->user()->row();
+		
+		$data = [
+			'user' 		=> $user,
+			'judul'		=> 'Wawancara',
+			'subjudul'	=> 'List Wawancara',
+			'mhs' 		=> $this->ujian->getIdMahasiswa($user->username),
+		];
+		$this->load->view('_templates/dashboard/_header.php', $data);
+		$this->load->view('ujian/list_wawan');
 		$this->load->view('_templates/dashboard/_footer.php');
 	}
 	

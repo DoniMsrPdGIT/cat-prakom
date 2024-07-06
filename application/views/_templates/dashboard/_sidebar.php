@@ -129,6 +129,21 @@
 					<i class="fa fa-heart"></i> <span>Tryout Live (TOLI)</span>
 				</a>
 			</li>
+			<li class="<?=$page2==='list_sosio'?"active":""?>">
+				<a href="<?=base_url('ujian/list_sosio')?>" rel="noopener noreferrer">
+					<i class="fa fa-universal-access"></i> <span>Tryout Sosiokultural</span>
+				</a>
+			</li>
+			<li class="<?=$page2==='list_manaj'?"active":""?>">
+				<a href="<?=base_url('ujian/list_manaj')?>" rel="noopener noreferrer">
+					<i class="fa fa-asterisk"></i> <span>Tryout Manajerial</span>
+				</a>
+			</li>
+			<li class="<?=$page2==='list_wawan'?"active":""?>">
+				<a href="<?=base_url('ujian/list_wawan')?>" rel="noopener noreferrer">
+					<i class="fa fa-bolt"></i> <span>Tryout Wawancara</span>
+				</a>
+			</li>
 			<?php }else{?>
 			<li class="<?=$page==='ujian'?"active":""?>">
 				<a href="<?=base_url('dashboard')?>" rel="noopener noreferrer">

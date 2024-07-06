@@ -1,7 +1,7 @@
 <div class="callout callout-info">
     <h4>Peraturan Ujian!</h4>
-    <p>Seleksi Kompetensi meliputi Seleksi Kompetensi Teknis, dilaksanakan dengan menggunakan Sistem Computer Assisted Test
-(CAT) dalam durasi waktu 80 (delapan puluh) menit dengan 90 Butir Soal Materi Kompetensi Teknis</p>
+    <p>Seleksi <?=$mhs->nama_jurusan?>, dilaksanakan dengan menggunakan Sistem Computer Assisted Test
+(CAT) dalam durasi waktu <?=$ujian->waktu?> menit dengan <?=$ujian->jumlah_soal?> Butir Soal Materi <?=$ujian->nama_ujian?></p>
 </div>
 <div class="box box-primary">
     <div class="box-header with-border">
