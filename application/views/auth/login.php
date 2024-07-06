@@ -50,28 +50,26 @@
 			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 			<span class="help-block"></span>
 		</div>
-		<!-- <div class="callout callout-danger">
+		 <div class="callout callout-danger">
                             <p>
                                 Password adalah No.HP yang didaftarkan
                             </p>
-                        </div>-->
-						 <div class="callout callout-success">
+                        </div>
+						 <!--<div class="callout callout-success">
                             <p>
                                 Pendaftaran Member Baru dan Login Member Lama akan dibuka bersamaan saat Pendaftaran Resmi CASN 2024, ditunggu aja ya kakak...
                             </p>
-                        </div>
+                        </div>-->
 		<div class="row">
 		<div class="col-xs-4">
 			<a href="auth/forgot_password">Lupa Password?</a>
 			</div>
 			<!-- /.col -->
 			
-			<!-- /.col 
-			
 			<div class="col-xs-4">
 			<a href="auth/register"><button type="button" class="btn btn-danger btn-block btn-flat">Daftar</button></a>
 			</div>
-			-->
+			
 			<div class="col-xs-4">
 			<?= form_submit('submit', lang('login_submit_btn'), array('id'=>'submit','class'=>'btn btn-primary btn-block btn-flat'));?>
 			</div>
