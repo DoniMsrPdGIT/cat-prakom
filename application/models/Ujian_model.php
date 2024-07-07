@@ -156,9 +156,16 @@ class Ujian_model extends CI_Model {
     {
         $ujian = $this->getUjianById($id);
         $order = $ujian->jenis==="acak" ? 'rand()' : 'id_soal';
-
         $this->db->select('id_soal, soal, file, tipe_file, opsi_a, opsi_b, opsi_c, opsi_d, opsi_e, jawaban,pembahasan');
+        if($id>='1' && $id<='10'){
+        $this->db->from('tb_soal_sosiokultural');
+        }elseif($id>='11' && $id<='20'){
+        $this->db->from('tb_soal_manajerial');
+        }elseif($id>='21' && $id<='30'){
+        $this->db->from('tb_soal_wawancara');
+        }else{
         $this->db->from('tb_soal');
+        }
         $this->db->where('dosen_id', $ujian->dosen_id);
         $this->db->where('matkul_id', $ujian->matkul_id);
         $this->db->order_by($order);
@@ -166,21 +173,66 @@ class Ujian_model extends CI_Model {
         return $this->db->get()->result();
     }
 
-    public function ambilSoal($pc_urut_soal1, $pc_urut_soal_arr)
+    public function ambilSoal($pc_urut_soal1, $pc_urut_soal_arr,$Kodeujian)
     {
-        $this->db->select("*, {$pc_urut_soal1} AS jawaban, jawaban AS kunci_soal_opsi, (SELECT CASE
-    WHEN jawaban = 'A' THEN opsi_a
-    WHEN jawaban = 'B' THEN opsi_b
-    WHEN jawaban = 'C' THEN opsi_c
-    WHEN jawaban = 'D' THEN opsi_d
-    ELSE opsi_e
-END
-FROM tb_soal WHERE id_soal='{$pc_urut_soal_arr}' ) as kunci_soal_ket
-
-");
-        $this->db->from('tb_soal');
-        $this->db->where('id_soal', $pc_urut_soal_arr);
-        return $this->db->get()->row();
+        if($Kodeujian>='1' && $Kodeujian<='10'){
+            $this->db->select("*, {$pc_urut_soal1} AS jawaban, jawaban AS kunci_soal_opsi, (SELECT CASE
+            WHEN jawaban = 'A' THEN opsi_a
+            WHEN jawaban = 'B' THEN opsi_b
+            WHEN jawaban = 'C' THEN opsi_c
+            WHEN jawaban = 'D' THEN opsi_d
+            ELSE opsi_e
+        END
+        FROM tb_soal_sosiokultural WHERE id_soal='{$pc_urut_soal_arr}' ) as kunci_soal_ket
+        
+        ");
+                $this->db->from('tb_soal_sosiokultural');
+                $this->db->where('id_soal', $pc_urut_soal_arr);
+                return $this->db->get()->row();
+        }elseif($Kodeujian>='11' && $Kodeujian<='20'){
+            $this->db->select("*, {$pc_urut_soal1} AS jawaban, jawaban AS kunci_soal_opsi, (SELECT CASE
+            WHEN jawaban = 'A' THEN opsi_a
+            WHEN jawaban = 'B' THEN opsi_b
+            WHEN jawaban = 'C' THEN opsi_c
+            WHEN jawaban = 'D' THEN opsi_d
+            ELSE opsi_e
+        END
+        FROM tb_soal_manajerial WHERE id_soal='{$pc_urut_soal_arr}' ) as kunci_soal_ket
+        
+        ");
+                $this->db->from('tb_soal_manajerial');
+                $this->db->where('id_soal', $pc_urut_soal_arr);
+                return $this->db->get()->row();
+        }elseif($Kodeujian>='21' && $Kodeujian<='30'){
+            $this->db->select("*, {$pc_urut_soal1} AS jawaban, jawaban AS kunci_soal_opsi, (SELECT CASE
+            WHEN jawaban = 'A' THEN opsi_a
+            WHEN jawaban = 'B' THEN opsi_b
+            WHEN jawaban = 'C' THEN opsi_c
+            WHEN jawaban = 'D' THEN opsi_d
+            ELSE opsi_e
+        END
+        FROM tb_soal_wawancara WHERE id_soal='{$pc_urut_soal_arr}' ) as kunci_soal_ket
+        
+        ");
+                $this->db->from('tb_soal_wawancara');
+                $this->db->where('id_soal', $pc_urut_soal_arr);
+                return $this->db->get()->row();
+        }else{
+            $this->db->select("*, {$pc_urut_soal1} AS jawaban, jawaban AS kunci_soal_opsi, (SELECT CASE
+            WHEN jawaban = 'A' THEN opsi_a
+            WHEN jawaban = 'B' THEN opsi_b
+            WHEN jawaban = 'C' THEN opsi_c
+            WHEN jawaban = 'D' THEN opsi_d
+            ELSE opsi_e
+        END
+        FROM tb_soal WHERE id_soal='{$pc_urut_soal_arr}' ) as kunci_soal_ket
+        
+        ");
+                $this->db->from('tb_soal');
+                $this->db->where('id_soal', $pc_urut_soal_arr);
+                return $this->db->get()->row();
+        }
+       
     }
 
     public function getJawaban($id_tes)
@@ -190,6 +242,32 @@ FROM tb_soal WHERE id_soal='{$pc_urut_soal_arr}' ) as kunci_soal_ket
         $this->db->where('id', $id_tes);
         return $this->db->get()->row()->list_jawaban;
     }
+
+    public function getUjianIdById($id_tes)
+{
+    $this->db->select('ujian_id');
+    $this->db->from('h_ujian');
+    $this->db->where('id', $id_tes);
+    return $this->db->get()->row()->ujian_id;
+}
+
+public function getSoalWithBobot($id,$soal)
+{
+    $this->db->select(" 
+        REPLACE(
+            SUBSTRING_INDEX(
+                SUBSTRING_INDEX(bobot, '".$id."', -1),
+                ',',
+                1
+            ),
+            ':',
+            ''
+        ) AS bobot_selected
+    ");
+    $this->db->from('tb_soal_sosiokultural');
+    $this->db->where('id_soal', $soal);
+    return $this->db->get()->row();
+}
 
     public function getHasilUjian($nip = null)
     {

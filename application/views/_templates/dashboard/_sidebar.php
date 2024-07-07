@@ -121,14 +121,10 @@
 			<?php  if($user->last_name!='' ){  ?>
 			<li class="<?=$page2==='list'?"active":""?>">
 				<a href="<?=base_url('ujian/list')?>" rel="noopener noreferrer">
-					<i class="fa fa-chrome"></i> <span>Tryout Mandiri (TOMAN)</span>
+					<i class="fa fa-chrome"></i> <span>Tryout Teknis</span>
 				</a>
 			</li>
-			<li class="<?=$page2==='list_live'?"active":""?>">
-				<a href="<?=base_url('ujian/list_live')?>" rel="noopener noreferrer">
-					<i class="fa fa-heart"></i> <span>Tryout Live (TOLI)</span>
-				</a>
-			</li>
+			
 			<li class="<?=$page2==='list_sosio'?"active":""?>">
 				<a href="<?=base_url('ujian/list_sosio')?>" rel="noopener noreferrer">
 					<i class="fa fa-universal-access"></i> <span>Tryout Sosiokultural</span>
@@ -142,6 +138,11 @@
 			<li class="<?=$page2==='list_wawan'?"active":""?>">
 				<a href="<?=base_url('ujian/list_wawan')?>" rel="noopener noreferrer">
 					<i class="fa fa-bolt"></i> <span>Tryout Wawancara</span>
+				</a>
+			</li>
+			<li class="<?=$page2==='list_live'?"active":""?>">
+				<a href="<?=base_url('ujian/list_live')?>" rel="noopener noreferrer">
+					<i class="fa fa-heart"></i> <span>Live Competition </span>
 				</a>
 			</li>
 			<?php }else{?>

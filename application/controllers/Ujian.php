@@ -331,6 +331,23 @@ class Ujian extends CI_Controller {
 
 		$user = $this->ion_auth->user()->row();
 		$data['id_ujian'] = $this->uri->segment('3');
+		$url = $this->uri->segment('3');
+		$hitung=strlen($url);
+		if($hitung=='24'){
+		$id_ujian=substr($url,11,5);	
+		}elseif($hitung=='23'){
+		$id_ujian=substr($url,11,4);	
+		}elseif($hitung=='22'){
+		$id_ujian=substr($url,11,3);	
+		}elseif($hitung=='21'){
+		$id_ujian=substr($url,11,2);	
+		}elseif($hitung=='20'){
+		$id_ujian=substr($url,11,1);	
+		}
+
+		// get ujian_id
+$ujian_id = $this->ujian->getUjianIdById($id_ujian);
+
 		$data = [
 			'user' 		=> $user,
 			'judul'		=> 'Jawaban & Pembahasan',
@@ -338,7 +355,11 @@ class Ujian extends CI_Controller {
 			'mhs' 		=> $this->ujian->getIdMahasiswa($user->username),
 		];
 		$this->load->view('_templates/dashboard/_header.php', $data);
-		$this->load->view('ujian/pembahasan',$data);
+		if($ujian_id>='1' && $ujian_id<='30'){
+		$this->load->view('ujian/pembahasan_mansoswa',$data);
+		}else{
+		$this->load->view('ujian/pembahasan',$data);	
+		}
 		$this->load->view('_templates/dashboard/_footer.php');
 	}
 	
@@ -385,6 +406,7 @@ class Ujian extends CI_Controller {
 		$id  = $this->encryption->decrypt(rawurldecode($key));
 		
 		$ujian 		= $this->ujian->getUjianById($id);
+		$Kodeujian 		= $id;
 		$soal 		= $this->ujian->getSoal($id);
 		
 		$mhs		= $this->mhs;
@@ -457,7 +479,7 @@ class Ujian extends CI_Controller {
 		for ($i = 0; $i < sizeof($urut_soal); $i++) {
 			$pc_urut_soal	= explode(":",$urut_soal[$i]);
 			$pc_urut_soal1 	= empty($pc_urut_soal[1]) ? "''" : "'{$pc_urut_soal[1]}'";
-			$ambil_soal 	= $this->ujian->ambilSoal($pc_urut_soal1, $pc_urut_soal[0]);
+			$ambil_soal 	= $this->ujian->ambilSoal($pc_urut_soal1, $pc_urut_soal[0],$Kodeujian);
 			$soal_urut_ok[] = $ambil_soal; 
 		}
 
@@ -558,6 +580,9 @@ class Ujian extends CI_Controller {
 		$id_tes = $this->input->post('id', true);
 		$id_tes = $this->encryption->decrypt($id_tes);
 		
+// get ujian_id
+$ujian_id = $this->ujian->getUjianIdById($id_tes);
+
 		// Get Jawaban
 		$list_jawaban = $this->ujian->getJawaban($id_tes);
 
@@ -569,6 +594,7 @@ class Ujian extends CI_Controller {
 		$jumlah_ragu  	= 0;
 		$nilai_bobot 	= 0;
 		$total_bobot	= 0;
+		$bobot_selected_total = 0;
 		$jumlah_soal	= sizeof($pc_jawaban);
 
 		foreach ($pc_jawaban as $jwb) {
@@ -577,21 +603,39 @@ class Ujian extends CI_Controller {
 			$jawaban 	= $pc_dt[1];
 			$ragu 		= $pc_dt[2];
 
-			$cek_jwb 	= $this->soal->getSoalById($id_soal);
+			$cek_jwb 	= $this->soal->getSoalById($ujian_id,$id_soal);
+			$cek_bobot = $this->ujian->getSoalWithBobot($jawaban,$id_soal);
+			if($ujian_id>='1' && $ujian_id<='30'){
+			$opsi_selected=	$jawaban;
+			$bobot_selected=substr($cek_bobot->bobot_selected, 0, 1);
+			$bobot_selected_total += $bobot_selected;
+			$total_bobot = $bobot_selected_total;
+			}else{
 			$total_bobot = $total_bobot + $cek_jwb->bobot;
+			}
+			
 
 			$jawaban == $cek_jwb->jawaban ? $jumlah_benar++ : $jumlah_salah++;
 		}
 
 		//$nilai = ($jumlah_benar / $jumlah_soal)  * 100;
-		$nilai = $jumlah_benar * 5;
+		if($ujian_id>='1' && $ujian_id<='30'){
+		//$nilai = $jumlah_benar * 5;
+		$nilai = $bobot_selected_total;
 		$nilai_bobot = ($total_bobot / $jumlah_soal)  * 100;
+		}else{
+		$nilai = $jumlah_benar * 5;
+		$nilai_bobot = ($total_bobot / $jumlah_soal)  * 100;	
+		}
 
 		$d_update = [
 			'jml_benar'		=> $jumlah_benar,
 			'nilai'			=> number_format(floor($nilai), 0),
 			'nilai_bobot'	=> number_format(floor($nilai_bobot), 0),
-			'status'		=> 'N'
+			'status'		=> 'N',
+			//'ujian_id' 		=> $ujian_id,
+			//'opsi_selected' => $opsi_selected,
+			//'bobot_selected' => $bobot_selected,
 		];
 
 		$this->master->update('h_ujian', $d_update, 'id', $id_tes);

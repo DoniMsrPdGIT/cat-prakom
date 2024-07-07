@@ -1885,8 +1885,7 @@ padding: 5px 0 0 0;
 
 .funkyradio input[type="radio"]:checked ~ label,
 .funkyradio input[type="checkbox"]:checked ~ label {
-color: #fff;
-background: #86C186;
+color: #000;
 font-weight: bold;
 }
 

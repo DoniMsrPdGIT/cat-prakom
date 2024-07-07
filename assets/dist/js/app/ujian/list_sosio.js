@@ -48,7 +48,7 @@ $(document).ready(function () {
                 "render": function (data, type, row, meta) {
                     var btn;
                     if (data.ada > 0) {
-						if (data.nilai >= 270) {
+						if (data.nilai >= 57) {
 							 btn = `
 								
 								<div class="alert alert-success">
