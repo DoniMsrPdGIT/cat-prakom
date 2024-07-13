@@ -102,17 +102,17 @@ if($donasi == '0' && $trial=='0'){
 }
 	</style>
 	 <div class="callout callout-warning">
-                           Silakan Donasi <del>Rp 30.000</del> <b>Rp 50.000</b>, untuk bisa mengakses Seluruh Sesi Ujian + Akses Modul eBook Materi Prakom + Fitur kedepannya.<br/>
+                           Silakan Donasi <del>Rp 100.000</del> <b>Rp 50.000</b>, untuk bisa mengakses Seluruh Sesi Ujian + Akses Modul eBook Materi Prakom + Fitur kedepannya.<br/>
 						   <b>Donasi diperlukan guna Pengembangan Website CAT Prakom lebih baik.</b>
                         </div>
 						<img src="../../assets/logo/qris-text.png" class="center"/>
 						<img src="../../assets/logo/qris.jpeg" class="center"/>
-						 <h4 align="center"><b>Rp 50.<?=substr($mhs->no_peserta,4,3)?></b></h4>
+						 <h4 align="center"><b>Rp 51.<?=substr($mhs->no_peserta,4,3)?></b></h4>
 						<br/>
 						 <div class="callout callout-danger">
                          Donasi dg Kode Unik [Nomor Peserta] => Rp. 50.000 + Nomor Peserta<br/>
 						 == Nomor Peserta Anda adalah <?=$mhs->no_peserta?> ==<br/>
-						 <b>Maka Donasi sebesar Rp. 50.<?=substr($mhs->no_peserta,4,3)?></b><br/>
+						 <b>Maka Donasi sebesar Rp. 51.<?=substr($mhs->no_peserta,4,3)?></b><br/>
 						 Pembayaran via QRIS diatas, Otomatis Teraktivasi. <br/> 🌟🌟 Akun Berlaku Selama CASN 2024
                         </div>
 						
@@ -120,7 +120,7 @@ if($donasi == '0' && $trial=='0'){
                            Klik untuk Join di <b><a href="https://t.me/cat_prakom"><i class="fa fa-telegram" aria-hidden="true"></i>&nbsp;Group Telegram CAT-Prakom.com</a></b><br/>
 						   Silakan Konfirmasi di grup jika sudah Donasi, namun belum Aktif dengan format :<br/>
 						   DCP_NAMA_NOHP_KODEUNIK<br/><br/>
-						   Contoh : DCP_Andini_081234567890_50<?=substr($mhs->no_peserta,4,3)?>
+						   Contoh : DCP_Andini_081234567890_51<?=substr($mhs->no_peserta,4,3)?>
 						   </br></br>
 						   <b>Admin akan melakukan pengecekan terlebih dahulu</b>
                         </div>

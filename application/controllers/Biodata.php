@@ -63,19 +63,19 @@ class Biodata extends CI_Controller {
 		
 		$melamar      = $this->input->post('melamar');
 		$testimoni     = $this->input->post('testimoni');
-		
-		
-			
-
-			
-
+		$nim     = $this->input->post('nik');
+		$email     = $this->input->post('email');
+		$kelas_id     = $this->input->post('kelas');
+		$kelas = array('kelas_id'=> $kelas_id);
 			$survei = array('last_name'=> $melamar,
 							  'first_name'   => $testimoni
 							  );
-		
+
 
 		$id_e = array('username' => $id );
 		$this->Biodata_model->edit_survei($survei, $id_e);
+
+		$this->Biodata_model->edit_kelas($kelas, $nim,$email);
 		redirect('Dashboard','refresh');
 	}
 	

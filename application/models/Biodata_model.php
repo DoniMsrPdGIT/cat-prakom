@@ -26,6 +26,12 @@ class Biodata_model extends CI_Model {
 	function edit_survei($survei, $id_e){
 		return $this->db->update('users',$survei, $id_e);
 	}
+
+	function edit_kelas($kelas, $nim, $email) {
+		$this->db->where('nim', $nim);
+		$this->db->where('email', $email);
+		return $this->db->update('mahasiswa', $kelas);
+	}
 	function c_all($id){
 	    return $this->db->query("SELECT * FROM biodata_mahasiswa bm LEFT JOIN mahasiswa m ON bm.nik=m.nim where m.kelas_id=$id order by m.no_peserta asc")->result();
 	}

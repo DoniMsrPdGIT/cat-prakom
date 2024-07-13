@@ -40,7 +40,7 @@
                     
                     <div class="form-group">
                         <label for="email">Testimoni terhadap Layanan CAT-Prakom</label>
-                        <textarea placeholder="Berikan testimoni /Ulasan/Review anda terkait adanya Layanan CAT-Prakom" type="text" name="testimoni" class="form-control"></textarea>
+                        <textarea placeholder="Berikan testimoni /Ulasan/Review anda terkait adanya Layanan CAT-Prakom" type="text" name="testimoni" class="form-control" required></textarea>
                         <small class="help-block"></small>
                     </div>
                    
@@ -48,13 +48,38 @@
 
             <div class="col-sm-4 col-sm-offset-1">
                    <div class="form-group">
-                        <label for="nama">No.HP</label>
-                        <input placeholder="NIK" type="text" name="nik" class="form-control" value="<?= $bioanggota['nik'] ?>" minlength="16" maxlength="16" required disabled>
+                        <label for="nama">No.HP & Email</label>
+                        <input  type="text" class="form-control" value="<?= $bioanggota['nik'] ?>"  disabled>
+                        <input  type="text" class="form-control" value="<?= $bioanggota['email'] ?>"  disabled>
+
+                        <input  type="hidden" name="nik" class="form-control" value="<?= $bioanggota['nik'] ?>"  >
+                        <input  type="hidden" name="email" class="form-control" value="<?= $bioanggota['email'] ?>"  >
                         <small class="help-block"></small>
                     </div>
                     <div class="form-group">
-                        <label for="nama_dosen">Melamar di Instansi Mana ? <font color="red">WAJIB ISI</font></label>
-                        <input type="text" name="melamar" class="form-control" placeholder="contoh : Pemkot Medan/KPK/Kemenag/DPR RI" >
+                    <label for="nama_dosen">Formasi Jabatan/Program Kelas  <font color="red">*WAJIB ISI</font></label>
+                   
+                    <div class="callout callout-danger" style="margin-bottom: 0!important;">
+			        <b> Pemilihan Formasi Jabatan hanya bisa 1x, Pemilihan Ulang akan dikenakan Biaya Pendaftaran Kembali.</b>
+			      </div>
+                  <select class="form-control" name="kelas" required>
+    <option value="">--Pilih Formasi Jabatan--</option>
+    <option value="1">PPPK Teknis - Pranata Komputer Ahli Pertama</option>
+    <option value="2">PPPK Teknis - Pranata Komputer Terampil</option>
+    <option value="3">CPNS SKB - Pranata Komputer Ahli Pertama</option>
+    <option value="4">CPNS SKB - Pranata Komputer Terampil</option>
+    <option value="9">PPPK Teknis - Penata Layanan Operasional</option>
+    <option value="10">PPPK Teknis - Pengelola Layanan Operasional</option>
+    <option value="11">PPPK Teknis - Operator Layanan Operasional</option>
+    <option value="12">PPKK Teknis - Pengelola Umum Operasional</option>
+    <option value="13">PPKK Teknis - Penelaah Teknis Kebijakan</option>
+    <option value="14">PPKK Teknis - Pengolah Data dan Informasi</option>
+</select>
+                    <small class="help-block"></small>
+                </div>
+                    <div class="form-group">
+                        <label for="nama_dosen">Melamar di Instansi Mana ? <font color="red">*WAJIB ISI</font></label>
+                        <input type="text" name="melamar" class="form-control" placeholder="contoh : Pemkot Medan/KPK/Kemenag/DPR RI" required>
                         <small class="help-block"></small>
                     </div>
                   

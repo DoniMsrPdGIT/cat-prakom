@@ -89,12 +89,12 @@ $no_peserta = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
                         <option value="2">PPPK Teknis - Pranata Komputer Terampil</option>
                         <option value="3">CPNS SKB - Pranata Komputer Ahli Pertama</option>
 						<option value="4">CPNS SKB - Pranata Komputer Terampil</option>
-                        <option value="7">PPPK Teknis - Penata Layanan Operasional</option>
-                        <option value="8">PPPK Teknis - Pengelola Layanan Operasional</option>
-                        <option value="9">PPPK Teknis - Operator Layanan Operasional</option>
-                        <option value="10">PPKK Teknis - Pengelola Umum Operasional</option>
-                        <option value="11">PPKK Teknis - Penelaah Teknis Kebijakan</option>
-                        <option value="12">PPKK Teknis - Pengolah Data dan Informasi</option>
+                        <option value="9">PPPK Teknis - Penata Layanan Operasional</option>
+    <option value="10">PPPK Teknis - Pengelola Layanan Operasional</option>
+    <option value="11">PPPK Teknis - Operator Layanan Operasional</option>
+    <option value="12">PPKK Teknis - Pengelola Umum Operasional</option>
+    <option value="13">PPKK Teknis - Penelaah Teknis Kebijakan</option>
+    <option value="14">PPKK Teknis - Pengolah Data dan Informasi</option>
                     </select>
                     <small class="help-block"></small>
                 </div>
@@ -108,7 +108,7 @@ $no_peserta = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
                
           <div class="form-group">
                     <label for="nama_dosen">Zona Waktu <font color="red">WAJIB ISI</font></label>
-                    <select type="text" class="form-control" name="jenis_waktu" placeholder="Zona Waktu" required>
+                    <select class="form-control" name="jenis_waktu" placeholder="Zona Waktu" required>
                         <option>--Pilih Zona Waktu--</option>
                         <option value="1">WIB</option>
                         <option value="2">WITA</option>

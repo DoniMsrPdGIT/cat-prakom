@@ -140,18 +140,18 @@
                 <h3 class="box-title">Tata Cara Donasi</h3>
             </div>
     <div class="callout callout-warning">
-                           Silakan Donasi <del>Rp 80.000</del> <b><font color="yellow" size="5px">Rp 50.000</font><b>&nbsp;<span class="badge badge-danger">Alumni 2023</span>, untuk bisa mengakses Seluruh Fitur Website :<br/>
+                           Silakan Donasi <del>Rp 100.000</del> <b><font color="yellow" size="5px">Rp 50.000</font><b>&nbsp;<span class="badge badge-danger">Alumni 2023</span>, untuk bisa mengakses Seluruh Fitur Website :<br/>
                 <p>- Simulasi Tryout CAT (30 Paket Soal)<br />- eBook PDF Materi Belajar<br />- eBook PDF Soal dan Pembahasan <br />- Video Materi Belajar</p>
 <p>- 800++ Bank Soal, diacak by system<br />- Soal selalu Update tiap hari sesuai FR &amp; Kisi-kisi MenpanRB<br />- Informasi Passing Grade dan Ranking Nasional<br />
                         </div>
-                        <img src="../../assets/logo/qris-text.png" class="center"/>
-                        <img src="../../assets/logo/qris.jpeg" class="center"/>
-                         <h4 align="center"><b>Rp 50.<?=substr($mhs->no_peserta,4,3)?></b></h4>
+                        <img src="assets/logo/qris-text.png" class="center"/>
+                        <img src="assets/logo/qris.jpeg" class="center"/>
+                         <h4 align="center"><b>Rp 51.<?=substr($mhs->no_peserta,4,3)?></b></h4>
                         <br/>
                          <div class="callout callout-danger">
                          Donasi dg Kode Unik [Nomor Peserta] => Rp. 50.000 + Nomor Peserta<br/>
                          == Nomor Peserta Anda adalah <?=$mhs->no_peserta?> ==<br/>
-                         <b>Maka Donasi sebesar Rp. 50.<?=substr($mhs->no_peserta,4,3)?></b><br/>
+                         <b>Maka Donasi sebesar Rp. 51.<?=substr($mhs->no_peserta,4,3)?></b><br/>
                          Pembayaran via QRIS diatas, Otomatis Teraktivasi. <br/> 🌟🌟 Akun Berlaku Selama CASN 2024
                         </div>
                         
@@ -159,7 +159,7 @@
                            Klik untuk Join di <b><a href="https://t.me/cat_prakom"><i class="fa fa-telegram" aria-hidden="true"></i>&nbsp;Group Telegram CAT-Prakom.com</a></b><br/>
                            Silakan Konfirmasi di grup jika sudah Donasi, namun belum Aktif dengan format :<br/>
                            DCP_NAMA_NOHP_KODEUNIK<br/><br/>
-                           Contoh : DCP_Andini_081234567890_50<?=substr($mhs->no_peserta,4,3)?>
+                           Contoh : DCP_Andini_081234567890_51<?=substr($mhs->no_peserta,4,3)?>
                            </br></br>
                            <b>Admin akan melakukan pengecekan terlebih dahulu</b>
                         </div>
@@ -169,18 +169,18 @@
             </div>
 	<div class="callout callout-warning">
       
-                           Silakan Donasi <b><font color="yellow" size="5px">Rp 80.000</font><b>&nbsp;<span class="badge badge-danger">Non-Alumni 2023</span>, untuk bisa mengakses Seluruh Fitur Website :<br/>
+                           Silakan Donasi <b><font color="yellow" size="5px">Rp 100.000</font><b>&nbsp;<span class="badge badge-danger">Non-Alumni 2023</span>, untuk bisa mengakses Seluruh Fitur Website :<br/>
 				<p>- Simulasi Tryout CAT (30 Paket Soal)<br />- eBook PDF Materi Belajar<br />- eBook PDF Soal dan Pembahasan <br />- Video Materi Belajar</p>
 <p>- 800++ Bank Soal, diacak by system<br />- Soal selalu Update tiap hari sesuai FR &amp; Kisi-kisi MenpanRB<br />- Informasi Passing Grade dan Ranking Nasional<br />
                         </div>
-						<img src="../../assets/logo/qris-text.png" class="center"/>
-						<img src="../../assets/logo/qris.jpeg" class="center"/>
-						 <h4 align="center"><b>Rp 80.<?=substr($mhs->no_peserta,4,3)?></b></h4>
+						<img src="assets/logo/qris-text.png" class="center"/>
+						<img src="assets/logo/qris.jpeg" class="center"/>
+						 <h4 align="center"><b>Rp 101.<?=substr($mhs->no_peserta,4,3)?></b></h4>
 						<br/>
 						 <div class="callout callout-danger">
-                         Donasi dg Kode Unik [Nomor Peserta] => Rp. 80.000 + Nomor Peserta<br/>
+                         Donasi dg Kode Unik [Nomor Peserta] => Rp. 100.000 + Nomor Peserta<br/>
 						 == Nomor Peserta Anda adalah <?=$mhs->no_peserta?> ==<br/>
-						 <b>Maka Donasi sebesar Rp. 80.<?=substr($mhs->no_peserta,4,3)?></b><br/>
+						 <b>Maka Donasi sebesar Rp. 101.<?=substr($mhs->no_peserta,4,3)?></b><br/>
 						 Pembayaran via QRIS diatas, Otomatis Teraktivasi. <br/> 🌟🌟 Akun Berlaku Selama CASN 2024
                         </div>
 						
@@ -188,7 +188,7 @@
                            Klik untuk Join di <b><a href="https://t.me/cat_prakom"><i class="fa fa-telegram" aria-hidden="true"></i>&nbsp;Group Telegram CAT-Prakom.com</a></b><br/>
 						   Silakan Konfirmasi di grup jika sudah Donasi, namun belum Aktif dengan format :<br/>
 						   DCP_NAMA_NOHP_KODEUNIK<br/><br/>
-						   Contoh : DCP_Andini_081234567890_80<?=substr($mhs->no_peserta,4,3)?>
+						   Contoh : DCP_Andini_081234567890_101<?=substr($mhs->no_peserta,4,3)?>
 						   </br></br>
 						   <b>Admin akan melakukan pengecekan terlebih dahulu</b>
                         </div>
