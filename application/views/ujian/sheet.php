@@ -1,7 +1,15 @@
 <?php
 if(time() >= $soal->waktu_habis)
 {
-    redirect('ujian/list', 'location', 301);
+    if($soal->ujian_id>='401' && $soal->ujian_id<='480'){
+        redirect('ujian/list_sosio', 'location', 301);
+        }elseif($soal->ujian_id>='6461' && $soal->ujian_id<='6540'){
+            redirect('ujian/list_manaj', 'location', 301);
+        }elseif($soal->ujian_id>='6588' && $soal->ujian_id<='6667'){
+            redirect('ujian/list_wawan', 'location', 301);
+    }else{
+        redirect('ujian/list', 'location', 301);   
+    }
 }
 ?>
 <div class="row">

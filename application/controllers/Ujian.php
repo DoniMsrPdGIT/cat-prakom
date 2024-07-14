@@ -248,8 +248,8 @@ class Ujian extends CI_Controller {
 		
 		$data = [
 			'user' 		=> $user,
-			'judul'		=> 'TOMAN',
-			'subjudul'	=> 'List Tryout Mandiri (TOMAN)',
+			'judul'		=> 'Teknis',
+			'subjudul'	=> 'List Kompetensi Teknis/Bidang',
 			'mhs' 		=> $this->ujian->getIdMahasiswa($user->username),
 		];
 		$this->load->view('_templates/dashboard/_header.php', $data);
@@ -266,7 +266,7 @@ class Ujian extends CI_Controller {
 		$data = [
 			'user' 		=> $user,
 			'judul'		=> 'TOLI',
-			'subjudul'	=> 'List Tryout Live (TOLI)',
+			'subjudul'	=> 'List Live Competition',
 			'mhs' 		=> $this->ujian->getIdMahasiswa($user->username),
 		];
 		$this->load->view('_templates/dashboard/_header.php', $data);
@@ -355,7 +355,7 @@ $ujian_id = $this->ujian->getUjianIdById($id_ujian);
 			'mhs' 		=> $this->ujian->getIdMahasiswa($user->username),
 		];
 		$this->load->view('_templates/dashboard/_header.php', $data);
-		if($ujian_id>='1' && $ujian_id<='30'){
+		if($ujian_id>='401' && $ujian_id<='6667'){
 		$this->load->view('ujian/pembahasan_mansoswa',$data);
 		}else{
 		$this->load->view('ujian/pembahasan',$data);	
@@ -605,7 +605,7 @@ $ujian_id = $this->ujian->getUjianIdById($id_tes);
 
 			$cek_jwb 	= $this->soal->getSoalById($ujian_id,$id_soal);
 			$cek_bobot = $this->ujian->getSoalWithBobot($jawaban,$id_soal);
-			if($ujian_id>='1' && $ujian_id<='30'){
+			if($ujian_id>='401' && $ujian_id<='6667'){
 			$opsi_selected=	$jawaban;
 			$bobot_selected=substr($cek_bobot->bobot_selected, 0, 1);
 			$bobot_selected_total += $bobot_selected;
@@ -619,7 +619,7 @@ $ujian_id = $this->ujian->getUjianIdById($id_tes);
 		}
 
 		//$nilai = ($jumlah_benar / $jumlah_soal)  * 100;
-		if($ujian_id>='1' && $ujian_id<='30'){
+		if($ujian_id>='401' && $ujian_id<='6667'){
 		//$nilai = $jumlah_benar * 5;
 		$nilai = $bobot_selected_total;
 		$nilai_bobot = ($total_bobot / $jumlah_soal)  * 100;

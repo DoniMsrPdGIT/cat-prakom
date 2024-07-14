@@ -210,7 +210,15 @@ function selesai() {
         success: function (r) {
             console.log(r);
             if (r.status) {
-                window.location.href = base_url + 'ujian/list';
+                if (id_tes >= 401 && id_tes <= 480) {
+                    window.location.href = base_url + 'ujian/list_sosio';
+                } else if (id_tes >= 6461 && id_tes <= 6540) {
+                    window.location.href = base_url + 'ujian/list_manaj';
+                } else if (id_tes >= 6588 && id_tes <= 6667) {
+                    window.location.href = base_url + 'ujian/list_wawan';
+                } else {
+                    window.location.href = base_url + 'ujian/list';
+                }
             }
         }
     });

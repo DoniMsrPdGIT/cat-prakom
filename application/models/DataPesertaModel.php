@@ -28,7 +28,7 @@ class DataPesertaModel extends CI_Model{
 	
 	function reset_toman($kdunik){
 		 $this->db->where('ujian_id>=', '35');
-		  $this->db->where('ujian_id<=', '96');
+		  $this->db->where('ujian_id<=', '6667');
 		$this->db->delete('h_ujian', $kdunik);
 	}
 }

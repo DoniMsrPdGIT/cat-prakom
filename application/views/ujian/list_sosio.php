@@ -49,7 +49,8 @@
 						<th>Kode Paket</th>
                         <th>Jumlah Soal</th>
                         <th>Waktu</th>
-                        <th class="text-center">Aksi</th>
+                        <th class="text-center">Nilai</th>
+						<th class="text-center">Reset </th>
                     </tr>        
                 </thead>
                 <tfoot>
@@ -60,7 +61,8 @@
 						<th>Kode Paket</th>
                         <th>Jumlah Soal</th>
                         <th>Waktu</th>
-                        <th class="text-center">Aksi</th>
+                        <th class="text-center">Nilai</th>
+						<th class="text-center">Reset </th>
                     </tr>
                 </tfoot>
                 </table>

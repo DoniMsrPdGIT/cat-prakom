@@ -58,7 +58,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianSosio($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada, h.nilai, h.jml_benar , h.id");
+        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='401' AND ujian_id<='480') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -76,7 +76,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianManaj($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada, h.nilai, h.jml_benar , h.id");
+        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='6461' AND ujian_id<='6540') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -94,7 +94,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianWawan($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada, h.nilai, h.jml_benar , h.id");
+        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='6588' AND ujian_id<='6667') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -157,11 +157,11 @@ class Ujian_model extends CI_Model {
         $ujian = $this->getUjianById($id);
         $order = $ujian->jenis==="acak" ? 'rand()' : 'id_soal';
         $this->db->select('id_soal, soal, file, tipe_file, opsi_a, opsi_b, opsi_c, opsi_d, opsi_e, jawaban,pembahasan');
-        if($id>='1' && $id<='10'){
+        if($id>='401' && $id<='480'){
         $this->db->from('tb_soal_sosiokultural');
-        }elseif($id>='11' && $id<='20'){
+        }elseif($id>='6461' && $id<='6540'){
         $this->db->from('tb_soal_manajerial');
-        }elseif($id>='21' && $id<='30'){
+        }elseif($id>='6588' && $id<='6667'){
         $this->db->from('tb_soal_wawancara');
         }else{
         $this->db->from('tb_soal');
@@ -175,7 +175,7 @@ class Ujian_model extends CI_Model {
 
     public function ambilSoal($pc_urut_soal1, $pc_urut_soal_arr,$Kodeujian)
     {
-        if($Kodeujian>='1' && $Kodeujian<='10'){
+        if($Kodeujian>='401' && $Kodeujian<='480'){
             $this->db->select("*, {$pc_urut_soal1} AS jawaban, jawaban AS kunci_soal_opsi, (SELECT CASE
             WHEN jawaban = 'A' THEN opsi_a
             WHEN jawaban = 'B' THEN opsi_b
@@ -189,7 +189,7 @@ class Ujian_model extends CI_Model {
                 $this->db->from('tb_soal_sosiokultural');
                 $this->db->where('id_soal', $pc_urut_soal_arr);
                 return $this->db->get()->row();
-        }elseif($Kodeujian>='11' && $Kodeujian<='20'){
+        }elseif($Kodeujian>='6461' && $Kodeujian<='6540'){
             $this->db->select("*, {$pc_urut_soal1} AS jawaban, jawaban AS kunci_soal_opsi, (SELECT CASE
             WHEN jawaban = 'A' THEN opsi_a
             WHEN jawaban = 'B' THEN opsi_b
@@ -203,7 +203,7 @@ class Ujian_model extends CI_Model {
                 $this->db->from('tb_soal_manajerial');
                 $this->db->where('id_soal', $pc_urut_soal_arr);
                 return $this->db->get()->row();
-        }elseif($Kodeujian>='21' && $Kodeujian<='30'){
+        }elseif($Kodeujian>='6588' && $Kodeujian<='6667'){
             $this->db->select("*, {$pc_urut_soal1} AS jawaban, jawaban AS kunci_soal_opsi, (SELECT CASE
             WHEN jawaban = 'A' THEN opsi_a
             WHEN jawaban = 'B' THEN opsi_b

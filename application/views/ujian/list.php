@@ -50,7 +50,7 @@
                         <th>Jumlah Soal</th>
                         <th>Waktu</th>
                         <th class="text-center">Nilai</th>
-						<th class="text-center">Reset TOMAN</th>
+						<th class="text-center">Reset </th>
 						
                     </tr>        
                 </thead>
@@ -63,7 +63,7 @@
                         <th>Jumlah Soal</th>
                         <th>Waktu</th>
                         <th class="text-center">Nilai</th>
-						<th class="text-center">Reset TOMAN</th>
+						<th class="text-center">Reset </th>
                     </tr>
                 </tfoot>
                 </table>
