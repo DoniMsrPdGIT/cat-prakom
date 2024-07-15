@@ -68,4 +68,47 @@ class DataPeserta extends CI_Controller {
 		$idunik = $this->uri->segment('4');
 		redirect("ujian/list");
 	}
+
+	function reset_sosio($id){
+		$mahasiswa_id=substr($id,11,4);
+		$kdunik = array('mahasiswa_id' => $mahasiswa_id );
+		$this->DataPesertaModel->reset_sosio($kdunik);
+		$this->session->set_flashdata('message',
+			'<div class="alert alert-white bg-gd-sun alert-dismissible" role="alert" style="background-color:#FF0000">
+		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		      	<span aria-hidden="true">&times;</span>
+		      </button><font color="white">Data Berhasil Di Hapus..!</font>
+		    </div>');
+
+		$idunik = $this->uri->segment('4');
+		redirect("ujian/list_sosio");
+	}
+	function reset_manaj($id){
+		$mahasiswa_id=substr($id,11,4);
+		$kdunik = array('mahasiswa_id' => $mahasiswa_id );
+		$this->DataPesertaModel->reset_manaj($kdunik);
+		$this->session->set_flashdata('message',
+			'<div class="alert alert-white bg-gd-sun alert-dismissible" role="alert" style="background-color:#FF0000">
+		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		      	<span aria-hidden="true">&times;</span>
+		      </button><font color="white">Data Berhasil Di Hapus..!</font>
+		    </div>');
+
+		$idunik = $this->uri->segment('4');
+		redirect("ujian/list_manaj");
+	}
+	function reset_wawan($id){
+		$mahasiswa_id=substr($id,11,4);
+		$kdunik = array('mahasiswa_id' => $mahasiswa_id );
+		$this->DataPesertaModel->reset_wawan($kdunik);
+		$this->session->set_flashdata('message',
+			'<div class="alert alert-white bg-gd-sun alert-dismissible" role="alert" style="background-color:#FF0000">
+		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		      	<span aria-hidden="true">&times;</span>
+		      </button><font color="white">Data Berhasil Di Hapus..!</font>
+		    </div>');
+
+		$idunik = $this->uri->segment('4');
+		redirect("ujian/list_wawan");
+	}
 }
