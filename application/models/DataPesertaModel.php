@@ -28,6 +28,21 @@ class DataPesertaModel extends CI_Model{
 	
 	function reset_toman($kdunik){
 		 $this->db->where('ujian_id>=', '35');
+		  $this->db->where('ujian_id<=', '400');
+		$this->db->delete('h_ujian', $kdunik);
+	}
+	function reset_sosio($kdunik){
+		 $this->db->where('ujian_id>=', '401');
+		  $this->db->where('ujian_id<=', '480');
+		$this->db->delete('h_ujian', $kdunik);
+	}
+	function reset_manaj($kdunik){
+		 $this->db->where('ujian_id>=', '6461');
+		  $this->db->where('ujian_id<=', '6540');
+		$this->db->delete('h_ujian', $kdunik);
+	}
+	function reset_wawan($kdunik){
+		 $this->db->where('ujian_id>=', '6588');
 		  $this->db->where('ujian_id<=', '6667');
 		$this->db->delete('h_ujian', $kdunik);
 	}
