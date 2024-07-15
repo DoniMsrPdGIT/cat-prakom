@@ -96,7 +96,7 @@ $(document).ready(function () {
 							 btn = `<a class="btn btn-xs btn-default" disabled><i class="fa fa-refresh"></i> Reset</a>
 						`;
 						} else {
-                        btn = `<a class="btn btn-xs btn-warning" href="${base_url}DataPeserta/reset_toman/01930304023${data.mahasiswa_id}49203324"><i class="fa fa-refresh"></i> Reset</a>
+                        btn = `<a class="btn btn-xs btn-warning" href="${base_url}DataPeserta/reset_sosio/01930304023${data.mahasiswa_id}49203324"><i class="fa fa-refresh"></i> Reset</a>
 						`;
                     }
                     }
