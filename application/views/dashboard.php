@@ -63,7 +63,7 @@
             </div>
 	
             <div class="box-body">
-                <p>Fitur Website CAT CASN Prakom :<br />- 1.300++ Bank Soal, diacak by system🌟<br />- Soal selalu Update tiap hari🌟<br />- Tryout CAT dibagi per Sesi🌟<br />- Informasi Passing Grade tiap Sesi🌟<br />- PDF Soal Tryout dan Pembahasan<br />- PDF Materi Pembelajaran<br />- Ranking Peserta per Sesi secara Nasional, 🌟<br />- Tryout Tanpa Batas dan Flexible, tanpa Jadwal<br />- Dilengkapi Timer<br />- Ada Aplikasi Androidnya, join di group telegram untuk mendapatkan Aplikasinya.<br />- Group Telegram utk Sharing Materi dan Aplikasi CAT Prakom Android https://t.me/cat_prakom<br />- Sesuai kisi-kisi MenPanRB🌟<br />- Sesuai FR Peserta 2022🌟</p>
+                <p>Fitur Website CAT CASN Prakom :<br />- 1.900++ Bank Soal, diacak by system🌟<br />- Soal selalu Update tiap hari🌟<br />- Tryout CAT dibagi per Sesi🌟<br />- Informasi Passing Grade tiap Sesi🌟<br />- PDF Soal Tryout dan Pembahasan<br />- PDF Materi Pembelajaran<br />- Ranking Peserta per Sesi secara Nasional, 🌟<br />- Tryout Tanpa Batas dan Flexible, tanpa Jadwal<br />- Dilengkapi Timer<br />- Ada Aplikasi Androidnya, join di group telegram untuk mendapatkan Aplikasinya.<br />- Group Telegram utk Sharing Materi dan Aplikasi CAT Prakom Android https://t.me/cat_prakom<br />- Sesuai kisi-kisi MenPanRB🌟<br />- Sesuai FR Peserta 2022🌟</p>
             </div>
 						
         </div>
@@ -125,7 +125,15 @@
             <div class="box-body">
                  <div class="callout callout-success">
                             <p><font color="yellow" size="3px"><b>Selamat, <?=$mhs->nama?>. Aktivasi Akun Premium anda Berhasil<b></font>, <br/>Terima kasih atas donasinya.</p>
-<p>✓Silakan jelajahi fitur Premium/Full Akses ke :<br />✅Tryout 30 Paket Soal dengan 1.300++ Bank Soal terupdate<br />✅10 eBook PDF Materi Belajar sesuai Kisi-kisi MenpanRB dan FR Peserta Ujian,&nbsp;<br />✅5 eBook PDF Soal dan Pembahasan (Ahli dan Terampil)&nbsp;<br />✅Video Materi Belajar.&nbsp;<br />✅ Android CAT-Prakom download di Playstore</p>
+<p>✓Silakan jelajahi fitur Premium/Full Akses ke :<br />
+✅Tryout 30 Paket Soal Kompetensi Teknis/Bidang dengan 1.900++ Bank Soal terupdate<br />
+✅Tryout 10 Paket Soal Sosiokultural<br />
+✅Tryout 10 Paket Soal Manajerial<br />
+✅Tryout 10 Paket Soal Wawancara<br />
+✅10 eBook PDF Materi Belajar sesuai Kisi-kisi MenpanRB dan FR Peserta Ujian,&nbsp;<br />
+✅5 eBook PDF Soal dan Pembahasan (Ahli dan Terampil)&nbsp;<br />
+✅Video Materi Belajar.&nbsp;<br />
+✅Android CAT-Prakom download di Playstore</p>
 
                         </div>
 						<!--
@@ -141,11 +149,21 @@
             </div>
     <div class="callout callout-warning">
                            Silakan Donasi <del>Rp 100.000</del> <b><font color="yellow" size="5px">Rp 50.000</font><b>&nbsp;<span class="badge badge-danger">Alumni 2023</span>, untuk bisa mengakses Seluruh Fitur Website :<br/>
-                <p>- Simulasi Tryout CAT (30 Paket Soal)<br />- eBook PDF Materi Belajar<br />- eBook PDF Soal dan Pembahasan <br />- Video Materi Belajar</p>
-<p>- 800++ Bank Soal, diacak by system<br />- Soal selalu Update tiap hari sesuai FR &amp; Kisi-kisi MenpanRB<br />- Informasi Passing Grade dan Ranking Nasional<br />
+                <p>✅ Simulasi Tryout CAT Kompetensi Teknis/Bidang (30 Paket Soal)<br />
+                ✅ Simulasi Tryout CAT Sosiokultural (10 Paket Soal)<br />
+                ✅ Simulasi Tryout CAT Manajerial (10 Paket Soal)<br />
+                ✅ Simulasi Tryout CAT Wawancara (10 Paket Soal)<br />
+                ✅ eBook PDF Materi Belajar<br />
+                ✅ eBook PDF Soal dan Pembahasan <br />
+                ✅ Video Materi Belajar</p>
+<p>✅ 1900++ Bank Soal, diacak by system<br />
+✅ Soal selalu Update tiap hari sesuai FR &amp; Kisi-kisi MenpanRB<br />
+✅ Paket Soal bisa di Reset dan Tryout bisa diulang terus-menerus<br />
+✅ Informasi Passing Grade dan Ranking Nasional<br />
+✅ Aktivasi Member Berlaku selama CASN 2024
                         </div>
-                        <img src="assets/logo/qris-text.png" class="center"/>
-                        <img src="assets/logo/qris.jpeg" class="center"/>
+                        
+                        <img src="assets/logo/qris_new.png" class="center"/>
                          <h4 align="center"><b>Rp 51.<?=substr($mhs->no_peserta,4,3)?></b></h4>
                         <br/>
                          <div class="callout callout-danger">
@@ -170,11 +188,21 @@
 	<div class="callout callout-warning">
       
                            Silakan Donasi <b><font color="yellow" size="5px">Rp 100.000</font><b>&nbsp;<span class="badge badge-danger">Non-Alumni 2023</span>, untuk bisa mengakses Seluruh Fitur Website :<br/>
-				<p>- Simulasi Tryout CAT (30 Paket Soal)<br />- eBook PDF Materi Belajar<br />- eBook PDF Soal dan Pembahasan <br />- Video Materi Belajar</p>
-<p>- 800++ Bank Soal, diacak by system<br />- Soal selalu Update tiap hari sesuai FR &amp; Kisi-kisi MenpanRB<br />- Informasi Passing Grade dan Ranking Nasional<br />
+                           <p>✅ Simulasi Tryout CAT Kompetensi Teknis/Bidang (30 Paket Soal)<br />
+                ✅ Simulasi Tryout CAT Sosiokultural (10 Paket Soal)<br />
+                ✅ Simulasi Tryout CAT Manajerial (10 Paket Soal)<br />
+                ✅ Simulasi Tryout CAT Wawancara (10 Paket Soal)<br />
+                ✅ eBook PDF Materi Belajar<br />
+                ✅ eBook PDF Soal dan Pembahasan <br />
+                ✅ Video Materi Belajar</p>
+<p>✅ 1900++ Bank Soal, diacak by system<br />
+✅ Soal selalu Update tiap hari sesuai FR &amp; Kisi-kisi MenpanRB<br />
+✅ Paket Soal bisa di Reset dan Tryout bisa diulang terus-menerus<br />
+✅ Informasi Passing Grade dan Ranking Nasional<br />
+✅ Aktivasi Member Berlaku selama CASN 2024
                         </div>
-						<img src="assets/logo/qris-text.png" class="center"/>
-						<img src="assets/logo/qris.jpeg" class="center"/>
+						
+						<img src="assets/logo/qris_new.png" class="center"/>
 						 <h4 align="center"><b>Rp 101.<?=substr($mhs->no_peserta,4,3)?></b></h4>
 						<br/>
 						 <div class="callout callout-danger">

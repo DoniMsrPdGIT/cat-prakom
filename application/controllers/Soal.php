@@ -14,6 +14,7 @@ class Soal extends CI_Controller {
 		$this->load->helper('my');// Load Library Ignited-Datatables
 		$this->load->model('Master_model', 'master');
 		$this->load->model('Soal_model', 'soal');
+        $this->load->model('Ujian_model', 'ujian');
 		$this->form_validation->set_error_delimiters('','');
 	}
 
@@ -47,12 +48,15 @@ class Soal extends CI_Controller {
     
     public function detail($id)
     {
+
+// get ujian_id
+$ujian_id = $id;
         $user = $this->ion_auth->user()->row();
 		$data = [
 			'user'      => $user,
 			'judul'	    => 'Soal',
             'subjudul'  => 'Edit Soal',
-            'soal'      => $this->soal->getSoalById($id),
+            'soal'      => $this->soal->getSoalById($ujian_id,$id),
         ];
 
         $this->load->view('_templates/dashboard/_header.php', $data);
@@ -84,12 +88,14 @@ class Soal extends CI_Controller {
 
     public function edit($id)
 	{
+        // get ujian_id
+$ujian_id = $id;
 		$user = $this->ion_auth->user()->row();
 		$data = [
 			'user'      => $user,
 			'judul'	    => 'Soal',
             'subjudul'  => 'Edit Soal',
-            'soal'      => $this->soal->getSoalById($id),
+            'soal'      => $this->soal->getSoalById($ujian_id,$id),
         ];
         
         if($this->ion_auth->is_admin()){

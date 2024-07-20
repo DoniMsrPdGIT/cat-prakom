@@ -531,3 +531,4 @@ $config['proxy_ips'] = '';
  */
 
 $config['jml_opsi']	= 5; // opsi jawaban 1 - 5
+$config['jml_opsi_manwa']	= 4; // opsi jawaban 1 - 4 Manajerial & Wawancara

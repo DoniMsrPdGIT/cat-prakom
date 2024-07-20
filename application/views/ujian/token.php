@@ -103,12 +103,11 @@ if($donasi == '0' && $trial=='0'){
 	</style>
 <?php if($user->activation_selector=='1' ){ ?>
 <div class="callout callout-warning">
-                           Silakan Donasi <del>Rp 100.000</del> <b>Rp 50.000</b>&nbsp;<span class="badge badge-danger">Alumni 2023</span>,untuk bisa mengakses Seluruh Sesi Ujian + Akses Modul eBook Materi Prakom + Fitur kedepannya.<br/>
+                           Silakan Donasi <del>Rp 100.000</del> <b>Rp 50.000</b>&nbsp;<span class="badge badge-danger">Alumni 2023</span>,untuk bisa mengakses Seluruh Sesi Ujian + Akses Modul eBook Materi + Fitur kedepannya.<br/>
 						   <b>Donasi diperlukan guna Pengembangan Website CAT Prakom lebih baik.</b>
                         </div>
-						<img src="../../assets/logo/qris-text.png" class="center"/>
-						<img src="../../assets/logo/qris.jpeg" class="center"/>
-						 <h4 align="center"><b>Rp 50.<?=substr($mhs->no_peserta,4,3)?></b></h4>
+						<img src="../../assets/logo/qris_new.png" class="center"/>
+						 <h4 align="center"><b>Rp 51.<?=substr($mhs->no_peserta,4,3)?></b></h4>
 						<br/>
 						 <div class="callout callout-danger">
                          Donasi dg Kode Unik [Nomor Peserta] => Rp. 50.000 + Nomor Peserta<br/>
@@ -128,11 +127,10 @@ if($donasi == '0' && $trial=='0'){
 
 						<?php  }else{ ?>
 <div class="callout callout-warning">
-                           Silakan Donasi <b>Rp 100.000</b>&nbsp;<span class="badge badge-danger">Non-Alumni 2023</span>, untuk bisa mengakses Seluruh Sesi Ujian + Akses Modul eBook Materi Prakom + Fitur kedepannya.<br/>
+                           Silakan Donasi <b>Rp 100.000</b>&nbsp;<span class="badge badge-danger">Non-Alumni 2023</span>, untuk bisa mengakses Seluruh Sesi Ujian + Akses Modul eBook Materi + Fitur kedepannya.<br/>
 						   <b>Donasi diperlukan guna Pengembangan Website CAT Prakom lebih baik.</b>
                         </div>
-						<img src="../../assets/logo/qris-text.png" class="center"/>
-						<img src="../../assets/logo/qris.jpeg" class="center"/>
+						<img src="../../assets/logo/qris_new.png" class="center"/>
 						 <h4 align="center"><b>Rp 101.<?=substr($mhs->no_peserta,4,3)?></b></h4>
 						<br/>
 						 <div class="callout callout-danger">

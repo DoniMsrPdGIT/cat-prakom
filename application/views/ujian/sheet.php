@@ -28,6 +28,10 @@ if(time() >= $soal->waktu_habis)
     </div>
     <div class="col-sm-9">
         <?=form_open('', array('id'=>'ujian'), array('id'=> $id_tes));?>
+        <?php 
+        $id_tes_decr = $this->encryption->decrypt($id_tes);
+        $ujian_id = $this->ujian->getUjianIdById($id_tes_decr);
+        ?>
         <div class="box box-primary">
             <div class="box-header with-border">
                 <h3 class="box-title"><span class="badge bg-blue">Soal #<span id="soalke"></span> </span></h3>
@@ -55,6 +59,7 @@ if(time() >= $soal->waktu_habis)
 <script type="text/javascript">
     var base_url        = "<?=base_url(); ?>";
     var id_tes          = "<?=$id_tes; ?>";
+    var ujian_id          = "<?=$ujian_id; ?>";
     var widget          = $(".step");
     var total_widget    = widget.length;
 </script>

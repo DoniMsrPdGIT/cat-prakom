@@ -98,10 +98,37 @@ echo '<div class="step" id="widget_'.$no.'">';
 					$opsi 			= "opsi_".$arr_opsi[$j];
 					$file 			= "file_".$arr_opsi[$j];
 					$checked 		= $arr_jawab == strtoupper($arr_opsi[$j]) ? "checked" : "";
+                    $checked_user   = $value[$no-1] == strtoupper($arr_opsi[$j])? "checked" : "";
 					$pilihan_opsi 	= !empty($s->$opsi) ? $s->$opsi : "";
 				//	$tampil_media_opsi = (is_file(base_url().$path.$s->$file) || $s->$file != "") ? tampil_media($path.$s->$file) : "";
-					echo '<div class="funkyradio-success" >
-						<input type="radio"  value="'.strtoupper($arr_opsi[$j]).'"  '.$checked.'> <label for="opsi_'.strtolower($arr_opsi[$j]).'_'.$s->id_soal.'"><div class="huruf_opsi">'.$arr_opsi[$j].'</div> <p>'.$pilihan_opsi.'</p><div class="w-25"></div></label></div>';
+                if ($checked_user==$checked) {
+                    echo '<div class="funkyradio-success" >
+                    <input type="radio"  value="'.strtoupper($arr_opsi[$j]).'"  '.$checked.'  > 
+                    <label for="opsi_'.strtolower($arr_opsi[$j]).'_'.$s->id_soal.'">
+                        <div class="huruf_opsi">'.$arr_opsi[$j].'</div>
+                        <p>'.$pilihan_opsi.'</p>
+                        <div class="w-25"></div>
+                    </label>';
+                }else{
+                    if ($checked_user) {
+                        echo '<div class="funkyradio-danger" >
+                    <input type="radio" value="'.strtoupper($arr_opsi[$j]).'"  '.$checked_user.'  > 
+                    <label for="opsi_'.strtolower($arr_opsi[$j]).'_'.$s->id_soal.'">
+                        <div class="huruf_opsi">'.$arr_opsi[$j].'</div>
+                        <p>'.$pilihan_opsi.'</p>
+                        <div class="w-25"></div>
+                    </label>';
+                    }else{
+                        echo '<div class="funkyradio-success" >
+                        <input type="radio"  value="'.strtoupper($arr_opsi[$j]).'"  '.$checked.'  > 
+                        <label for="opsi_'.strtolower($arr_opsi[$j]).'_'.$s->id_soal.'">
+                            <div class="huruf_opsi">'.$arr_opsi[$j].'</div>
+                            <p>'.$pilihan_opsi.'</p>
+                            <div class="w-25"></div>
+                        </label>';
+                    }
+                }
+            echo '</div>';
 						
 				}
 				for ($j = 0; $j < $this->config->item('jml_opsi'); $j++) {
