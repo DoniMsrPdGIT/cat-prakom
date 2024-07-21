@@ -56,7 +56,7 @@ $ujian_id = $id;
 			'user'      => $user,
 			'judul'	    => 'Soal',
             'subjudul'  => 'Edit Soal',
-            'soal'      => $this->soal->getSoalById($ujian_id,$id),
+            'soal'      => $this->soal->getSoalByIdSoal($id),
         ];
 
         $this->load->view('_templates/dashboard/_header.php', $data);
@@ -95,7 +95,7 @@ $ujian_id = $id;
 			'user'      => $user,
 			'judul'	    => 'Soal',
             'subjudul'  => 'Edit Soal',
-            'soal'      => $this->soal->getSoalById($ujian_id,$id),
+            'soal'      => $this->soal->getSoalByIdSoal($id),
         ];
         
         if($this->ion_auth->is_admin()){
@@ -150,7 +150,7 @@ $ujian_id = $id;
         $method = $this->input->post('method', true);
         $this->validasi();
         $this->file_config();
-
+        $ujian_id = $id;
         
         if($this->form_validation->run() === FALSE){
             $method==='add'? $this->add() : $this->edit();
@@ -172,7 +172,7 @@ $ujian_id = $id;
             $i = 0;
             foreach ($_FILES as $key => $val) {
                 $img_src = FCPATH.'uploads/bank_soal/';
-                $getsoal = $this->soal->getSoalById($this->input->post('id_soal', true));
+                $getsoal = $this->soal->getSoalByIdSoal($this->input->post('id_soal', true));
                 
                 $error = '';
                 if($key === 'file_soal'){
@@ -250,7 +250,7 @@ $ujian_id = $id;
         foreach($chk as $id){
             $abjad = ['a', 'b', 'c', 'd', 'e'];
             $path = FCPATH.'uploads/bank_soal/';
-            $soal = $this->soal->getSoalById($id);
+            $soal = $this->soal->getSoalByIdSoal($id);
             // Hapus File Soal
             if(!empty($soal->file)){
                 if(file_exists($path.$soal->file)){

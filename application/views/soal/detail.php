@@ -46,9 +46,13 @@
                 <?php endforeach;?>
                 
                 <hr class="my-4">
+                <h3 class="text-center">Pembahasan</h3>
+                <?=$soal->pembahasan?>
+                <hr class="my-4">
                 <strong>Dibuat pada :</strong> <?=strftime("%A, %d %B %Y", date($soal->created_on))?>
                 <br>
                 <strong>Terkahir diupdate :</strong> <?=strftime("%A, %d %B %Y", date($soal->updated_on))?>
+               
             </div>
         </div>
     </div>

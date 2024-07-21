@@ -35,19 +35,19 @@
                             
                             <div class="col-sm-12">
                                 <label for="soal" class="control-label text-center">Soal</label>
-                                <div class="row">
-                                    <div class="form-group col-sm-3">
+                             
+                                    <div class="form-group">
                                         <input type="file" name="file_soal" class="form-control">
                                         <small class="help-block" style="color: #dc3545"><?=form_error('file_soal')?></small>
                                         <?php if(!empty($soal->file)) : ?>
                                             <?=tampil_media('uploads/bank_soal/'.$soal->file);?>
                                         <?php endif;?>
                                     </div>
-                                    <div class="form-group col-sm-9">
+                                    <div class="form-group">
                                         <textarea name="soal" id="soal" rows="4" class="form-control ckeditor"><?=$soal->soal?></textarea>
                                         <small class="help-block" style="color: #dc3545"><?=form_error('soal')?></small>
                                     </div>
-                                </div>
+                                
                             </div>
                             
                             <!-- 
@@ -63,19 +63,19 @@
                             
                             <div class="col-sm-12">
                                 <label for="jawaban_<?= $abj; ?>" class="control-label text-center">Jawaban <?= $ABJ; ?></label>
-                                <div class="row">
-                                    <div class="form-group col-sm-3">
+                            
+                                    <div class="form-group">
                                         <input type="file" name="<?= $file; ?>" class="form-control">
                                         <small class="help-block" style="color: #dc3545"><?=form_error($file)?></small>
                                         <?php if(!empty($soal->$file)) : ?>
                                             <?=tampil_media('uploads/bank_soal/'.$soal->$file);?>
                                         <?php endif;?>
                                     </div>
-                                    <div class="form-group col-sm-9">
+                                    <div class="form-group">
                                         <textarea name="jawaban_<?= $abj; ?>" id="jawaban_<?= $abj; ?>" class="form-control ckeditor"><?=$soal->$opsi?></textarea>
                                         <small class="help-block" style="color: #dc3545"><?=form_error('jawaban_'.$abj)?></small>
                                     </div>
-                                </div>
+                                
                             </div>
                             
                             <?php endforeach; ?>
@@ -117,3 +117,15 @@
         <?=form_close();?>
     </div>
 </div>
+<script src="<?php echo base_url('assets/ckeditor/ckeditor.js'); ?>"></script>
+<script>
+    CKEDITOR.replace('soal'); // Replace 'soal' with the ID of your textarea
+    <?php
+                        $abjad = ['a', 'b', 'c', 'd', 'e']; 
+                        foreach ($abjad as $abj) :
+                            $ABJ = strtoupper($abj); // Abjad Kapital
+                        ?>
+    CKEDITOR.replace('jawaban_<?= $abj; ?>');
+    <?php endforeach; ?>
+    CKEDITOR.replace('pembahasan'); 
+</script>

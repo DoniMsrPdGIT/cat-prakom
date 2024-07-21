@@ -49,13 +49,13 @@
 					<li class="<?=$page==='matkul'?"active":""?>">
 						<a href="<?=base_url('matkul')?>">
 							<i class="fa fa-circle-o"></i>
-							Tema Pelatihan
+							Tema Pelatihan/Formasi
 						</a>
 					</li>
 					<li class="<?=$page==='dosen'?"active":""?>">
 						<a href="<?=base_url('dosen')?>">
 							<i class="fa fa-circle-o"></i>
-							Pelatihan
+							Pelatihan/Admin Formasi 
 						</a>
 					</li>
 					<li class="<?=$page==='mahasiswa'?"active":""?>">

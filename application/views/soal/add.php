@@ -98,3 +98,15 @@
         <?=form_close();?>
     </div>
 </div>
+<script src="<?php echo base_url('assets/ckeditor/ckeditor.js'); ?>"></script>
+<script>
+    CKEDITOR.replace('soal'); // Replace 'soal' with the ID of your textarea
+    <?php
+                        $abjad = ['a', 'b', 'c', 'd', 'e']; 
+                        foreach ($abjad as $abj) :
+                            $ABJ = strtoupper($abj); // Abjad Kapital
+                        ?>
+    CKEDITOR.replace('jawaban_<?= $abj; ?>');
+    <?php endforeach; ?>
+    CKEDITOR.replace('pembahasan'); 
+</script>

@@ -86,6 +86,19 @@ var CKBUILDER_CONFIG = {
 		'wsc' : 1,
 		'wysiwygarea' : 1
 	},
+	toolbar: 'full',
+    toolbar_Full: [
+        { name: 'document', items: ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates'] },
+        { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
+        { name: 'editing', items: ['Find', 'Replace', '-', 'SelectAll', '-', 'SpellChecker', 'Scayt'] },
+        { name: 'forms', items: ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'] },
+        { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
+        { name: 'insert', items: ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe'] },
+        { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+        { name: 'colors', items: ['TextColor', 'BGColor'] },
+        { name: 'tools', items: ['Maximize', 'ShowBlocks'] },
+        { name: 'others', items: ['-'] }
+    ],
 	languages : {
 		'af' : 1,
 		'ar' : 1,

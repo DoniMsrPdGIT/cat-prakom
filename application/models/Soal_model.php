@@ -38,6 +38,11 @@ class Soal_model extends CI_Model {
         }
     }
 
+    public function getSoalByIdSoal($id)
+    {
+        return $this->db->get_where('tb_soal', ['id_soal' => $id])->row();
+    }
+
 
     public function getMatkulDosen($nip)
     {
