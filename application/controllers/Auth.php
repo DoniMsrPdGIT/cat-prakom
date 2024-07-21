@@ -304,9 +304,12 @@ $manual_activation = $this->config->item('manual_activation', 'ion_auth');
 		// filter out any data passed that doesnt have a matching column in the users table
 		// and merge the set user data and the additional data
 		$servername = "localhost";
-$username = "cat39971_donimsrpd";
-$password = "aquansite1993";
-$dbname = "cat39971_prakom_casndb";
+// $username = "cat39971_donimsrpd";
+// $password = "aquansite1993";
+// $dbname = "cat39971_prakom_casndb";
+$username = "root";
+$password = "";
+$dbname = "prakom_casndb";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -361,9 +364,12 @@ if ($conn->connect_error) {
 		
 
 		$servername = "localhost";
-$username = "cat39971_donimsrpd";
-$password = "aquansite1993";
-$dbname = "cat39971_prakom_casndb";
+// $username = "cat39971_donimsrpd";
+// $password = "aquansite1993";
+// $dbname = "cat39971_prakom_casndb";
+$username = "root";
+$password = "";
+$dbname = "prakom_casndb";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
