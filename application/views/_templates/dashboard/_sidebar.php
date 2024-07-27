@@ -99,6 +99,11 @@
 					<i class="fa fa-file-text-o"></i> <span>Bank Soal</span>
 				</a>
 			</li>
+			<li class="<?=$page==='soal_tiu'?"active":""?>">
+				<a href="<?=base_url('soal_tiu')?>" rel="noopener noreferrer">
+					<i class="fa fa-file-text-o"></i> <span>Bank Soal TIU</span>
+				</a>
+			</li>
 			<?php endif; ?>
 			
 			<?php if( $this->ion_auth->is_admin() ) : ?>
