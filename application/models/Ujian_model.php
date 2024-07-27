@@ -373,6 +373,57 @@ public function getSoalWithBobot($id,$soal)
     $this->db->where('id_soal', $soal);
     return $this->db->get()->row();
 }
+public function getSoalWithBobotManaj($id,$soal)
+{
+    $this->db->select(" 
+        REPLACE(
+            SUBSTRING_INDEX(
+                SUBSTRING_INDEX(bobot, '".$id."', -1),
+                ',',
+                1
+            ),
+            ':',
+            ''
+        ) AS bobot_selected
+    ");
+    $this->db->from('tb_soal_manajerial');
+    $this->db->where('id_soal', $soal);
+    return $this->db->get()->row();
+}
+public function getSoalWithBobotWawan($id,$soal)
+{
+    $this->db->select(" 
+        REPLACE(
+            SUBSTRING_INDEX(
+                SUBSTRING_INDEX(bobot, '".$id."', -1),
+                ',',
+                1
+            ),
+            ':',
+            ''
+        ) AS bobot_selected
+    ");
+    $this->db->from('tb_soal_wawancara');
+    $this->db->where('id_soal', $soal);
+    return $this->db->get()->row();
+}
+public function getSoalWithBobotTKP($id,$soal)
+{
+    $this->db->select(" 
+        REPLACE(
+            SUBSTRING_INDEX(
+                SUBSTRING_INDEX(bobot, '".$id."', -1),
+                ',',
+                1
+            ),
+            ':',
+            ''
+        ) AS bobot_selected
+    ");
+    $this->db->from('tb_soal_tkp');
+    $this->db->where('id_soal', $soal);
+    return $this->db->get()->row();
+}
 
     public function getHasilUjian($nip = null)
     {

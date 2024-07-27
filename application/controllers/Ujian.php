@@ -673,13 +673,32 @@ $ujian_id = $this->ujian->getUjianIdById($id_tes);
 			$ragu 		= $pc_dt[2];
 
 			$cek_jwb 	= $this->soal->getSoalById($ujian_id,$id_soal);
+			
+			if(($ujian_id>='401' && $ujian_id<='480')){
 			$cek_bobot = $this->ujian->getSoalWithBobot($jawaban,$id_soal);
-			if(($ujian_id>='401' && $ujian_id<='6667')||($ujian_id>='6728' && $ujian_id<='6752')){
 			$opsi_selected=	$jawaban;
 			$bobot_selected=substr($cek_bobot->bobot_selected, 0, 1);
 			$bobot_selected_total += $bobot_selected;
 			$total_bobot = $bobot_selected_total;
-			}else{
+			}elseif(($ujian_id>='6461' && $ujian_id<='6540')){
+				$cek_bobot = $this->ujian->getSoalWithBobotManaj($jawaban,$id_soal);
+				$opsi_selected=	$jawaban;
+				$bobot_selected=substr($cek_bobot->bobot_selected, 0, 1);
+				$bobot_selected_total += $bobot_selected;
+				$total_bobot = $bobot_selected_total;
+				}elseif(($ujian_id>='6588' && $ujian_id<='6667')){
+					$cek_bobot = $this->ujian->getSoalWithBobotWawan($jawaban,$id_soal);
+					$opsi_selected=	$jawaban;
+					$bobot_selected=substr($cek_bobot->bobot_selected, 0, 1);
+					$bobot_selected_total += $bobot_selected;
+					$total_bobot = $bobot_selected_total;
+					}elseif(($ujian_id>='6728' && $ujian_id<='6752')){
+				$cek_bobot = $this->ujian->getSoalWithBobotTKP($jawaban,$id_soal);
+				$opsi_selected=	$jawaban;
+				$bobot_selected=substr($cek_bobot->bobot_selected, 0, 1);
+				$bobot_selected_total += $bobot_selected;
+				$total_bobot = $bobot_selected_total;
+				}else{
 			$total_bobot = $total_bobot + $cek_jwb->bobot;
 			}
 			
