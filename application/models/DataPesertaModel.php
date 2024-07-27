@@ -46,4 +46,19 @@ class DataPesertaModel extends CI_Model{
 		  $this->db->where('ujian_id<=', '6667');
 		$this->db->delete('h_ujian', $kdunik);
 	}
+	function reset_twk($kdunik){
+		$this->db->where('ujian_id>=', '6668');
+		 $this->db->where('ujian_id<=', '6692');
+	   $this->db->delete('h_ujian', $kdunik);
+   }
+   function reset_tiu($kdunik){
+	$this->db->where('ujian_id>=', '6698');
+	 $this->db->where('ujian_id<=', '6722');
+   $this->db->delete('h_ujian', $kdunik);
+}
+function reset_tkp($kdunik){
+	$this->db->where('ujian_id>=', '6728');
+	 $this->db->where('ujian_id<=', '6752');
+   $this->db->delete('h_ujian', $kdunik);
+}
 }
