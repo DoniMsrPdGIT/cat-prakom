@@ -48,6 +48,8 @@
                     $id_ujian=substr($url,11,1);	
                     }
 				
+              		// get ujian_id
+                      $ujian_id = $this->ujian->getUjianIdById($id_ujian);
 
 						$x_soal = $this->db->query("SELECT CONCAT(list_soal) AS id_soal,REGEXP_REPLACE(REPLACE(REPLACE(CONCAT(list_jawaban), ':N', ''), ':Y', ''), '[0-9]+:', '') AS jawaban_pil , mahasiswa_id FROM h_ujian WHERE id='$id_ujian' ")->result();
 foreach ($x_soal as $x) { 
@@ -55,8 +57,13 @@ $id_soal=$x->id_soal;
 $id_mhs=$x->mahasiswa_id;
 
 $jawab_pil=$x->jawaban_pil;
+if($ujian_id>='6668' && $ujian_id<='6692'){
+    $soal_urut_ok = $this->db->query("SELECT * FROM tb_soal_twk WHERE id_soal IN ($id_soal) ORDER BY FIELD(id_soal,$id_soal)")->result();
+    }elseif($ujian_id>='6698' && $ujian_id<='6722'){
+        $soal_urut_ok = $this->db->query("SELECT * FROM tb_soal_tiu WHERE id_soal IN ($id_soal) ORDER BY FIELD(id_soal,$id_soal)")->result();
+        }else{
 $soal_urut_ok = $this->db->query("SELECT * FROM tb_soal WHERE id_soal IN ($id_soal) ORDER BY FIELD(id_soal,$id_soal)")->result();
-
+    }
 
 		$id  = '1609';
 		
