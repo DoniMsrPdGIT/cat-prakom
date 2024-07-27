@@ -303,7 +303,7 @@ class Ujian extends CI_Controller {
 		
 		$data = [
 			'user' 		=> $user,
-			'judul'		=> 'SOSIOKULTURAL',
+			'judul'		=> 'Sosiokultural',
 			'subjudul'	=> 'List Sosiokultural',
 			'mhs' 		=> $this->ujian->getIdMahasiswa($user->username),
 		];

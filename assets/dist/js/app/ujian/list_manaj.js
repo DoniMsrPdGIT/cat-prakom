@@ -29,7 +29,12 @@ $(document).ready(function () {
                 "searchable": false
             },
             { "data": 'nama_ujian' },
-            { "data": 'nama_matkul' },
+            { 
+                "data": null, 
+                "render": function(data, type, row, meta) {
+                    return 'Seleksi Kompetensi Manajerial - PPPK';
+                }
+            },
             { "data": 'nama_dosen' },
             { "data": 'jumlah_soal' },
             { "data": 'waktu' },
