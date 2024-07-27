@@ -1,0 +1,28 @@
+[12-Oct-2023 11:52:17 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 90
+[12-Oct-2023 11:52:18 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 90
+[12-Oct-2023 11:52:19 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 90
+[12-Oct-2023 16:52:07 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 91
+[12-Oct-2023 16:52:08 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 91
+[12-Oct-2023 16:54:24 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 91
+[12-Oct-2023 16:54:25 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 91
+[12-Oct-2023 16:54:26 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 91
+[12-Oct-2023 16:54:26 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 91
+[12-Oct-2023 16:54:27 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 91
+[12-Oct-2023 16:54:27 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 91
+[12-Oct-2023 17:06:57 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 90
+[12-Oct-2023 17:06:57 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 90
+[12-Oct-2023 17:06:58 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 90
+[12-Oct-2023 17:07:03 Asia/Jakarta] PHP Fatal error:  Cannot use [] for reading in /home3/cat39971/public_html/application/views/ujian/pembahasan.php on line 90
+[27-Mar-2024 15:41:46 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[27-Mar-2024 15:41:47 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[27-Mar-2024 15:41:49 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[29-Mar-2024 05:24:13 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[31-Mar-2024 23:51:39 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[31-Mar-2024 23:51:40 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[31-Mar-2024 23:51:41 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[07-Apr-2024 00:57:24 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[07-Apr-2024 00:57:25 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[07-Apr-2024 00:57:27 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[08-Apr-2024 21:59:24 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[08-Apr-2024 21:59:25 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
+[08-Apr-2024 21:59:26 Asia/Jakarta] PHP Notice:  Undefined index: HTTP_HOST in /home3/cat39971/public_html/application/config/config.php on line 28
