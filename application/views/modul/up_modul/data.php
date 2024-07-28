@@ -25,6 +25,26 @@
                           
 						     <b>Konten eBook akan terus di update, sesuai Edisi</b>
                         </div>
+                        <?php }elseif($user->activation_code=='2' ){ ?>
+				<!-- keterangan modul-->
+				 <div class="callout callout-warning">
+                           Modul Materi / eBook akan diperbaharui serta ditambah setiap waktu, sesuai FR Peserta Ujian CASN 2024. Jadi pantau terus website CAT-Prakom.com<br/>
+						   <b>Terima kasih telah donasi.</b>
+                        </div>
+							 <div class="callout callout-danger">
+                          
+						     <b>Konten eBook akan terus di update, sesuai Edisi</b>
+                        </div>
+                        <?php }elseif($user->activation_code=='3' ){ ?>
+				<!-- keterangan modul-->
+				 <div class="callout callout-warning">
+                           Modul Materi / eBook akan diperbaharui serta ditambah setiap waktu, sesuai FR Peserta Ujian CASN 2024. Jadi pantau terus website CAT-Prakom.com<br/>
+						   <b>Terima kasih telah donasi.</b>
+                        </div>
+							 <div class="callout callout-danger">
+                          
+						     <b>Konten eBook akan terus di update, sesuai Edisi</b>
+                        </div>
 					<?php }else{ ?>
 					<style>
 	.center {
@@ -35,7 +55,7 @@
    border: 2px solid;
 }
 	</style>
-    <?php if($user->activation_selector=='1' ){ ?>
+    <?php if(($user->activation_selector=='1' && $user->activation_code=='0' && $user->remember_selector!='15' )){ ?>
 	 <div class="callout callout-warning">
                            Modul Materi / eBook akan diperbaharui setiap waktu, sesuai FR Peserta Ujian CASN 2024. Jadi pantau terus website CAT-Prakom.com<br/>
 						   <b>Konsep Penyusunan Bank Soal CAT-Prakom bersumber dari :</b><br/>
@@ -72,7 +92,7 @@
 						   </br></br>
 						   <b>Admin akan melakukan pengecekan terlebih dahulu</b>
                         </div>
-						<?php  }else{ ?>
+						<?php }elseif(($user->activation_selector=='0' && $user->activation_code=='0' && $user->remember_selector!='15')){ ?>
 <div class="callout callout-warning">
                            Silakan Donasi <b>Rp 100.000</b>&nbsp;<span class="badge badge-danger">Non-Alumni 2023</span>, untuk bisa mengakses Seluruh Sesi Ujian + Akses Modul eBook Materi + Fitur kedepannya.<br/>
                            <b>Donasi diperlukan guna Pengembangan Website CAT Prakom lebih baik.</b>
@@ -93,6 +113,30 @@
                            Silakan Konfirmasi di grup jika sudah Donasi, namun belum Aktif dengan format :<br/>
                            DCP_NAMA_NOHP_KODEUNIK<br/><br/>
                            Contoh : DCP_Andini_081234567890_101<?=substr($mhs->no_peserta,4,3)?>
+                           </br></br>
+                           <b>Admin akan melakukan pengecekan terlebih dahulu</b>
+                        </div>
+                        <?php }elseif($user->remember_selector=='15' && $user->activation_code=='0'){ ?>
+<div class="callout callout-warning">
+                           Silakan Donasi <b>Rp 35.000</b>&nbsp;<span class="badge badge-success">Paket Fokus SKD CPNS</span>, untuk bisa mengakses Seluruh Sesi Ujian + Akses Modul eBook Materi + Fitur kedepannya.<br/>
+                           <b>Donasi diperlukan guna Pengembangan Website CAT Prakom lebih baik.</b>
+                        </div>
+                        
+                        <img src="assets/logo/qris_new.png" class="center"/>
+                         <h4 align="center"><b>Rp 35.<?=substr($mhs->no_peserta,4,3)?></b></h4>
+                        <br/>
+                         <div class="callout callout-danger">
+                         Donasi dg Kode Unik [Nomor Peserta] => Rp. 35.000 + Nomor Peserta<br/>
+                         == Nomor Peserta Anda adalah <?=$mhs->no_peserta?> ==<br/>
+                         <b>Maka Donasi sebesar Rp. 35.<?=substr($mhs->no_peserta,4,3)?></b><br/>
+                         Pembayaran via QRIS diatas, Otomatis Teraktivasi. <br/> 🌟🌟 Akun Berlaku Selama CASN 2024
+                        </div>
+                        
+  <div class="callout callout-warning">
+                           Klik untuk Join di <b><a href="https://t.me/cat_prakom"><i class="fa fa-telegram" aria-hidden="true"></i>&nbsp;Group Telegram CAT-Prakom.com</a></b><br/>
+                           Silakan Konfirmasi di grup jika sudah Donasi, namun belum Aktif dengan format :<br/>
+                           DCP_NAMA_NOHP_KODEUNIK<br/><br/>
+                           Contoh : DCP_Andini_081234567890_35<?=substr($mhs->no_peserta,4,3)?>
                            </br></br>
                            <b>Admin akan melakukan pengecekan terlebih dahulu</b>
                         </div>
@@ -120,7 +164,7 @@
             		<td><?= $no++; ?></td>
             		<td><?= $vm->nama_modul ?></td>
 					<td><?= $vm->edisi ?></td>
-					<?php if($user->activation_code=='1' ){ ?>
+					<?php if($user->activation_code=='1' || $user->activation_code=='2' || $user->activation_code=='3' ){ ?>
 					<td><a href="<?= base_url('uploads/modul/'.$vm->isi_modul)?>" target="_blank"><img src="<?= base_url('assets/logo/icon.png')?>" style="width:50px;"></a></td>
 					<?php }else{ ?>
 		<td><a href="#"><img src="<?= base_url('assets/logo/icon.png')?>" style="width:50px;"></a></td>

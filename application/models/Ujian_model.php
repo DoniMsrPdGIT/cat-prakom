@@ -115,7 +115,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianTiu($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='6698' AND ujian_id<='6722') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
+        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ((ujian_id>='6698' AND ujian_id<='6722')||(ujian_id>='6834' AND ujian_id<='6843'))) AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -133,7 +133,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianTwk($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='6668' AND ujian_id<='6692') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
+        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ((ujian_id>='6668' AND ujian_id<='6692')||(ujian_id>='6819' AND ujian_id<='6828'))) AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -151,7 +151,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianTkp($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='6728' AND ujian_id<='6752') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
+        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ((ujian_id>='6728' AND ujian_id<='6752')||(ujian_id>='6865' AND ujian_id<='6874'))) AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -220,11 +220,11 @@ class Ujian_model extends CI_Model {
         $this->db->from('tb_soal_manajerial');
         }elseif($id>='6588' && $id<='6667'){
         $this->db->from('tb_soal_wawancara');
-        }elseif($id>='6668' && $id<='6692'){
+        }elseif(($id>='6668' && $id<='6692') || ($id>='6819' && $id<='6828')){
             $this->db->from('tb_soal_twk');
-            }elseif($id>='6698' && $id<='6722'){
+            }elseif(($id>='6698' && $id<='6722')||($id>='6834' && $id<='6843')){
                 $this->db->from('tb_soal_tiu');
-                }elseif($id>='6728' && $id<='6752'){
+                }elseif(($id>='6728' && $id<='6752')||($id>='6865' && $id<='6874')){
                     $this->db->from('tb_soal_tkp');
                     }else{
         $this->db->from('tb_soal');
@@ -280,7 +280,7 @@ class Ujian_model extends CI_Model {
                 $this->db->from('tb_soal_wawancara');
                 $this->db->where('id_soal', $pc_urut_soal_arr);
                 return $this->db->get()->row();
-        }elseif($Kodeujian>='6668' && $Kodeujian<='6692'){
+        }elseif((($Kodeujian>='6668' && $Kodeujian<='6692')||($Kodeujian>='6819' && $Kodeujian<='6828'))){
             $this->db->select("*, {$pc_urut_soal1} AS jawaban, jawaban AS kunci_soal_opsi, (SELECT CASE
             WHEN jawaban = 'A' THEN opsi_a
             WHEN jawaban = 'B' THEN opsi_b
@@ -294,7 +294,7 @@ class Ujian_model extends CI_Model {
                 $this->db->from('tb_soal_twk');
                 $this->db->where('id_soal', $pc_urut_soal_arr);
                 return $this->db->get()->row();
-        }elseif($Kodeujian>='6698' && $Kodeujian<='6722'){
+        }elseif((($Kodeujian>='6698' && $Kodeujian<='6722')||($Kodeujian>='6834' && $Kodeujian<='6843'))){
             $this->db->select("*, {$pc_urut_soal1} AS jawaban, jawaban AS kunci_soal_opsi, (SELECT CASE
             WHEN jawaban = 'A' THEN opsi_a
             WHEN jawaban = 'B' THEN opsi_b
@@ -308,7 +308,7 @@ class Ujian_model extends CI_Model {
                 $this->db->from('tb_soal_tiu');
                 $this->db->where('id_soal', $pc_urut_soal_arr);
                 return $this->db->get()->row();
-        }elseif($Kodeujian>='6728' && $Kodeujian<='6752'){
+        }elseif((($Kodeujian>='6728' && $Kodeujian<='6752')||($Kodeujian>='6865' && $Kodeujian<='6874'))){
             $this->db->select("*, {$pc_urut_soal1} AS jawaban, jawaban AS kunci_soal_opsi, (SELECT CASE
             WHEN jawaban = 'A' THEN opsi_a
             WHEN jawaban = 'B' THEN opsi_b

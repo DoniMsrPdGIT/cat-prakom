@@ -32,10 +32,9 @@ class Soal_wawancara extends CI_Controller {
 			'judul'	=> 'Soal',
 			'subjudul'=> 'Bank Soal'
         ];
-        
+        $jenis='PPPK';
         if($this->ion_auth->is_admin()){
             //Jika admin maka tampilkan semua matkul
-            $jenis='PPPK';
             $data['matkul'] = $this->master->getAllMatkulDasar($jenis);
         }else{
             //Jika bukan maka matkul dipilih otomatis sesuai matkul dosen

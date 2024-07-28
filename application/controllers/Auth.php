@@ -287,6 +287,7 @@ $manual_activation = $this->config->item('manual_activation', 'ion_auth');
 			'created_on' => time(),
 			'company' =>$ref,
 			'last_name' =>$melamar,
+			'remember_selector' =>$kelas,
 			'active' => ($manual_activation === FALSE ? 1 : 0)
 		];
 

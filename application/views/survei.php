@@ -64,6 +64,7 @@
 			      </div>
                   <select class="form-control" name="kelas" required>
     <option value="">--Pilih Formasi Jabatan--</option>
+    <option value="15">Fokus SKD CPNS</option>
     <option value="1">PPPK Teknis - Pranata Komputer Ahli Pertama</option>
     <option value="2">PPPK Teknis - Pranata Komputer Terampil</option>
     <option value="3">CPNS SKB - Pranata Komputer Ahli Pertama</option>
@@ -74,6 +75,7 @@
     <option value="12">PPKK Teknis - Pengelola Umum Operasional</option>
     <option value="13">PPKK Teknis - Penelaah Teknis Kebijakan</option>
     <option value="14">PPKK Teknis - Pengolah Data dan Informasi</option>
+    
 </select>
                     <small class="help-block"></small>
                 </div>

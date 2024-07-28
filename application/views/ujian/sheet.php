@@ -7,11 +7,11 @@ if(time() >= $soal->waktu_habis)
             redirect('ujian/list_manaj', 'location', 301);
         }elseif($soal->ujian_id>='6588' && $soal->ujian_id<='6667'){
             redirect('ujian/list_wawan', 'location', 301);
-        } else if ($soal->ujian_id >= '6668' && $soal->ujian_id <= '6692') {
+        } else if ((($soal->ujian_id >= '6668' && $soal->ujian_id <= '6692')||($soal->ujian_id >= '6819' && $soal->ujian_id <= '6828'))) {
             redirect('ujian/list_twk', 'location', 301);
-          } else if ($soal->ujian_id >= '6698' && $soal->ujian_id <= '6722') {
+          } else if ((($soal->ujian_id >= '6698' && $soal->ujian_id <= '6722')||($soal->ujian_id >= '6834' && $soal->ujian_id <= '6843'))) {
             redirect('ujian/list_tiu', 'location', 301);
-          } else if ($soal->ujian_id >= '6728' && $soal->ujian_id <= '6752') {
+          } else if ((($soal->ujian_id >= '6728' && $soal->ujian_id <= '6752')||($soal->ujian_id >= '6865' && $soal->ujian_id <= '6874'))) {
             redirect('ujian/list_tkp', 'location', 301);
     }else{
         redirect('ujian/list', 'location', 301);   

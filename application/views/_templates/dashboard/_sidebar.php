@@ -149,12 +149,12 @@
 			<?php endif; ?>
 			<?php if( $this->ion_auth->in_group('mahasiswa') ) : ?>
 			<?php  if($user->last_name!='' ){  ?>
+				<?php if($user->activation_code=='1' ){ ?>
 			<li class="<?=$page2==='list'?"active":""?>">
 				<a href="<?=base_url('ujian/list')?>" rel="noopener noreferrer">
 					<i class="fa fa-chrome"></i> <span>Tryout Teknis</span>
 				</a>
 			</li>
-			
 			<li class="<?=$page2==='list_sosio'?"active":""?>">
 				<a href="<?=base_url('ujian/list_sosio')?>" rel="noopener noreferrer">
 					<i class="fa fa-universal-access"></i> <span>Tryout Sosiokultural</span>
@@ -175,6 +175,7 @@
 					<i class="fa fa-heart"></i> <span>Live Competition </span>
 				</a>
 			</li>
+			<?php }elseif($user->activation_code=='2' ){ ?>
 			<li class="<?=$page2==='list_tiu'?"active":""?>">
 				<a href="<?=base_url('ujian/list_tiu')?>" rel="noopener noreferrer">
 					<i class="fa fa-universal-access"></i> <span>Tryout TIU</span>
@@ -190,6 +191,35 @@
 					<i class="fa fa-bolt"></i> <span>Tryout TKP</span>
 				</a>
 			</li>
+			<?php }elseif($user->activation_code=='3' ){ ?>
+			<li class="<?=$page2==='list'?"active":""?>">
+				<a href="<?=base_url('ujian/list')?>" rel="noopener noreferrer">
+					<i class="fa fa-chrome"></i> <span>Tryout SKB</span>
+				</a>
+			</li>
+			<li class="<?=$page2==='list_tiu'?"active":""?>">
+				<a href="<?=base_url('ujian/list_tiu')?>" rel="noopener noreferrer">
+					<i class="fa fa-universal-access"></i> <span>Tryout TIU</span>
+				</a>
+			</li>
+			<li class="<?=$page2==='list_twk'?"active":""?>">
+				<a href="<?=base_url('ujian/list_twk')?>" rel="noopener noreferrer">
+					<i class="fa fa-asterisk"></i> <span>Tryout TWK</span>
+				</a>
+			</li>
+			<li class="<?=$page2==='list_tkp'?"active":""?>">
+				<a href="<?=base_url('ujian/list_tkp')?>" rel="noopener noreferrer">
+					<i class="fa fa-bolt"></i> <span>Tryout TKP</span>
+				</a>
+			</li>
+			<li class="<?=$page2==='list_live'?"active":""?>">
+				<a href="<?=base_url('ujian/list_live')?>" rel="noopener noreferrer">
+					<i class="fa fa-heart"></i> <span>Live Competition </span>
+				</a>
+			</li>
+			<?php }?>
+
+			
 			<?php }else{?>
 			<li class="<?=$page==='ujian'?"active":""?>">
 				<a href="<?=base_url('dashboard')?>" rel="noopener noreferrer">

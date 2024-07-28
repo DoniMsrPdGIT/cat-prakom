@@ -424,7 +424,7 @@ $ujian_id = $this->ujian->getUjianIdById($id_ujian);
 			'mhs' 		=> $this->ujian->getIdMahasiswa($user->username),
 		];
 		$this->load->view('_templates/dashboard/_header.php', $data);
-		if(($ujian_id>='401' && $ujian_id<='6667')||($ujian_id>='6728' && $ujian_id<='6752')){
+		if(($ujian_id>='401' && $ujian_id<='6667')||((($ujian_id>='6728' && $ujian_id<='6752')||($ujian_id>='6865' && $ujian_id<='6874')))){
 		$this->load->view('ujian/pembahasan_mansoswa',$data);
 		}else{
 		$this->load->view('ujian/pembahasan',$data);	
@@ -692,7 +692,7 @@ $ujian_id = $this->ujian->getUjianIdById($id_tes);
 					$bobot_selected=substr($cek_bobot->bobot_selected, 0, 1);
 					$bobot_selected_total += $bobot_selected;
 					$total_bobot = $bobot_selected_total;
-					}elseif(($ujian_id>='6728' && $ujian_id<='6752')){
+					}elseif((($ujian_id>='6728' && $ujian_id<='6752')||($ujian_id>='6865' && $ujian_id<='6874'))){
 				$cek_bobot = $this->ujian->getSoalWithBobotTKP($jawaban,$id_soal);
 				$opsi_selected=	$jawaban;
 				$bobot_selected=substr($cek_bobot->bobot_selected, 0, 1);
@@ -707,7 +707,7 @@ $ujian_id = $this->ujian->getUjianIdById($id_tes);
 		}
 
 		//$nilai = ($jumlah_benar / $jumlah_soal)  * 100;
-		if(($ujian_id>='401' && $ujian_id<='6667')||($ujian_id>='6728' && $ujian_id<='6752')){
+		if(($ujian_id>='401' && $ujian_id<='6667')||((($ujian_id>='6728' && $ujian_id<='6752')||($ujian_id>='6865' && $ujian_id<='6874')))){
 		//$nilai = $jumlah_benar * 5;
 		$nilai = $bobot_selected_total;
 		$nilai_bobot = ($total_bobot / $jumlah_soal)  * 100;

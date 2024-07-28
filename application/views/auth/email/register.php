@@ -82,6 +82,7 @@ $no_peserta = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
                     <label for="nama_dosen">Formasi Jabatan/Kelas</label>
                     <select type="text" class="form-control" name="kelas" placeholder="Kelas" required>
                         <option>--Pilih Jabatan--</option>
+                        <option value="15">Fokus SKD CPNS</option>
                         <option value="1">PPPK Teknis - Pranata Komputer Ahli Pertama</option>
                         <option value="2">PPPK Teknis - Pranata Komputer Terampil</option>
                         <option value="3">CPNS SKB - Pranata Komputer Ahli Pertama</option>
@@ -92,6 +93,7 @@ $no_peserta = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
     <option value="12">PPKK Teknis - Pengelola Umum Operasional</option>
     <option value="13">PPKK Teknis - Penelaah Teknis Kebijakan</option>
     <option value="14">PPKK Teknis - Pengolah Data dan Informasi</option>
+   
                     </select>
                     <small class="help-block"></small>
                 </div>

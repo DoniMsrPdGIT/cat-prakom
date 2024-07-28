@@ -12,11 +12,11 @@ class Soal_model extends CI_Model {
         $this->datatables->from('tb_soal_manajerial a');
         }elseif($id>='6588' && $id<='6667'){
         $this->datatables->from('tb_soal_wawancara a');
-        }elseif($id>='6668' && $id<='6692'){
+        }elseif(($id>='6668' && $id<='6692') || ($id>='6819' && $id<='6828')){
         $this->datatables->from('tb_soal_twk a');
-        }elseif($id>='6698' && $id<='6722'){
+        }elseif(($id>='6698' && $id<='6722')||($id>='6834' && $id<='6843')){
         $this->datatables->from('tb_soal_tiu a');
-        }elseif($id>='6728' && $id<='6752'){
+        }elseif(($id>='6728' && $id<='6752')||($id>='6865' && $id<='6874')){
         $this->datatables->from('tb_soal_tkp a');
         }else{
         $this->datatables->from('tb_soal a');
@@ -121,11 +121,11 @@ class Soal_model extends CI_Model {
         return $this->db->get_where('tb_soal_manajerial', ['id_soal' => $id_soal])->row();
         }else if($ujian_id>='6588' && $ujian_id<='6667'){
         return $this->db->get_where('tb_soal_wawancara', ['id_soal' => $id_soal])->row();
-        }else if($ujian_id>='6668' && $ujian_id<='6692'){
+        }else if(($ujian_id>='6668' && $ujian_id<='6692')||($ujian_id>='6619' && $ujian_id<='6828')){
             return $this->db->get_where('tb_soal_twk', ['id_soal' => $id_soal])->row();
-            }else if($ujian_id>='6698' && $ujian_id<='6722'){
+            }else if(($ujian_id>='6698' && $ujian_id<='6722')||($ujian_id>='6834' && $ujian_id<='6843')){
                 return $this->db->get_where('tb_soal_tiu', ['id_soal' => $id_soal])->row();
-                }else if($ujian_id>='6728' && $ujian_id<='6752'){
+                }else if(($ujian_id>='6728' && $ujian_id<='6752')||($ujian_id>='6865' && $ujian_id<='6874')){
                     return $this->db->get_where('tb_soal_tkp', ['id_soal' => $id_soal])->row();
                     }else{
         return $this->db->get_where('tb_soal', ['id_soal' => $id_soal])->row();

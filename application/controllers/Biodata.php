@@ -68,7 +68,8 @@ class Biodata extends CI_Controller {
 		$kelas_id     = $this->input->post('kelas');
 		$kelas = array('kelas_id'=> $kelas_id);
 			$survei = array('last_name'=> $melamar,
-							  'first_name'   => $testimoni
+							  'first_name'   => $testimoni,
+							  'remember_selector'=>$kelas_id
 							  );
 
 

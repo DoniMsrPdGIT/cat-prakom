@@ -72,7 +72,7 @@
                         </div>
                         <?php elseif( $terlambat > $now ) : ?>
 						<?php
-						$n_ac = $this->db->query("SELECT COUNT(*) AS donasi, (SELECT COUNT(*) AS tot FROM h_ujian WHERE mahasiswa_id='$mhs->id_mahasiswa') AS trial FROM users u  WHERE u.activation_code='1' AND u.username='$mhs->nim' ")->result();
+						$n_ac = $this->db->query("SELECT COUNT(*) AS donasi, (SELECT COUNT(*) AS tot FROM h_ujian WHERE mahasiswa_id='$mhs->id_mahasiswa') AS trial FROM users u  WHERE u.activation_code!='0' AND u.username='$mhs->nim' ")->result();
 foreach ($n_ac as $t) { 
 $donasi=$t->donasi;
 $trial=$t->trial;
@@ -101,8 +101,7 @@ if($donasi == '0' && $trial=='0'){
    border: 2px solid;
 }
 	</style>
-<?php if($user->activation_selector=='1' ){ ?>
-<div class="callout callout-warning">
+<?php if(($user->activation_selector=='1' && $user->activation_code=='0' && $user->remember_selector!='15' )){ ?>
                            Silakan Donasi <del>Rp 100.000</del> <b>Rp 50.000</b>&nbsp;<span class="badge badge-danger">Alumni 2023</span>,untuk bisa mengakses Seluruh Sesi Ujian + Akses Modul eBook Materi + Fitur kedepannya.<br/>
 						   <b>Donasi diperlukan guna Pengembangan Website CAT Prakom lebih baik.</b>
                         </div>
@@ -125,7 +124,7 @@ if($donasi == '0' && $trial=='0'){
 						   <b>Admin akan melakukan pengecekan terlebih dahulu</b>
                         </div>
 
-						<?php  }else{ ?>
+                        <?php }elseif(($user->activation_selector=='0' && $user->activation_code=='0' && $user->remember_selector!='15')){ ?>
 <div class="callout callout-warning">
                            Silakan Donasi <b>Rp 100.000</b>&nbsp;<span class="badge badge-danger">Non-Alumni 2023</span>, untuk bisa mengakses Seluruh Sesi Ujian + Akses Modul eBook Materi + Fitur kedepannya.<br/>
 						   <b>Donasi diperlukan guna Pengembangan Website CAT Prakom lebih baik.</b>
@@ -148,7 +147,30 @@ if($donasi == '0' && $trial=='0'){
 						   </br></br>
 						   <b>Admin akan melakukan pengecekan terlebih dahulu</b>
                         </div>
-							<?php } ?>	
+                        <?php }elseif($user->remember_selector=='15' && $user->activation_code=='0'){ ?>
+							<div class="callout callout-warning">
+                           Silakan Donasi <b>Rp 35.000</b>&nbsp;<span class="badge badge-success">Paket Fokus SKD CPNS</span>, untuk bisa mengakses Seluruh Sesi Ujian + Akses Modul eBook Materi + Fitur kedepannya.<br/>
+						   <b>Donasi diperlukan guna Pengembangan Website CAT Prakom lebih baik.</b>
+                        </div>
+						<img src="../../assets/logo/qris_new.png" class="center"/>
+						 <h4 align="center"><b>Rp 35.<?=substr($mhs->no_peserta,4,3)?></b></h4>
+						<br/>
+						 <div class="callout callout-danger">
+                         Donasi dg Kode Unik [Nomor Peserta] => Rp. 35.000 + Nomor Peserta<br/>
+						 == Nomor Peserta Anda adalah <?=$mhs->no_peserta?> ==<br/>
+						 <b>Maka Donasi sebesar Rp. 35.<?=substr($mhs->no_peserta,4,3)?></b><br/>
+						 Pembayaran via QRIS diatas, Otomatis Teraktivasi. <br/> 🌟🌟 Akun Berlaku Selama CASN 2024
+                        </div>
+						
+  <div class="callout callout-warning">
+                           Klik untuk Join di <b><a href="https://t.me/cat_prakom"><i class="fa fa-telegram" aria-hidden="true"></i>&nbsp;Group Telegram CAT-Prakom.com</a></b><br/>
+						   Silakan Konfirmasi di grup jika sudah Donasi, namun belum Aktif dengan format :<br/>
+						   DCP_NAMA_NOHP_KODEUNIK<br/><br/>
+						   Contoh : DCP_Andini_081234567890_35<?=substr($mhs->no_peserta,4,3)?>
+						   </br></br>
+						   <b>Admin akan melakukan pengecekan terlebih dahulu</b>
+                        </div>
+                            <?php } ?>	
 
 
 <?php } }?>

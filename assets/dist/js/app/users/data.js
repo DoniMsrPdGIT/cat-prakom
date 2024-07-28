@@ -75,7 +75,15 @@ $(document).ready(function() {
                 render: function(data, type, row, meta) {
                     if (data === "1") {
                         return `<div class="text-center">
-                                <span class="badge bg-green">Active</span>
+                                <span class="badge bg-green">PPPK</span>
+                            </div>`;
+                    }else if (data === "2") {
+                        return `<div class="text-center">
+                                <span class="badge bg-warning">SKD</span>
+                            </div>`;
+                    } else if (data === "3") {
+                        return `<div class="text-center">
+                                <span class="badge bg-green">CPNS</span>
                             </div>`;
                     } else {
                         return `<div class="text-center">

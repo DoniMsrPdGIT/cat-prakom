@@ -63,7 +63,7 @@ $jawab_pil=$x->jawaban_pil;
     $soal_urut_ok = $this->db->query("SELECT * FROM tb_soal_manajerial WHERE id_soal IN ($id_soal) ORDER BY FIELD(id_soal,$id_soal)")->result();
     }else if($ujian_id>='6588' && $ujian_id<='6667'){
     $soal_urut_ok = $this->db->query("SELECT * FROM tb_soal_wawancara WHERE id_soal IN ($id_soal) ORDER BY FIELD(id_soal,$id_soal)")->result();
-    }else if($ujian_id>='6728' && $ujian_id<='6752'){
+    }else if((($ujian_id>='6728' && $ujian_id<='6752')||($ujian_id>='6865' && $ujian_id<='6874'))){
         $soal_urut_ok = $this->db->query("SELECT * FROM tb_soal_tkp WHERE id_soal IN ($id_soal) ORDER BY FIELD(id_soal,$id_soal)")->result();
         }
 
@@ -75,7 +75,7 @@ $jawab_pil=$x->jawaban_pil;
 $myArray = explode(',', $jawab_pil);
 $colors = array($myArray);
 
-if(($ujian_id>='401' && $ujian_id<='480'||($ujian_id>='6728' && $ujian_id<='6752'))){
+if(($ujian_id>='401' && $ujian_id<='480'||((($ujian_id>='6728' && $ujian_id<='6752')||($ujian_id>='6865' && $ujian_id<='6874'))))){
     $arr_opsi = array("a","b","c","d","e");
     }else if($ujian_id>='6461' && $ujian_id<='6667'){
         $arr_opsi = array("a","b","c","d");
@@ -249,7 +249,7 @@ echo '<div class="step" id="widget_'.$no.'">';
                             $pilihan_opsi 	= !empty($s->$opsi) ? $s->$opsi : "";
                         $pilihan_anda 		= $arr_jawab == strtoupper($value[$no-1]) ? "&nbsp;<span class='label label-success'>Jawaban Terbaik</span>" : "&nbsp;<span class='label label-warning'>Jawaban Biasa</span>";
                             }
-                    }elseif($ujian_id>='6728' && $ujian_id<='6752'){
+                    }elseif((($ujian_id>='6728' && $ujian_id<='6752')||($ujian_id>='6865' && $ujian_id<='6874'))){
                         for ($j = 0; $j < $this->config->item('jml_opsi'); $j++) {
                             $opsi 			= "opsi_".$arr_opsi[$j];
                             $file 			= "file_".$arr_opsi[$j];

@@ -79,7 +79,7 @@
         <?=form_open('users/edit_status', array('id'=>'user_status'), array('id'=>$users->id))?>
         <div class="box box-success">
             <div class="box-header with-border">
-                <h3 class="box-title">Status</h3>
+                <h3 class="box-title">Status Paket Member</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
@@ -87,11 +87,18 @@
             </div>
             <div class="box-body pb-0">
                 <div class="form-group">
+                    
                     <label>
-                        <input <?=$users->activation_code==='1'?"checked":""?> type="radio" name="status" value="1"> Aktif
-                    </label>
+                        <input <?=$users->activation_code==='0'?"checked":""?> type="radio" name="status" value="0"> Non-Aktif
+                    </label>&nbsp;&nbsp;
                     <label>
-                        <input <?=$users->activation_code==='0'?"checked":""?> type="radio" name="status" value="0"> Tidak Aktif
+                        <input <?=$users->activation_code==='1'?"checked":""?> type="radio" name="status" value="1"> Full PPPK
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input <?=$users->activation_code==='2'?"checked":""?> type="radio" name="status" value="2"> Fokus SKD
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input <?=$users->activation_code==='3'?"checked":""?> type="radio" name="status" value="3"> Full CPNS
                     </label>
                     <small class="help-block"></small>
                 </div>
@@ -160,7 +167,7 @@
                 <button type="reset" class="btn btn-flat btn-default">
                     <i class="fa fa-rotate-left"></i> Reset
                 </button>
-                <button type="submit" id="btn-pass" class="btn btn-flat btn-warning">Ganti Password</button>            
+                <button type="submit" id="btn-pass" class="btn btn-flat btn-warning">Ganti Status</button>            
             </div>
         </div>
     </div>

@@ -511,7 +511,6 @@ class Ion_auth_model extends CI_Model
 		}
 
 		$data = [
-			'remember_selector' => NULL,
 			'remember_code' => NULL
 		];
 
