@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-12">    
-        <?=form_open_multipart('soal_tiu/save', array('id'=>'formsoal'), array('method'=>'edit', 'id_soal'=>$soal->id_soal));?>
+        <?=form_open_multipart('soal_twk/save', array('id'=>'formsoal'), array('method'=>'edit', 'id_soal'=>$soal->id_soal));?>
         <div class="box">
             <div class="box-header with-border">
                 <h3 class="box-title"><?=$subjudul?></h3>
@@ -104,7 +104,7 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group pull-right">
-                                    <a href="<?=base_url('soal_tiu')?>" class="btn btn-flat btn-default"><i class="fa fa-arrow-left"></i> Batal</a>
+                                    <a href="<?=base_url('soal_twk')?>" class="btn btn-flat btn-default"><i class="fa fa-arrow-left"></i> Batal</a>
                                     <button type="submit" id="submit" class="btn btn-flat bg-purple"><i class="fa fa-save"></i> Simpan</button>
                                 </div>
                             </div>

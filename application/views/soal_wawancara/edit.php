@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-12">    
-        <?=form_open_multipart('soal_tiu/save', array('id'=>'formsoal'), array('method'=>'edit', 'id_soal'=>$soal->id_soal));?>
+        <?=form_open_multipart('soal_wawancara/save', array('id'=>'formsoal'), array('method'=>'edit', 'id_soal'=>$soal->id_soal));?>
         <div class="box">
             <div class="box-header with-border">
                 <h3 class="box-title"><?=$subjudul?></h3>
@@ -54,7 +54,7 @@
                                 Membuat perulangan A-E 
                             -->
                             <?php
-                            $abjad = ['a', 'b', 'c', 'd', 'e']; 
+                            $abjad = ['a', 'b', 'c', 'd']; 
                             foreach ($abjad as $abj) :
                                 $ABJ = strtoupper($abj); // Abjad Kapital
                                 $file = 'file_'.$abj;
@@ -81,21 +81,58 @@
                             <?php endforeach; ?>
                             
                             <div class="form-group col-sm-12">
-                                <label for="jawaban" class="control-label">Kunci Jawaban</label>
+                                <label for="jawaban" class="control-label">Opsi Jawaban Bobot Nilai Tertinggi</label>
                                 <select required="required" name="jawaban" id="jawaban" class="form-control select2" style="width:100%!important">
-                                    <option value="" disabled selected>Pilih Kunci Jawaban</option>
+                                    <option value="" disabled selected>Pilih Opsi Jawaban Bobot Nilai Tertinggi</option>
                                     <option <?=$soal->jawaban==="A"?"selected":""?> value="A">A</option>
                                     <option <?=$soal->jawaban==="B"?"selected":""?> value="B">B</option>
                                     <option <?=$soal->jawaban==="C"?"selected":""?> value="C">C</option>
                                     <option <?=$soal->jawaban==="D"?"selected":""?> value="D">D</option>
-                                    <option <?=$soal->jawaban==="E"?"selected":""?> value="E">E</option>
                                 </select>                
                                 <small class="help-block" style="color: #dc3545"><?=form_error('jawaban')?></small>
                             </div>
                             <div class="form-group col-sm-12">
-                                <label for="bobot" class="control-label">Bobot Nilai</label>
-                                <input required="required" value="<?=$soal->bobot?>" type="number" name="bobot" placeholder="Bobot Soal" id="bobot" class="form-control">
-                                <small class="help-block" style="color: #dc3545"><?=form_error('bobot')?></small>
+                                
+                                <?php
+$string = $soal->bobot;
+$parts = explode(',', $string);
+foreach ($parts as $part) {
+    list($option, $value) = explode(':', $part);
+    if ($option == 'A') {
+        $bobotValueA = $value;
+    }elseif ($option == 'B') {
+        $bobotValueB = $value;
+    }elseif ($option == 'C') {
+        $bobotValueC = $value;
+    }elseif ($option == 'D') {
+        $bobotValueD = $value;
+    }
+}
+                                ?>
+                                  <label for="bobot" class="control-label">Bobot Nilai</label>
+                                <div class="row">
+    <div class="col-md-3">
+        <label for="option_a" class="control-label">A</label>
+        <input required="required" value="<?=$bobotValueA?>" type="number" name="option_a" placeholder="Opsi A" id="option_a" class="form-control form-control-sm">
+        <small class="help-block" style="color: #dc3545"><?=form_error('option_a')?></small>
+    </div>
+    <div class="col-md-3">
+        <label for="option_b" class="control-label">B</label>
+        <input required="required" value="<?=$bobotValueB?>" type="number" name="option_b" placeholder="Opsi B" id="option_b" class="form-control form-control-sm">
+        <small class="help-block" style="color: #dc3545"><?=form_error('option_b')?></small>
+    </div>
+    <div class="col-md-3">
+        <label for="option_c" class="control-label">C</label>
+        <input required="required" value="<?=$bobotValueC?>" type="number" name="option_c" placeholder="Opsi C" id="option_c" class="form-control form-control-sm">
+        <small class="help-block" style="color: #dc3545"><?=form_error('option_c')?></small>
+    </div>
+    <div class="col-md-3">
+        <label for="option_d" class="control-label">D</label>
+        <input required="required" value="<?=$bobotValueD?>" type="number" name="option_d" placeholder="Opsi D" id="option_d" class="form-control form-control-sm">
+        <small class="help-block" style="color: #dc3545"><?=form_error('option_d')?></small>
+    </div>
+   
+</div>
                             </div>
 							<div class="form-group col-sm-12">
                             <label for="jawaban" class="control-label">Pembahasan</label>
@@ -104,7 +141,7 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group pull-right">
-                                    <a href="<?=base_url('soal_tiu')?>" class="btn btn-flat btn-default"><i class="fa fa-arrow-left"></i> Batal</a>
+                                    <a href="<?=base_url('soal_wawancara')?>" class="btn btn-flat btn-default"><i class="fa fa-arrow-left"></i> Batal</a>
                                     <button type="submit" id="submit" class="btn btn-flat bg-purple"><i class="fa fa-save"></i> Simpan</button>
                                 </div>
                             </div>
@@ -121,7 +158,7 @@
 <script>
     CKEDITOR.replace('soal'); // Replace 'soal' with the ID of your textarea
     <?php
-                        $abjad = ['a', 'b', 'c', 'd', 'e']; 
+                        $abjad = ['a', 'b', 'c', 'd']; 
                         foreach ($abjad as $abj) :
                             $ABJ = strtoupper($abj); // Abjad Kapital
                         ?>

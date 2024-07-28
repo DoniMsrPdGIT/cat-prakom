@@ -175,9 +175,9 @@ class Master_model extends CI_Model
     {
         return $this->db->get('matkul')->result();
     }
-    public function getAllMatkulDasar()
+    public function getAllMatkulDasar($jenis)
     {
-        return $this->db->get('matkul_dasar')->result();
+        return $this->db->where('jenis', $jenis)->get('matkul_dasar')->result();
     }
 
     public function getMatkulById($id, $single = false)

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Soal_tiu extends CI_Controller {
+class Soal_twk extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -43,7 +43,7 @@ class Soal_tiu extends CI_Controller {
         }
 
 		$this->load->view('_templates/dashboard/_header.php', $data);
-		$this->load->view('soal_tiu/data');
+		$this->load->view('soal_twk/data');
 		$this->load->view('_templates/dashboard/_footer.php');
     }
     
@@ -57,11 +57,11 @@ $ujian_id = $id;
 			'user'      => $user,
 			'judul'	    => 'Soal',
             'subjudul'  => 'Edit Soal',
-            'soal'      => $this->soal->getSoalByIdSoalTiu($id),
+            'soal'      => $this->soal->getSoalByIdSoalTwk($id),
         ];
 
         $this->load->view('_templates/dashboard/_header.php', $data);
-		$this->load->view('soal_tiu/detail');
+		$this->load->view('soal_twk/detail');
 		$this->load->view('_templates/dashboard/_footer.php');
     }
     
@@ -83,7 +83,7 @@ $ujian_id = $id;
         }
 
 		$this->load->view('_templates/dashboard/_header.php', $data);
-		$this->load->view('soal_tiu/add');
+		$this->load->view('soal_twk/add');
 		$this->load->view('_templates/dashboard/_footer.php');
     }
 
@@ -96,7 +96,7 @@ $ujian_id = $id;
 			'user'      => $user,
 			'judul'	    => 'Soal',
             'subjudul'  => 'Edit Soal',
-            'soal'      => $this->soal->getSoalByIdSoalTiu($id),
+            'soal'      => $this->soal->getSoalByIdSoalTwk($id),
         ];
         $jenis='CPNS';
         if($this->ion_auth->is_admin()){
@@ -108,13 +108,13 @@ $ujian_id = $id;
         }
 
 		$this->load->view('_templates/dashboard/_header.php', $data);
-		$this->load->view('soal_tiu/edit');
+		$this->load->view('soal_twk/edit');
 		$this->load->view('_templates/dashboard/_footer.php');
 	}
 
 	public function data($id=null, $dosen=null)
 	{
-		$this->output_json($this->soal->getDataSoalTiu($id, $dosen), false);
+		$this->output_json($this->soal->getDataSoalTwk($id, $dosen), false);
     }
 
     public function validasi()
@@ -173,7 +173,7 @@ $ujian_id = $id;
             $i = 0;
             foreach ($_FILES as $key => $val) {
                 $img_src = FCPATH.'uploads/bank_soal/';
-                $getsoal = $this->soal->getSoalByIdSoalTiu($this->input->post('id_soal', true));
+                $getsoal = $this->soal->getSoalByIdSoalTwk($this->input->post('id_soal', true));
                 
                 $error = '';
                 if($key === 'file_soal'){
@@ -229,17 +229,17 @@ $ujian_id = $id;
                 $data['created_on'] = time();
                 $data['updated_on'] = time();
                 //insert data
-                $this->master->create('tb_soal_tiu', $data);
+                $this->master->create('tb_soal_twk', $data);
             }else if($method==='edit'){
                 //push array
                 $data['updated_on'] = time();
                 //update data
                 $id_soal = $this->input->post('id_soal', true);
-                $this->master->update('tb_soal_tiu', $data, 'id_soal', $id_soal);
+                $this->master->update('tb_soal_twk', $data, 'id_soal', $id_soal);
             }else{
                 show_error('Method tidak diketahui', 404);
             }
-            redirect('soal_tiu');
+            redirect('soal_twk');
         }
     }
 
@@ -251,7 +251,7 @@ $ujian_id = $id;
         foreach($chk as $id){
             $abjad = ['a', 'b', 'c', 'd', 'e'];
             $path = FCPATH.'uploads/bank_soal/';
-            $soal = $this->soal->getSoalByIdSoalTiu($id);
+            $soal = $this->soal->getSoalByIdSoalTwk($id);
             // Hapus File Soal
             if(!empty($soal->file)){
                 if(file_exists($path.$soal->file)){
@@ -273,7 +273,7 @@ $ujian_id = $id;
         if(!$chk){
             $this->output_json(['status'=>false]);
         }else{
-            if($this->master->delete('tb_soal_tiu', $chk, 'id_soal')){
+            if($this->master->delete('tb_soal_twk', $chk, 'id_soal')){
                 $this->output_json(['status'=>true, 'total'=>count($chk)]);
             }
         }

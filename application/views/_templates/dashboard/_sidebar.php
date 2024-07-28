@@ -104,6 +104,31 @@
 					<i class="fa fa-file-text-o"></i> <span>Bank Soal TIU</span>
 				</a>
 			</li>
+			<li class="<?=$page==='soal_twk'?"active":""?>">
+				<a href="<?=base_url('soal_twk')?>" rel="noopener noreferrer">
+					<i class="fa fa-file-text-o"></i> <span>Bank Soal TWK</span>
+				</a>
+			</li>
+			<li class="<?=$page==='soal_tkp'?"active":""?>">
+				<a href="<?=base_url('soal_tkp')?>" rel="noopener noreferrer">
+					<i class="fa fa-file-text-o"></i> <span>Bank Soal TKP</span>
+				</a>
+			</li>
+			<li class="<?=$page==='soal_sosiokultural'?"active":""?>">
+				<a href="<?=base_url('soal_sosiokultural')?>" rel="noopener noreferrer">
+					<i class="fa fa-file-text-o"></i> <span>Bank Soal Sosiokultural</span>
+				</a>
+			</li>
+			<li class="<?=$page==='soal_manajerial'?"active":""?>">
+				<a href="<?=base_url('soal_manajerial')?>" rel="noopener noreferrer">
+					<i class="fa fa-file-text-o"></i> <span>Bank Soal Manajerial</span>
+				</a>
+			</li>
+			<li class="<?=$page==='soal_wawancara'?"active":""?>">
+				<a href="<?=base_url('soal_wawancara')?>" rel="noopener noreferrer">
+					<i class="fa fa-file-text-o"></i> <span>Bank Soal Wawancara</span>
+				</a>
+			</li>
 			<?php endif; ?>
 			
 			<?php if( $this->ion_auth->is_admin() ) : ?>
