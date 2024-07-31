@@ -4,7 +4,15 @@ Aplikasi CAT-Prakom
 
 <h1>Catatan</h1>
 <p>Disarankan upgrade PHP ke versi terbaru (7.3 atau lebih tinggi)</p>
-
+<p>
+   tb_soal
+                        1 soal, lanjut koreksi (view soal, jawaban, pembahasan) User koreksi: ( Pembahasan koreksi ckeditor), simpan/update ke tabel tb_soal [id_soal]
+                        tb_soal_masoswa (sama dengan atas, masing-masing table update koreksi hanya 1x)
+                        
+                        tambahkan kolom koreksi pada tabel soal,
+                        jika koreksi null, maka muncul text editor untuk koreksi terbuka, 
+                        jika tidak, text editor hidden, dan komentar "Soal dalam proses koreksi"
+</p>
 <h3>User</h3>
 <ul>
 <li>Administrator <br/> Email: admin@admin.com <br/> Password : aqu****te </li>
