@@ -13,6 +13,13 @@ Aplikasi CAT-Prakom
                         jika koreksi null, maka muncul text editor untuk koreksi terbuka, 
                         jika tidak, text editor hidden, dan komentar "Soal dalam proses koreksi"
 </p>
+<p>
+   Extract Semua Image pdf
+                                        Crop soal masing2 dengan opsi A-E
+                                        Cari jawaban di ChatGPT, dalam format table
+                                        pindahkan ke excel TIU
+                                        utk gambar di upload dalam sistem EDIT, upload pada sisi Soal saja
+</p>
 <h3>User</h3>
 <ul>
 <li>Administrator <br/> Email: admin@admin.com <br/> Password : aqu****te </li>
