@@ -24,13 +24,6 @@ class Soal_tiu extends CI_Controller {
         $this->output->set_content_type('application/json')->set_output($data);
     }
     
-    public function update() {
-        $text = $this->input->post('text');
-        $id_soal = $this->input->post('id_soal');
-        $this->db->where('id_soal', $id_soal);
-        $this->db->update('tb_soal_tiu', array('koreksi' => $text));
-        echo 'Berhasil mengupdate data!';
-      }
 
     public function index()
 	{
