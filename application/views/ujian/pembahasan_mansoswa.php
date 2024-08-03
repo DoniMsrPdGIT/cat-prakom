@@ -303,7 +303,22 @@ echo '<div class="step" id="widget_'.$no.'">';
 	<span class="label label-default">ID Member CAT-Prakom : '.$id_mhs.'</span>
   <span class="label label-primary"> Anda Memilih Pilihan '.$value[$no-1].'</span>'.$pilihan_anda.'
           <hr/><strong>Pembahasan :</strong> <br/>'.implode('</p><p>', preg_split('/\R+/', $s->pembahasan)).'
-        </div></div></div>';
+         <br/>';
+       if ($s->koreksi==''){
+    echo '<button class="btn btn-sm btn-warning p-0 btn-koreksi">&nbsp;Ada yang keliru?, Klik disini untuk bantu koreksi&nbsp;</button>';
+       }else{
+   echo '<span class="label label-danger">Dalam proses peninjauan koreksi oleh Admin...</span>';
+       }
+       echo '<br/>
+   <div class="form-group col-sm-12">
+   <br/>
+                                <textarea style="display:none;" rows="10" class="form-control koreksi-text ckeditor"></textarea>
+                            </div>
+  <input type="hidden" class="id-soal" value="'.$s->id_soal.'">
+   <input type="hidden" class="id-ujian" value="'.$ujian_id.'">
+   
+  <button class="btn btn-sm btn-success p-0 btn-simpan-koreksi" style="display:none;" id="simpanKoreksiBtn">&nbsp;Simpan dan Ajukan Koreksi ke Admin&nbsp;</button>
+</div>';
             echo '</div>
          
         </div>
@@ -325,3 +340,32 @@ echo '<div class="step" id="widget_'.$no.'">';
     </div>
 </div>
 
+<script>
+$(document).ready(function() {
+    ajaxcsrf();
+  $('.btn-koreksi').on('click', function() {
+    var koreksiText = $(this).parents('.alert').find('.koreksi-text');
+    var simpanKoreksiBtn = $(this).parents('.alert').find('.btn-simpan-koreksi');
+    koreksiText.show();
+    simpanKoreksiBtn.show();
+  });
+
+  $('.btn-simpan-koreksi').on('click', function() {
+    var koreksiText = $(this).parents('.alert').find('.koreksi-text');
+    var idSoal = $(this).parents('.alert').find('.id-soal').val();
+    var idUjian = $(this).parents('.alert').find('.id-ujian').val();
+    var text = koreksiText.val();
+  
+    $.ajax({
+        type: "POST",
+        url: base_url + "koreksi/update",
+        data: {text: text, id_soal: idSoal, id_ujian :idUjian},
+        success: function (data) {
+            console.log(data);
+            $(koreksiText).hide(); // Wrap koreksiText in a jQuery object
+            $(simpanKoreksiBtn).hide(); // Wrap simpanKoreksiBtn in a jQuery object
+        }
+    });
+  });
+});
+</script>
