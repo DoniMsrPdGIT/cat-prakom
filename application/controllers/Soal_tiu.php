@@ -151,7 +151,7 @@ $ujian_id = $id;
         $method = $this->input->post('method', true);
         $this->validasi();
         $this->file_config();
-        $ujian_id = $id;
+        //$ujian_id = $id;
         
         if($this->form_validation->run() === FALSE){
             $method==='add'? $this->add() : $this->edit();
