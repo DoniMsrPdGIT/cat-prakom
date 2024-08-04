@@ -9,7 +9,7 @@ function tampil_media($file,$width="",$height="") {
 
 	$eks_video = array("mp4","flv","mpeg");
 	$eks_audio = array("mp3","acc");
-	$eks_image = array("jpeg","jpg","gif","bmp","png");
+	$eks_image = array("jpeg","jpg","gif","bmp","png","PNG");
 
 
 	if (!in_array($eks, $eks_video) && !in_array($eks, $eks_audio) && !in_array($eks, $eks_image)) {

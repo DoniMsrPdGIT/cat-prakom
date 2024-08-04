@@ -99,7 +99,11 @@ echo '<div class="row">
               echo '<input type="hidden" name="id_soal_'.$no.'" value="'.$s->id_soal.'">';
 echo '<input type="hidden" name="rg_'.$no.'" id="rg_'.$no.'">';
 echo '<div class="step" id="widget_'.$no.'">';
-
+if(!empty($s->file)){
+    echo '<div class="w-50">';
+    echo tampil_media('uploads/bank_soal/'.$s->file);
+   echo '</div>';
+}
 				echo '<div class="text-center"><div class="w-25"></div></div>'.$s->soal.'<div class="funkyradio">';
 				for ($j = 0; $j < $this->config->item('jml_opsi'); $j++) {
 					$opsi 			= "opsi_".$arr_opsi[$j];
