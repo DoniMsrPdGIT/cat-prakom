@@ -65,10 +65,10 @@
                   <select class="form-control" name="kelas" required>
     <option value="">--Pilih Formasi Jabatan--</option>
     <?php
-$query = $this->db->query("SELECT * FROM jurusan ORDER BY id_kelas");
+$query = $this->db->query("SELECT * FROM jurusan ORDER BY id_kelas_jurusan");
 ?>
     <?php foreach ($query->result() as $row) : ?>
-        <option value="<?= $row->id_kelas ?>"><?= $row->nama_jurusan ?></option>
+        <option value="<?= $row->id_kelas_jurusan ?>"><?= $row->nama_jurusan ?></option>
     <?php endforeach; ?>
                     </select>
     

@@ -83,10 +83,10 @@ $no_peserta = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
                     <select type="text" class="form-control" name="kelas" placeholder="Kelas" required>
                         <option>--Pilih Jabatan--</option>
                         <?php
-$query = $this->db->query("SELECT * FROM jurusan ORDER BY id_kelas");
+$query = $this->db->query("SELECT * FROM jurusan ORDER BY id_kelas_jurusan");
 ?>
     <?php foreach ($query->result() as $row) : ?>
-        <option value="<?= $row->id_kelas ?>"><?= $row->nama_jurusan ?></option>
+        <option value="<?= $row->id_kelas_jurusan ?>"><?= $row->nama_jurusan ?></option>
     <?php endforeach; ?>
                     </select>
    
