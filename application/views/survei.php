@@ -64,17 +64,13 @@
 			      </div>
                   <select class="form-control" name="kelas" required>
     <option value="">--Pilih Formasi Jabatan--</option>
-    <option value="15">Fokus SKD CPNS</option>
-    <option value="1">PPPK Teknis - Pranata Komputer Ahli Pertama</option>
-    <option value="2">PPPK Teknis - Pranata Komputer Terampil</option>
-    <option value="3">CPNS SKB - Pranata Komputer Ahli Pertama</option>
-    <option value="4">CPNS SKB - Pranata Komputer Terampil</option>
-    <option value="9">PPPK Teknis - Penata Layanan Operasional</option>
-    <option value="10">PPPK Teknis - Pengelola Layanan Operasional</option>
-    <option value="11">PPPK Teknis - Operator Layanan Operasional</option>
-    <option value="12">PPKK Teknis - Pengelola Umum Operasional</option>
-    <option value="13">PPKK Teknis - Penelaah Teknis Kebijakan</option>
-    <option value="14">PPKK Teknis - Pengolah Data dan Informasi</option>
+    <?php
+$query = $this->db->query("SELECT * FROM jurusan ORDER BY id_kelas");
+?>
+    <?php foreach ($query->result() as $row) : ?>
+        <option value="<?= $row->id_kelas ?>"><?= $row->nama_jurusan ?></option>
+    <?php endforeach; ?>
+                    </select>
     
 </select>
                     <small class="help-block"></small>
