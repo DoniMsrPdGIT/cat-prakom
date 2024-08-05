@@ -19,3 +19,4 @@ application/logs/*
 application/config/database.php
 application/uploads
 application/sql
+application/vendor
