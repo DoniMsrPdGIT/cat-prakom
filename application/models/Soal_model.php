@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Soal_model extends CI_Model {
     
-    public function getDataSoal($id, $dosen)
+    public function getDataSoalx($id, $dosen)
     {
         $this->datatables->select('a.id_soal, a.soal,a.pembahasan, FROM_UNIXTIME(a.created_on) as created_on, FROM_UNIXTIME(a.updated_on) as updated_on, b.nama_matkul, c.nama_dosen');
         if($id>='401' && $id<='480'){
@@ -113,7 +113,7 @@ class Soal_model extends CI_Model {
         return $this->datatables->generate();
     }
 
-    public function getSoalById($ujian_id,$id_soal)
+    public function getSoalByIdx($ujian_id,$id_soal)
     {
         if($ujian_id>='401' && $ujian_id<='480'){
         return $this->db->get_where('tb_soal_sosiokultural', ['id_soal' => $id_soal])->row();
@@ -193,4 +193,79 @@ class Soal_model extends CI_Model {
         $this->db->where('jenis', $jenis);
         return $this->db->get()->result();
     }
+
+    public function getSoalById($ujian_id, $id_soal)
+{
+    $ujian_ranges = [
+        'tb_soal_sosiokultural' => ['401', '480'],
+        'tb_soal_manajerial' => ['6461', '6540'],
+        'tb_soal_wawancara' => ['6588', '6667'],
+        'tb_soal_twk' => [['6668', '6692'], ['6619', '6828']],
+        'tb_soal_tiu' => [['6698', '6722'], ['6834', '6843']],
+        'tb_soal_tkp' => [['6728', '6752'], ['6865', '6874']],
+    ];
+
+    $table_name = 'tb_soal'; // default table name
+
+    foreach ($ujian_ranges as $table => $ranges) {
+        if (is_array($ranges[0])) {
+            foreach ($ranges as $range) {
+                if ($ujian_id >= $range[0] && $ujian_id <= $range[1]) {
+                    $table_name = $table;
+                    break 2;
+                }
+            }
+        } else {
+            if ($ujian_id >= $ranges[0] && $ujian_id <= $ranges[1]) {
+                $table_name = $table;
+                break;
+            }
+        }
+    }
+
+    return $this->db->get_where($table_name, ['id_soal' => $id_soal])->row();
+}
+
+public function getDataSoal($id, $dosen)
+{
+    $ujian_ranges = [
+        'tb_soal_sosiokultural' => ['401', '480'],
+        'tb_soal_manajerial' => ['6461', '6540'],
+        'tb_soal_wawancara' => ['6588', '6667'],
+        'tb_soal_twk' => [['6668', '6692'], ['6819', '6828']],
+        'tb_soal_tiu' => [['6698', '6722'], ['6834', '6843']],
+        'tb_soal_tkp' => [['6728', '6752'], ['6865', '6874']],
+    ];
+
+    $table_name = 'tb_soal'; // default table name
+
+    foreach ($ujian_ranges as $table => $ranges) {
+        if (is_array($ranges[0])) {
+            foreach ($ranges as $range) {
+                if ($id >= $range[0] && $id <= $range[1]) {
+                    $table_name = $table;
+                    break 2;
+                }
+            }
+        } else {
+            if ($id >= $ranges[0] && $id <= $ranges[1]) {
+                $table_name = $table;
+                break;
+            }
+        }
+    }
+
+    $this->datatables->select('a.id_soal, a.soal, a.pembahasan, FROM_UNIXTIME(a.created_on) as created_on, FROM_UNIXTIME(a.updated_on) as updated_on, b.nama_matkul, c.nama_dosen');
+    $this->datatables->from($table_name . ' a');
+    $this->datatables->join('matkul b', 'b.id_matkul=a.matkul_id');
+    $this->datatables->join('dosen c', 'c.id_dosen=a.dosen_id');
+
+    if ($id !== null && $dosen === null) {
+        $this->datatables->where('a.matkul_id', $id);
+    } elseif ($id !== null && $dosen !== null) {
+        $this->datatables->where('a.dosen_id', $dosen);
+    }
+
+    return $this->datatables->generate();
+}
 }
