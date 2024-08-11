@@ -15,7 +15,7 @@
                 if($see_id==""){
                     
                 }else{ ?>
-                <a href="<?= base_url("Biodata/cetak_biodata/$see_id")?>" type="button" class="btn btn-warning btn-xs" target="_blank"><i class='fa fa-print'></i></a>
+                <!--<a href="<?= base_url("Biodata/cetak_biodata/$see_id")?>" type="button" class="btn btn-warning btn-xs" target="_blank"><i class='fa fa-print'></i></a>-->
             <?php    }    ?>
             
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -72,13 +72,13 @@
             </div>
 
             <div class="col-sm-4 col-sm-offset-1">
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label for="nim">PAS FOTO</label>
                         <img src="<?= base_url('assets/pasfoto/'.$bioanggota['pas_foto'])?>" width="150px">
                         <input type="file" name="foto" class="form-control">
                         <input type="hidden" name="foto_lama" value="<?= $bioanggota['pas_foto'] ?>" class="form-control">
                         <small class="help-block"></small>
-                    </div>
+                    </div>-->
                     
                     <div class="form-group">
                         <label for="email">PEKERJAAN</label>

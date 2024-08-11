@@ -217,11 +217,11 @@ function selesai() {
                 redirectUrl = 'ujian/list_manaj';
               } else if (ujian_id >= 6588 && ujian_id <= 6667) {
                 redirectUrl = 'ujian/list_wawan';
-              } else if (((ujian_id >= 6668 && ujian_id <= 6692)||(ujian_id >= 6819 && ujian_id <= 6828))) {
+              } else if (((ujian_id >= 6668 && ujian_id <= 6692)||(ujian_id >= 6819 && ujian_id <= 6828)|| (ujian_id>=6875 && ujian_id<=6884))) {
                 redirectUrl = 'ujian/list_twk';
-              } else if (((ujian_id >= 6698 && ujian_id <= 6722)||(ujian_id >= 6834 && ujian_id <= 6843))) {
+              } else if (((ujian_id >= 6698 && ujian_id <= 6722)||(ujian_id >= 6834 && ujian_id <= 6843)|| (ujian_id>=6885 && ujian_id<=6894))) {
                 redirectUrl = 'ujian/list_tiu';
-              } else if (((ujian_id >= 6728 && ujian_id <= 6752)||(ujian_id >= 6865 && ujian_id <= 6874))) {
+              } else if (((ujian_id >= 6728 && ujian_id <= 6752)||(ujian_id >= 6865 && ujian_id <= 6874)|| (ujian_id>=6895 && ujian_id<=6904))) {
                 redirectUrl = 'ujian/list_tkp';
               } else {
                 redirectUrl = 'ujian/list';

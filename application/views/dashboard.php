@@ -199,9 +199,8 @@
     <div class="callout callout-warning">
                            Silakan Donasi <del>Rp 100.000</del> <b><font color="yellow" size="5px">Rp 50.000</font><b>&nbsp;<span class="badge badge-danger">Alumni 2023</span>, untuk bisa mengakses Seluruh Fitur Website :<br/>
                 <p>✅ Simulasi Tryout CAT Kompetensi Teknis/Bidang (30 Paket Soal)<br />
-                ✅ Simulasi Tryout CAT Sosiokultural (10 Paket Soal)<br />
-                ✅ Simulasi Tryout CAT Manajerial (10 Paket Soal)<br />
-                ✅ Simulasi Tryout CAT Wawancara (10 Paket Soal)<br />
+                ✅ Simulasi Tryout CAT Mansoswa untuk PPPK (10 Paket Soal Manajerial, Sosiokultural dan Wawancara)<br />
+                ✅ Simulasi Tryout CAT SKD untuk CPNS (10 Paket Soal TIU, TWK dan TKP)<br />
                 ✅ eBook PDF Materi Belajar<br />
                 ✅ eBook PDF Soal dan Pembahasan <br />
                 ✅ Video Materi Belajar</p>
@@ -238,9 +237,8 @@
       
                            Silakan Donasi <b><font color="yellow" size="5px">Rp 100.000</font><b>&nbsp;<span class="badge badge-danger">Non-Alumni 2023</span>, untuk bisa mengakses Seluruh Fitur Website :<br/>
                            <p>✅ Simulasi Tryout CAT Kompetensi Teknis/Bidang (30 Paket Soal)<br />
-                ✅ Simulasi Tryout CAT Sosiokultural (10 Paket Soal)<br />
-                ✅ Simulasi Tryout CAT Manajerial (10 Paket Soal)<br />
-                ✅ Simulasi Tryout CAT Wawancara (10 Paket Soal)<br />
+                ✅ Simulasi Tryout CAT Mansoswa untuk PPPK (10 Paket Soal Manajerial, Sosiokultural dan Wawancara)<br />
+                ✅ Simulasi Tryout CAT SKD untuk CPNS (10 Paket Soal TIU, TWK dan TKP)<br />
                 ✅ eBook PDF Materi Belajar<br />
                 ✅ eBook PDF Soal dan Pembahasan <br />
                 ✅ Video Materi Belajar</p>

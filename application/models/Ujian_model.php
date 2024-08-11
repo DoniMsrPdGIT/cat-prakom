@@ -18,7 +18,7 @@ class Ujian_model extends CI_Model {
     public function getListUjian($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='35' AND ujian_id<='96') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
+        $this->datatables->select("a.id_ujian, a.matkul_id, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND (ujian_id>='35' AND ujian_id<='96')||(ujian_id>='6905' AND ujian_id<='6934')) AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -43,7 +43,7 @@ class Ujian_model extends CI_Model {
 	 public function getListUjianLive($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada, h.nilai, h.jml_benar , h.id");
+        $this->datatables->select("a.id_ujian, a.matkul_id, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada, h.nilai, h.jml_benar , h.id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -61,7 +61,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianSosio($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='401' AND ujian_id<='480') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
+        $this->datatables->select("a.id_ujian, a.matkul_id, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='401' AND ujian_id<='480') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -79,7 +79,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianManaj($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='6461' AND ujian_id<='6540') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
+        $this->datatables->select("a.id_ujian, a.matkul_id, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='6461' AND ujian_id<='6540') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -97,7 +97,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianWawan($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='6588' AND ujian_id<='6667') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
+        $this->datatables->select("a.id_ujian, a.matkul_id, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ujian_id>='6588' AND ujian_id<='6667') AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -115,7 +115,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianTiu($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ((ujian_id>='6698' AND ujian_id<='6722')||(ujian_id>='6834' AND ujian_id<='6843') || (ujian_id>='6885' && ujian_id<='6894'))) AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
+        $this->datatables->select("a.id_ujian, a.matkul_id, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ((ujian_id>='6698' AND ujian_id<='6722')||(ujian_id>='6834' AND ujian_id<='6843') || (ujian_id>='6885' && ujian_id<='6894'))) AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -133,7 +133,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianTwk($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ((ujian_id>='6668' AND ujian_id<='6692')||(ujian_id>='6819' AND ujian_id<='6828') || (ujian_id>='6875' && ujian_id<='6884'))) AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
+        $this->datatables->select("a.id_ujian, a.matkul_id, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ((ujian_id>='6668' AND ujian_id<='6692')||(ujian_id>='6819' AND ujian_id<='6828') || (ujian_id>='6875' && ujian_id<='6884'))) AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");
@@ -151,7 +151,7 @@ class Ujian_model extends CI_Model {
     public function getListUjianTkp($id, $kelas)
     {
         $tgl = date('Y-m-d');
-        $this->datatables->select("a.id_ujian, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ((ujian_id>='6728' AND ujian_id<='6752')||(ujian_id>='6865' AND ujian_id<='6874') || (ujian_id>='6895' && ujian_id<='6904'))) AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
+        $this->datatables->select("a.id_ujian, a.matkul_id, e.nama_dosen, d.nama_kelas, a.nama_ujian, b.nama_matkul, a.jumlah_soal, CONCAT(a.tgl_mulai, ' <br/> (', a.waktu, ' Menit)') as waktu,  (SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND h.ujian_id = a.id_ujian) AS ada,(SELECT COUNT(id) FROM h_ujian h WHERE h.mahasiswa_id = {$id} AND ((ujian_id>='6728' AND ujian_id<='6752')||(ujian_id>='6865' AND ujian_id<='6874') || (ujian_id>='6895' && ujian_id<='6904'))) AS tot_toman, h.nilai, h.jml_benar , h.id, {$id} AS mahasiswa_id");
         $this->datatables->from('m_ujian a');
         $this->datatables->join('matkul b', 'a.matkul_id = b.id_matkul');
         $this->datatables->join('kelas_dosen c', "a.dosen_id = c.dosen_id");

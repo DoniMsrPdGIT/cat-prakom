@@ -49,7 +49,7 @@ $(document).ready(function () {
                 "render": function (data, type, row, meta) {
                     var btn;
                     if (data.ada > 0) {
-						if (data.nilai >= 270) {
+						if (data.nilai >= 270 && (data.matkul_id==28 || data.matkul_id==15 || data.matkul_id==16 || data.matkul_id==17 || data.matkul_id==18) ) {
 							 btn = `
 								
 								<div class="alert alert-success">
