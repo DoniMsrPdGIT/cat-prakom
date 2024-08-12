@@ -53,7 +53,7 @@ $(document).ready(function() {
             { data: "no_peserta" },
             { data: "username" },
             { data: "email" },
-            { data: "last_name" },
+            { data: "remember_selector" },
             { data: "created_on" }
         ],
         columnDefs: [
@@ -68,7 +68,7 @@ $(document).ready(function() {
             // },
             {
                 targets: 5,
-                orderable: false,
+                orderable: true,
                 searchable: false,
                 title: "Instansi",
                 data: "remember_selector",
@@ -103,7 +103,7 @@ $(document).ready(function() {
                             </div>`;
                     } else if (data === "12") {
                         return `<div class="text-center">
-                                <span class="badge bg-green">PPKK Teknis - Pengelola Umum Operasional</span>
+                                <span class="badge bg-green">PPPK Teknis - Pengelola Umum Operasional</span>
                             </div>`;
                     } else if (data === "13") {
                         return `<div class="text-center">
@@ -130,7 +130,7 @@ $(document).ready(function() {
             },
             {
                 targets: 7,
-                orderable: false,
+                orderable: true,
                 searchable: false,
                 title: "Status",
                 data: "activation_code",
