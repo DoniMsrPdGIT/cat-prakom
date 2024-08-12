@@ -61,13 +61,13 @@
                             </p>
                         </div>-->
 		<div class="row">
-		<!--<div class="col-xs-4">
+		<div class="col-xs-4">
 			<a href="auth/forgot_password">Lupa Password?</a>
 			</div> 
 			
 			<div class="col-xs-4">
 			<a href="auth/register"><button type="button" class="btn btn-danger btn-block btn-flat">Daftar</button></a>
-			</div>-->
+			</div>
 			
 			<div class="col-xs-4">
 			<?= form_submit('submit', lang('login_submit_btn'), array('id'=>'submit','class'=>'btn btn-primary btn-block btn-flat'));?>

@@ -57,13 +57,75 @@ $(document).ready(function() {
             { data: "created_on" }
         ],
         columnDefs: [
+            // {
+            //     targets: 5,
+            //     data: "last_name",
+            //     render: function(data, type, row, meta) {
+            //         return `<div class="text-center">
+            //                 <span class="badge">${data}</span>
+            //             </div>`;
+            //     }
+            // },
             {
                 targets: 5,
-                data: "last_name",
+                orderable: false,
+                searchable: false,
+                title: "Instansi",
+                data: "remember_selector",
                 render: function(data, type, row, meta) {
-                    return `<div class="text-center">
-                            <span class="badge">${data}</span>
-                        </div>`;
+                    if (data === "1") {
+                        return `<div class="text-center">
+                                <span class="badge bg-green">PPPK Teknis - Pranata Komputer Ahli Pertama</span>
+                            </div>`;
+                    }else if (data === "2") {
+                        return `<div class="text-center">
+                                <span class="badge bg-green">PPPK Teknis - Pranata Komputer Terampil</span>
+                            </div>`;
+                    } else if (data === "3") {
+                        return `<div class="text-center">
+                                <span class="badge bg-red">CPNS SKB - Pranata Komputer Ahli Pertama</span>
+                            </div>`;
+                    } else if (data === "4") {
+                        return `<div class="text-center">
+                                <span class="badge bg-red">CPNS SKB - Pranata Komputer Terampil</span>
+                            </div>`;
+                    } else if (data === "9") {
+                        return `<div class="text-center">
+                                <span class="badge bg-green">PPPK Teknis - Penata Layanan Operasional</span>
+                            </div>`;
+                    } else if (data === "10") {
+                        return `<div class="text-center">
+                                <span class="badge bg-green">PPPK Teknis - Pengelola Layanan Operasional</span>
+                            </div>`;
+                    } else if (data === "11") {
+                        return `<div class="text-center">
+                                <span class="badge bg-green">PPPK Teknis - Operator Layanan Operasional</span>
+                            </div>`;
+                    } else if (data === "12") {
+                        return `<div class="text-center">
+                                <span class="badge bg-green">PPKK Teknis - Pengelola Umum Operasional</span>
+                            </div>`;
+                    } else if (data === "13") {
+                        return `<div class="text-center">
+                                <span class="badge bg-green">PPPK Teknis - Penelaah Teknis Kebijakan</span>
+                            </div>`;
+                    } else if (data === "14") {
+                        return `<div class="text-center">
+                                <span class="badge bg-green">PPPK Teknis - Pengolah Data dan Informasi</span>
+                            </div>`;
+                    } else if (data === "16") {
+                        return `<div class="text-center">
+                                <span class="badge bg-red">CPNS SKB - Penata Kelola Sistem dan Teknologi Informasi</span>
+                            </div>`;
+                    } else if (data === "15") {
+                        return `<div class="text-center">
+                                <span class="badge bg-yellow">Fokus SKD CPNS</span>
+                            </div>`;
+                    } else {
+                        return `<div class="text-center">
+                                <span class="badge bg-primary">Formasi Kosong</span>
+                            </div>`;
+                    }
                 }
             },
             {

@@ -5,7 +5,7 @@ class Users_model extends CI_Model {
     
     public function getDatausers($id = null)
     {
-        $this->datatables->select('users.id, username, first_name, last_name, users.email, FROM_UNIXTIME(created_on) as created_on, last_login, active,users.activation_code AS activation_code, groups.name as level, mahasiswa.nama, mahasiswa.no_peserta');
+        $this->datatables->select('users.id, username, first_name, last_name,users.remember_selector AS remember_selector, users.email, FROM_UNIXTIME(created_on) as created_on, last_login, active,users.activation_code AS activation_code, groups.name as level, mahasiswa.nama, mahasiswa.no_peserta');
         $this->datatables->from('users_groups');
         $this->datatables->join('users', 'users_groups.user_id=users.id');
 		 $this->datatables->join('mahasiswa', 'users.username=mahasiswa.nim');
