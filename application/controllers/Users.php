@@ -67,8 +67,8 @@ class Users extends CI_Controller {
 	{
 		$this->is_admin();
 		$this->form_validation->set_rules('username', 'Username', 'required');
-		$this->form_validation->set_rules('first_name', 'First Name', 'required');
-		$this->form_validation->set_rules('last_name', 'Last Name', 'required');
+		// $this->form_validation->set_rules('first_name', 'First Name', 'required');
+		// $this->form_validation->set_rules('last_name', 'Last Name', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 		
 		if($this->form_validation->run()===FALSE){

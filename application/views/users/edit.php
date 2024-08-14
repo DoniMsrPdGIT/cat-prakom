@@ -28,10 +28,36 @@
                         <small class="help-block"></small>
                     </div>
                     <div class="form-group col-sm-12">
-                        <label for="last_name">Melamar</label>
-                        <input type="text" name="last_name" class="form-control" value="<?=$users->last_name?>">
-                        <small class="help-block"></small>
-                    </div>
+    <label for="last_name">Melamar</label>&nbsp;&nbsp;<font color="red"><small>Hapus untuk reset Formasi</small></font>
+    <input type="text" name="last_name" class="form-control" value="<?=$users->last_name?>">
+    <small class="help-block"></small>
+    <?php
+        $badges = [
+            '1' => ['bg-green', 'PPPK Teknis - Pranata Komputer Ahli Pertama'],
+            '2' => ['bg-green', 'PPPK Teknis - Pranata Komputer Terampil'],
+            '3' => ['bg-red', 'CPNS SKB - Pranata Komputer Ahli Pertama'],
+            '4' => ['bg-red', 'CPNS SKB - Pranata Komputer Terampil'],
+            '9' => ['bg-green', 'PPPK Teknis - Penata Layanan Operasional'],
+            '10' => ['bg-green', 'PPPK Teknis - Pengelola Layanan Operasional'],
+            '11' => ['bg-green', 'PPPK Teknis - Operator Layanan Operasional'],
+            '12' => ['bg-green', 'PPPK Teknis - Pengelola Umum Operasional'],
+            '13' => ['bg-green', 'PPPK Teknis - Penelaah Teknis Kebijakan'],
+            '14' => ['bg-green', 'PPPK Teknis - Pengolah Data dan Informasi'],
+            '16' => ['bg-red', 'CPNS SKB - Penata Kelola Sistem dan Teknologi Informasi'],
+            '15' => ['bg-yellow', 'Fokus SKD CPNS'],
+        ];
+
+        if (isset($badges[$users->remember_selector])) {
+            $badgeClass = $badges[$users->remember_selector][0];
+            $badgeText = $badges[$users->remember_selector][1];
+        } else {
+            $badgeClass = 'bg-primary';
+            $badgeText = 'Formasi Kosong';
+        }
+
+        echo "<div class='text-center'><span class='badge $badgeClass'>$badgeText</span></div>";
+    ?>
+</div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
