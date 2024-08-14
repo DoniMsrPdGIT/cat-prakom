@@ -273,7 +273,7 @@
             </div>
 	<div class="callout callout-warning">
       
-                           Silakan Donasi <b><font color="yellow" size="5px">Rp 35.000</font><b>&nbsp;<span class="badge badge-success">Paket Fokus SKD CPNS</span>, untuk bisa mengakses Seluruh Fitur Website :<br/>
+                           Silakan Pilih Program Kelas &nbsp, untuk bisa mengakses Seluruh Fitur Website :<br/>
                            <p>✅Tryout 10 Paket Soal Tes Wawasan Kebangsaan (TWK)<br />
 ✅Tryout 10 Paket Soal Tes Intelegensi Umum (TIU)<br />
 ✅Tryout 10 Paket Soal Tes Karakteristik Pribadi (TKP)<br />
@@ -288,12 +288,13 @@
                         </div>
 						
 						<img src="assets/logo/qris_new.png" class="center"/>
-						 <h4 align="center"><b>Rp 35.<?=substr($mhs->no_peserta,4,3)?></b></h4>
+						 <h4 align="center"><b>Rp 35.<?=substr($mhs->no_peserta,4,3)?></b>&nbsp;<span class="badge badge-success">Paket Fokus Tryout SKD CPNS</span></h4>
+                         <h4 align="center"><b>Rp 71.<?=substr($mhs->no_peserta,4,3)?></b>&nbsp;<span class="badge badge-danger">Paket Fokus Tryout SKD CPNS + Bimbel Kelas Online via Zoom</span></h4>
 						<br/>
 						 <div class="callout callout-danger">
-                         Donasi dg Kode Unik [Nomor Peserta] => Rp. 35.000 + Nomor Peserta<br/>
+                         Donasi dg Kode Unik [Nomor Peserta] => Rp. 35.000/Rp. 70.000 + Nomor Peserta<br/>
 						 == Nomor Peserta Anda adalah <?=$mhs->no_peserta?> ==<br/>
-						 <b>Maka Donasi sebesar Rp. 35.<?=substr($mhs->no_peserta,4,3)?></b><br/>
+						 <b>Maka Donasi sebesar Rp. 35.<?=substr($mhs->no_peserta,4,3)?>/71.<?=substr($mhs->no_peserta,4,3)?></b><br/>
 						 Pembayaran via QRIS diatas, Otomatis Teraktivasi. <br/> 🌟🌟 Akun Berlaku Selama CASN 2024
                         </div>
 						
@@ -301,7 +302,7 @@
                            Klik untuk Join di <b><a href="https://t.me/cat_prakom"><i class="fa fa-telegram" aria-hidden="true"></i>&nbsp;Group Telegram CAT-Prakom.com</a></b><br/>
 						   Silakan Konfirmasi di grup jika sudah Donasi, namun belum Aktif dengan format :<br/>
 						   DCP_NAMA_NOHP_KODEUNIK<br/><br/>
-						   Contoh : DCP_Andini_081234567890_35<?=substr($mhs->no_peserta,4,3)?>
+						   Contoh : DCP_Andini_081234567890_35<?=substr($mhs->no_peserta,4,3)?>/71<?=substr($mhs->no_peserta,4,3)?>
 						   </br></br>
 						   <b>Admin akan melakukan pengecekan terlebih dahulu</b>
                         </div>
