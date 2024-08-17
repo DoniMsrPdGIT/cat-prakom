@@ -166,13 +166,13 @@
             		<td><?= $vm->nama_modul ?></td>
 					<td><?= $vm->edisi ?></td>
 					<?php if($user->activation_code=='1' || $user->activation_code=='2' || $user->activation_code=='3' ){ ?>
-					<td><a href="<?= base_url('uploads/modul/'.$vm->isi_modul)?>" target="_blank"><img src="<?= base_url('assets/logo/icon.png')?>" style="width:50px;"></a></td>
+					<td><a href="<?= $vm->link?>" target="_blank"><img src="<?= base_url('assets/logo/icon.png')?>" style="width:50px;"></a></td>
 					<?php }else{ ?>
 		<td><a href="#"><img src="<?= base_url('assets/logo/icon.png')?>" style="width:50px;"></a></td>
 					<?php } ?>
             		
             		<?php if( $this->ion_auth->is_admin() || $this->ion_auth->in_group('dosen') ) : ?>
-            		<td style="width: 5px;"><a href="<?= base_url('C_Modul/del_modul/'.$vm->id_modul.'/'.$vm->isi_modul)?>" class="btn btn-danger btn-md"><i class="fa fa-trash"></i></a></td>
+            		<td style="width: 5px;"><a href="<?= base_url('C_Modul/del_modul/'.$vm->id_modul)?>" class="btn btn-danger btn-md"><i class="fa fa-trash"></i></a></td>
             		<?php endif; ?>
             	</tr>
             <?php } ?>

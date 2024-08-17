@@ -21,10 +21,22 @@
                     <input type="text" class="form-control" name="edisi" placeholder="Edisi Bulan Tahun">
                     <small class="help-block"></small>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="nama_dosen">Modul</label>
                     <input type="file" class="form-control" name="modul">
                     <small class="help-block"></small>
+                </div> -->
+                <div class="form-group">
+                    <label for="nama_dosen">URL Mediafire</label>
+                    <input type="text" class="form-control" name="link" placeholder="URL Mediafire">
+                    <small class="help-block"></small>
+                </div>
+                <div class="form-group">
+                    <label for="nama_dosen">Status Aktif</label>
+                    <select name="status" class="form-control">
+                        <option value="0">Non-Aktif</option>
+                        <option value="1" selected>Aktif</option>
+                    </select>
                 </div>
                 <div class="form-group pull-right">
                     <button type="reset" class="btn btn-flat btn-default">
