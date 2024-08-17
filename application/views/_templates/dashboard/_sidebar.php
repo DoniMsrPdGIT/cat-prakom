@@ -272,7 +272,7 @@
 					<i class="fa fa-cog"></i> <span>Settings</span>
 				</a>
 			</li> -->
-			<?php endif; ?>
+			<!-- <?php endif; ?>
 			<li class="header">MODUL</li>
 			<?php if($this->ion_auth->is_admin()) : ?>
 			<li class="<?=$page==='Mahasiswa/berkas'?"active":""?>">
@@ -280,7 +280,7 @@
 					<i class="glyphicon glyphicon-folder-close"></i> <span>Berkas</span>
 				</a>
 			</li>
-			<?php endif; ?>
+			<?php endif; ?> -->
 			<!--<li class="<?=$page==='sertifikat'?"active":""?>">
 				<a href="<?=base_url('Sertifikat')?>" rel="noopener noreferrer">
 					<i class="glyphicon glyphicon-book"></i> <span>Sertifikat</span>
