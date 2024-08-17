@@ -426,9 +426,10 @@ $ujian_id = $this->ujian->getUjianIdById($id_ujian);
 		$this->load->view('_templates/dashboard/_header.php', $data);
 		if(($ujian_id>='401' && $ujian_id<='6667')||((($ujian_id>='6728' && $ujian_id<='6752')||($ujian_id>='6865' && $ujian_id<='6874')|| ($ujian_id>='6895' && $ujian_id<='6904')))){
 		$this->load->view('ujian/pembahasan_mansoswa',$data);
+		// $this->load->view('ujian/pembahasan_mansoswa_ebook',$data);
 		}else{
-		$this->load->view('ujian/pembahasan',$data);	
-		// $this->load->view('ujian/pembahasan_ebook',$data);	
+		// $this->load->view('ujian/pembahasan',$data);	
+		$this->load->view('ujian/pembahasan_ebook',$data);	
 		}
 		$this->load->view('_templates/dashboard/_footer.php');
 	}
