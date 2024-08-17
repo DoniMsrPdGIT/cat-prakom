@@ -149,7 +149,6 @@
                 <tr>
                     <th style="width: 5px;">No.</th>
                     <th>Nama eBook / Materi</th>
-					 <th>Edisi</th>
                     <th>Download File PDF</th>
                     <?php if( $this->ion_auth->is_admin() || $this->ion_auth->in_group('dosen') ) : ?>
                     <th>Aksi</th>
@@ -163,8 +162,7 @@
             	 ?>
             	<tr>
             		<td><?= $no++; ?></td>
-            		<td><?= $vm->nama_modul ?></td>
-					<td><?= $vm->edisi ?></td>
+            		<td><?= $vm->nama_modul ?><br/><small><font color="grey"><?= $vm->edisi ?></font></small></td>
 					<?php if($user->activation_code=='1' || $user->activation_code=='2' || $user->activation_code=='3' ){ ?>
 					<td><a href="<?= $vm->link?>" target="_blank"><img src="<?= base_url('assets/logo/icon.png')?>" style="width:50px;"></a></td>
 					<?php }else{ ?>

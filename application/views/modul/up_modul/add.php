@@ -17,8 +17,8 @@
                     <small class="help-block"></small>
                 </div>
 				 <div class="form-group">
-                    <label for="nama_dosen">Edisi</label>
-                    <input type="text" class="form-control" name="edisi" placeholder="Edisi Bulan Tahun">
+                    <label for="nama_dosen">Deskripsi</label>
+                    <input type="text" class="form-control" name="edisi" placeholder="Deskripsi singkat">
                     <small class="help-block"></small>
                 </div>
                 <!-- <div class="form-group">
