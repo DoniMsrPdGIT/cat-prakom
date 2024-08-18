@@ -11,13 +11,70 @@
 	</style>
 	<img src="assets/logo/logo.png"  class="center"/>
 	<div class="login-box-body">
-	
+	<style>
+		.elegant-button {
+    background-color: #4CAF50; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    padding: 5px 5px; /* Padding di sekitar teks */
+    cursor: pointer; /* Ubah cursor ketika mouse berada di atas tombol */
+    border: none; /* Hapus border */
+    border-radius: 5px; /* Tambahkan sedikit lengkungan pada sudut */
+    transition: background-color 0.3s, transform 0.2s; /* Animasi untuk hover */
+    animation: blink 1s infinite; /* Tambahkan animasi blink */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.star {
+  font-size: 16px;
+  color: #fff;
+  animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.moving-text {
+  position: relative;
+  animation: move 2s infinite;
+}
+
+@keyframes move {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 10px;
+  }
+  100% {
+    left: 0;
+  }
+}
+	</style>
 
 <style>
     .elegant-button {
-        background-color: #4CAF50; /* Warna latar belakang */
+        background-color: black; /* Warna latar belakang */
         color: white; /* Warna teks */
-        padding: 5px 5px; /* Padding di sekitar teks */
+        padding: 15px 15px; /* Padding di sekitar teks */
         cursor: pointer; /* Ubah cursor ketika mouse berada di atas tombol */
         border: none; /* Hapus border */
         border-radius: 5px; /* Tambahkan sedikit lengkungan pada sudut */
@@ -36,7 +93,7 @@
  
 
  
-	<p class="login-box-msg"><a href="/auth/testimonial"><button class="elegant-button">Testimoni Alumni 2023 yang Lulus ASN</button></a></p>
+<p class="login-box-msg"><a href="/auth/testimonial"><button class="elegant-button"><i class="star"></i><span class="moving-text">Testimoni Alumni 2023 yang Lulus ASN</span></button></a></p>
 	<div id="infoMessage" class="text-center"><?php echo $message;?></div>
 
 	<?= form_open("auth/cek_login", array('id'=>'login'));?>
@@ -84,7 +141,21 @@
 	</div>
 	</div>
 </div>
+<script>
+	const button = document.querySelector('.elegant-button');
+const star = document.querySelector('.star');
+const movingText = document.querySelector('.moving-text');
 
+button.addEventListener('mouseover', () => {
+  star.style.animation = 'twinkle 2s infinite';
+  movingText.style.animation = 'move 2s infinite';
+});
+
+button.addEventListener('mouseout', () => {
+  star.style.animation = 'none';
+  movingText.style.animation = 'none';
+});
+</script>
 <script type="text/javascript">
 	let base_url = '<?=base_url();?>';
 </script>
