@@ -29,11 +29,11 @@
                     </li>
                     <!-- Menu Body -->
                     <li class="user-footer">
-                        <!-- <div class="pull-left">
+                        <div class="pull-left">
                             <a href="<?=base_url()?>users/edit/<?=$user->id?>" class="btn btn-default btn-flat">
                                 <?=$this->ion_auth->is_admin() ? "Edit Profile" : "Ganti Password" ?>
                             </a>
-                        </div> -->
+                        </div>
                         <div class="pull-right">
                             <a href="#" id="logout" class="btn btn-default btn-flat">Logout</a>
                         </div>
