@@ -293,11 +293,11 @@
 				</a>
 			</li>
 			
-			<li class="<?=$page2==='video'?"active":""?>">
+			<!-- <li class="<?=$page2==='video'?"active":""?>">
 				<a href="<?=base_url('C_Modul/video')?>" rel="noopener noreferrer">
 					<i class="glyphicon glyphicon-facetime-video"></i> <span>Video Materi Belajar</span>
 				</a>
-			</li>
+			</li> -->
 			<?php } ?>
 		</ul>
 
