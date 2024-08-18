@@ -428,8 +428,8 @@ $ujian_id = $this->ujian->getUjianIdById($id_ujian);
 		$this->load->view('ujian/pembahasan_mansoswa',$data);
 		// $this->load->view('ujian/pembahasan_mansoswa_ebook',$data);
 		}else{
-		// $this->load->view('ujian/pembahasan',$data);	
-		$this->load->view('ujian/pembahasan_ebook',$data);	
+		$this->load->view('ujian/pembahasan',$data);	
+		// $this->load->view('ujian/pembahasan_ebook',$data);	
 		}
 		$this->load->view('_templates/dashboard/_footer.php');
 	}

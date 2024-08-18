@@ -286,7 +286,7 @@
 					<i class="glyphicon glyphicon-book"></i> <span>Sertifikat</span>
 				</a>
 			</li>-->
-			
+			<?php  if($user->last_name!='' ){  ?>
 			<li class="<?=$page==='C_Modul'?"active":""?>">
 				<a href="<?=base_url('C_Modul')?>" rel="noopener noreferrer">
 					<i class="glyphicon glyphicon-book"></i> <span>eBook PDF</span>
@@ -298,6 +298,7 @@
 					<i class="glyphicon glyphicon-facetime-video"></i> <span>Video Materi Belajar</span>
 				</a>
 			</li>
+			<?php } ?>
 		</ul>
 
 	</section>

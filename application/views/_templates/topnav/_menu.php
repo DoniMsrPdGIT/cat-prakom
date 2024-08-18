@@ -15,10 +15,10 @@
 		</div>
 		<div class="navbar-custom-menu">
 			<ul class="nav navbar-nav">
-				<li><a href="#" onclick="simpan_akhir()">Selesai Ujian</a></li>
+				<!-- <li><a href="#" onclick="simpan_akhir()">Selesai Ujian</a></li> -->
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-						<?=$user->username?> <span class="caret"></span>
+						<?=$user->email?> <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="<?=base_url('logout')?>">Logout</a></li>
