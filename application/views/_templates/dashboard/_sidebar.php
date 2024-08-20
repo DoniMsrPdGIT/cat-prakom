@@ -150,11 +150,19 @@
 			<?php if( $this->ion_auth->in_group('mahasiswa') ) : ?>
 			<?php  if($user->last_name!='' ){  ?>
 				<?php if($user->activation_code=='1' ){ ?>
+					<?php if($user->remember_selector=='3' || $user->remember_selector=='4' || $user->remember_selector=='15' || $user->remember_selector=='16' ){ ?>
 			<li class="<?=$page2==='list'?"active":""?>">
 				<a href="<?=base_url('ujian/list')?>" rel="noopener noreferrer">
 					<i class="fa fa-chrome"></i> <span>Tryout Teknis</span>
 				</a>
 			</li>
+			<?php }else{ ?>
+				<li class="<?=$page2==='list'?"active":""?>">
+				<a href="#" rel="noopener noreferrer">
+					<i class="fa fa-chrome"></i> <span>Tryout Teknis (Belum dibuka)</span>
+				</a>
+			</li>
+			<?php } ?>	
 			<li class="<?=$page2==='list_sosio'?"active":""?>">
 				<a href="<?=base_url('ujian/list_sosio')?>" rel="noopener noreferrer">
 					<i class="fa fa-universal-access"></i> <span>Tryout Sosiokultural</span>
@@ -287,12 +295,19 @@
 				</a>
 			</li>-->
 			<?php  if($user->last_name!='' ){  ?>
+				<?php if($user->remember_selector=='3' || $user->remember_selector=='4' || $user->remember_selector=='15' || $user->remember_selector=='16' ){ ?>
 			<li class="<?=$page==='C_Modul'?"active":""?>">
 				<a href="<?=base_url('C_Modul')?>" rel="noopener noreferrer">
 					<i class="glyphicon glyphicon-book"></i> <span>eBook PDF</span>
 				</a>
 			</li>
-			
+			<?php }else{ ?>
+				<li class="<?=$page==='C_Modul'?"active":""?>">
+				<a href="#" rel="noopener noreferrer">
+					<i class="glyphicon glyphicon-book"></i> <span>eBook PDF (Belum dibuka)</span>
+				</a>
+			</li>
+			<?php } ?>	
 			<!-- <li class="<?=$page2==='video'?"active":""?>">
 				<a href="<?=base_url('C_Modul/video')?>" rel="noopener noreferrer">
 					<i class="glyphicon glyphicon-facetime-video"></i> <span>Video Materi Belajar</span>
