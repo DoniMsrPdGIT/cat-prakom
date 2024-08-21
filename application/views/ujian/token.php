@@ -153,12 +153,12 @@ if($donasi == '0' && $trial=='0'){
 						   <b>Donasi diperlukan guna Pengembangan Website CAT Prakom lebih baik.</b>
                         </div>
 						<img src="../../assets/logo/qris_new.png" class="center"/>
-						 <h4 align="center"><b>Rp 35.<?=substr($mhs->no_peserta,4,3)?>/Rp 71.<?=substr($mhs->no_peserta,4,3)?></b></h4>
+						 <h4 align="center"><b>Rp 71.<?=substr($mhs->no_peserta,4,3)?></b></h4>
 						<br/>
 						 <div class="callout callout-danger">
-                         Donasi dg Kode Unik [Nomor Peserta] => Rp. 35.000/Rp. 70.000 + Nomor Peserta<br/>
+                         Donasi dg Kode Unik [Nomor Peserta] => Rp. 70.000 + Nomor Peserta<br/>
 						 == Nomor Peserta Anda adalah <?=$mhs->no_peserta?> ==<br/>
-						 <b>Maka Donasi sebesar Rp. 35.<?=substr($mhs->no_peserta,4,3)?>/Rp. 71.<?=substr($mhs->no_peserta,4,3)?></b><br/>
+						 <b>Maka Donasi sebesar Rp. 71.<?=substr($mhs->no_peserta,4,3)?></b><br/>
 						 Pembayaran via QRIS diatas, Otomatis Teraktivasi. <br/> 🌟🌟 Akun Berlaku Selama CASN 2024
                         </div>
 						
