@@ -121,7 +121,7 @@ class Soal_model extends CI_Model {
         return $this->db->get_where('tb_soal_manajerial', ['id_soal' => $id_soal])->row();
         }else if($ujian_id>='6588' && $ujian_id<='6667'){
         return $this->db->get_where('tb_soal_wawancara', ['id_soal' => $id_soal])->row();
-        }else if(($ujian_id>='6668' && $ujian_id<='6692')||($ujian_id>='6619' && $ujian_id<='6828') || ($ujian_id>='6895' && $ujian_id<='6904')){
+        }else if(($ujian_id>='6668' && $ujian_id<='6692')||($ujian_id>='6819' && $ujian_id<='6828') || ($ujian_id>='6895' && $ujian_id<='6904')){
             return $this->db->get_where('tb_soal_twk', ['id_soal' => $id_soal])->row();
             }else if(($ujian_id>='6698' && $ujian_id<='6722')||($ujian_id>='6834' && $ujian_id<='6843') || ($ujian_id>='6885' && $ujian_id<='6894')){
                 return $this->db->get_where('tb_soal_tiu', ['id_soal' => $id_soal])->row();
@@ -200,7 +200,7 @@ class Soal_model extends CI_Model {
         'tb_soal_sosiokultural' => ['401', '480'],
         'tb_soal_manajerial' => ['6461', '6540'],
         'tb_soal_wawancara' => ['6588', '6667'],
-        'tb_soal_twk' => [['6668', '6692'], ['6619', '6828'], ['6875', '6884']],
+        'tb_soal_twk' => [['6668', '6692'], ['6819', '6828'], ['6875', '6884']],
         'tb_soal_tiu' => [['6698', '6722'], ['6834', '6843'], ['6885', '6894']],
         'tb_soal_tkp' => [['6728', '6752'], ['6865', '6874'], ['6895', '6904']],
     ];
@@ -232,7 +232,7 @@ public function getDataSoal($id, $dosen)
         'tb_soal_sosiokultural' => ['401', '480'],
         'tb_soal_manajerial' => ['6461', '6540'],
         'tb_soal_wawancara' => ['6588', '6667'],
-       'tb_soal_twk' => [['6668', '6692'], ['6619', '6828'], ['6875', '6884']],
+       'tb_soal_twk' => [['6668', '6692'], ['6819', '6828'], ['6875', '6884']],
         'tb_soal_tiu' => [['6698', '6722'], ['6834', '6843'], ['6885', '6894']],
         'tb_soal_tkp' => [['6728', '6752'], ['6865', '6874'], ['6895', '6904']],
     ];
