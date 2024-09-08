@@ -12,12 +12,12 @@
         <div class="row">
             <div class="col-sm-4 col-sm-offset-4">
                 <div class="form-group">
-                    <label for="nama_dosen">Tema</label>
+                    <label for="nama_dosen">Tema Judul</label>
                     <input type="text" class="form-control" name="tema" placeholder="Tema Video">
                     <small class="help-block"></small>
                 </div>
                <div class="form-group">
-                    <label for="nama_dosen">Judul</label>
+                    <label for="nama_dosen">Deskrispi</label>
                     <input type="text" class="form-control" name="judul" placeholder="Judul Video">
                     <small class="help-block"></small>
                 </div>
@@ -31,6 +31,11 @@
                     <input type="text" class="form-control" name="ch_yt" placeholder="Hak Cipta">
                     <small class="help-block"></small>
                 </div>
+                 <div class="form-group">
+                  <label for="nama_dosen">Cover Youtube</label>
+                                <input type="file" name="fvideo" class="form-control">
+                                <small class="help-block" style="color: #dc3545"></small>
+                            </div>
                 <div class="form-group pull-right">
                     <button type="reset" class="btn btn-flat btn-default">
                         <i class="fa fa-rotate-left"></i> Reset

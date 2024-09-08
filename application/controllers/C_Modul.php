@@ -32,13 +32,14 @@ public function index(){
 	public function video(){
 	//$this->akses_mahasiswa();
 		$user = $this->ion_auth->user()->row();
+		$kelas_id=$user->remember_selector;
 		$data = [
 			'user' => $this->ion_auth->user()->row(),
 			'mhs' 		=> $this->ujian->getIdMahasiswa($user->username),
 			'judul'	=> 'Video Materi Belajar',
 			'subjudul' => 'List Video'
 		];
-		$data['view_video'] = $this->Modul->video();
+		$data['view_video'] = $this->Modul->video($kelas_id);
  		$this->load->view('_templates/dashboard/_header.php', $data);
 		$this->load->view('modul/video/data',$data);
 		$this->load->view('_templates/dashboard/_footer.php');
@@ -67,12 +68,30 @@ public function index(){
 	}
 
 public function aksi_video(){
-		$judul= $this->input->post('judul');
+	$judul= $this->input->post('judul');
 		$tema = $this->input->post('tema');
 		$url= $this->input->post('url');
 		$ch_yt= $this->input->post('ch_yt');
+
+	$acak= random_string('alnum', 20);
 		
-		$add = array('tema' => $tema, 'judul_video' => $judul, 'url' => $url, 'channel_youtube' => $ch_yt );
+	$config['file_name'] = 'thumbnails_'.$acak;
+	$config['upload_path'] ='uploads/youtube/';
+	$config['allowed_types'] = 'JPG|jpg|PNG|png|JPEG|jpeg';
+	$config['max_size'] = '9999999999'; // kb
+
+	//$this->upload->initialize($config);
+		
+	$this->load->library('upload', $config);
+     
+	if(!$this->upload->do_upload('fvideo')){
+	echo "Gagal upload Bro..."; die();
+	}else{
+	$file = $this->upload->data('file_name');
+	}
+		
+		
+		$add = array('tema' => $tema, 'judul_video' => $judul, 'url' => $url, 'channel_youtube' => $ch_yt, 'foto' => $file );
 		$this->Modul->addvideo($add);
 		redirect('C_Modul/video','refresh');
 	}

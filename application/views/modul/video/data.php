@@ -27,21 +27,26 @@
             		foreach ($view_video as $vm) {
             	 ?>
          <!-- Default box -->
-    <div class="box box-solid collapsed-box">
-        <div class="box-header">
-            <h3 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h3>
-            <div class="box-tools pull-right">
-                <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></button>
-            </div>
-        </div>
-        <div style="display: none;" class="box-body">
-		<iframe width="100%" height="355" src="<?php echo $vm->url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><hr/>
-		   <i class="fa fa-play" aria-hidden="true"></i>&nbsp;&nbsp;<?php echo $vm->judul_video; ?><br/>
-           <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?>
-		
-            
-        </div><!-- /.box-body -->
-    </div><!-- /.box -->
+   
+         <div class="box box-solid">
+         <div class="col-md-12">
+         <div class="col-md-2">
+      <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
+        <a href="<?php echo $vm->url; ?>" title="Lihat Video">
+          <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
+          <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
+        </a>
+    </div>
+  </div>
+  <div class="col-md-10">
+        <h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4><br/>
+        <small><?php echo $vm->judul_video; ?><br/>
+        <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?></small>
+  </div>
+  </div>
+</div>
+
+
 	<?php 
 					}
 					?>
@@ -57,21 +62,24 @@
             		foreach ($view_video as $vm) {
             	 ?>
          <!-- Default box -->
-    <div class="box box-solid collapsed-box">
-        <div class="box-header">
-            <h3 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h3>
-            <div class="box-tools pull-right">
-                <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></button>
-            </div>
-        </div>
-        <div style="display: none;" class="box-body">
-		<iframe width="100%" height="355" src="<?php echo $vm->url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><hr/>
-		   <i class="fa fa-play" aria-hidden="true"></i>&nbsp;&nbsp;<?php echo $vm->judul_video; ?><br/>
-           <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?>
-		
-            
-        </div><!-- /.box-body -->
-    </div><!-- /.box -->
+       <div class="box box-solid">
+         <div class="col-md-12">
+         <div class="col-md-2">
+      <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
+        <a href="<?php echo $vm->url; ?>" title="Lihat Video">
+          <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
+          <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
+        </a>
+    </div>
+  </div>
+  <div class="col-md-10">
+        <h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4><br/>
+        <small><?php echo $vm->judul_video; ?><br/>
+        <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?></small>
+  </div>
+  </div>
+</div>
+<!-- end box -->
 	<?php 
 					}
 					?>
@@ -87,21 +95,24 @@
             		foreach ($view_video as $vm) {
             	 ?>
          <!-- Default box -->
-    <div class="box box-solid collapsed-box">
-        <div class="box-header">
-            <h3 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h3>
-            <div class="box-tools pull-right">
-                <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></button>
-            </div>
-        </div>
-        <div style="display: none;" class="box-body">
-		<iframe width="100%" height="355" src="<?php echo $vm->url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><hr/>
-		   <i class="fa fa-play" aria-hidden="true"></i>&nbsp;&nbsp;<?php echo $vm->judul_video; ?><br/>
-           <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?>
-		
-            
-        </div><!-- /.box-body -->
-    </div><!-- /.box -->
+ <div class="box box-solid">
+         <div class="col-md-12">
+         <div class="col-md-2">
+      <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
+        <a href="<?php echo $vm->url; ?>" title="Lihat Video">
+          <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
+          <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
+        </a>
+    </div>
+  </div>
+  <div class="col-md-10">
+        <h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4><br/>
+        <small><?php echo $vm->judul_video; ?><br/>
+        <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?></small>
+  </div>
+  </div>
+</div>
+<!-- end box -->
 	<?php 
 					}
 					?>
