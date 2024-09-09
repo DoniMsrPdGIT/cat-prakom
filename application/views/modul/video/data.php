@@ -39,7 +39,7 @@
     </div>
   </div>
   <div class="col-md-10">
-        <h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4><br/>
+         <a href="<?php echo $vm->url; ?>"><h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4></a><br/>
         <small><?php echo $vm->judul_video; ?><br/>
         <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?></small>
   </div>
@@ -73,7 +73,7 @@
     </div>
   </div>
   <div class="col-md-10">
-        <h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4><br/>
+         <a href="<?php echo $vm->url; ?>"><h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4></a><br/>
         <small><?php echo $vm->judul_video; ?><br/>
         <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?></small>
   </div>
@@ -106,7 +106,7 @@
     </div>
   </div>
   <div class="col-md-10">
-        <h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4><br/>
+         <a href="<?php echo $vm->url; ?>"><h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4></a><br/>
         <small><?php echo $vm->judul_video; ?><br/>
         <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?></small>
   </div>
