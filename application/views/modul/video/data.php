@@ -32,7 +32,7 @@
          <div class="col-md-12">
          <div class="col-md-2">
       <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
-        <a href="<?php echo $vm->url; ?>" title="Lihat Video">
+        <a href="<?php echo $vm->url; ?>" target="_blank" title="Lihat Video">
           <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
           <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
         </a>
@@ -66,7 +66,7 @@
          <div class="col-md-12">
          <div class="col-md-2">
       <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
-        <a href="<?php echo $vm->url; ?>" title="Lihat Video">
+        <a href="<?php echo $vm->url; ?>" target="_blank" title="Lihat Video">
           <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
           <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
         </a>
@@ -99,7 +99,7 @@
          <div class="col-md-12">
          <div class="col-md-2">
       <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
-        <a href="<?php echo $vm->url; ?>" title="Lihat Video">
+        <a href="<?php echo $vm->url; ?>" target="_blank" title="Lihat Video">
           <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
           <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
         </a>
