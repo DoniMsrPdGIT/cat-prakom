@@ -19,6 +19,9 @@ class Modul extends CI_Model {
 	function delete($id){
 		return $this->db->delete('modul', $id);
 	}
+	function deletevideo($id){
+		return $this->db->delete('video', $id);
+	}
 	function viewberkas(){
 		return $this->db->query("SELECT * FROM berkas_anggota ba LEFT JOIN mahasiswa mhs ON ba.id_anggota=mhs.id_mahasiswa")->result();
 	}

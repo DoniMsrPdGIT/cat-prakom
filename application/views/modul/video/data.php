@@ -22,34 +22,51 @@
 						   <b>Terima kasih telah donasi.</b>
                         </div>
 						
-								<?php 
-            	$no=1;
-            		foreach ($view_video as $vm) {
-            	 ?>
-         <!-- Default box -->
-   
-         <div class="box box-solid">
-         <div class="col-md-12">
-         <div class="col-md-2">
-      <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
-        <a href="<?php echo $vm->url; ?>" target="_blank" title="Lihat Video">
-          <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
-          <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
-        </a>
-    </div>
-  </div>
-  <div class="col-md-10">
-         <a href="<?php echo $vm->url; ?>"><h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4></a><br/>
-        <small><?php echo $vm->judul_video; ?><br/>
-        <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?></small>
-  </div>
-  </div>
+						 <?= form_open('dosen/delete', array('id' => 'bulk')) ?>
+      <div class="table-responsive">
+    <table id="example1" class="w-100 table table-striped table-bordered table-hover" width="100%">
+        <thead>
+            <tr>
+                <th style="width: 1px;">No.</th>
+                <th style="width: 5px;">Video</th>
+                <th>Detail</th>
+                <?php if( $this->ion_auth->is_admin() || $this->ion_auth->in_group('dosen') ) : ?>
+                <th>Aksi</th>
+                <?php endif; ?>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            $no = 1;
+            foreach ($view_video as $vm) {
+            ?>
+            <tr>
+                <td><?= $no++; ?></td>
+                <td>
+                    <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
+                        <a href="<?php echo $vm->url; ?>" target="_blank" title="Lihat Video">
+                            <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
+                            <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <a href="<?php echo $vm->url; ?>"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></a><br/>
+                    <small><?php echo $vm->judul_video; ?><br/>
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>&nbsp;<?php echo $vm->channel_youtube; ?></small>
+                </td>
+                <?php if( $this->ion_auth->is_admin() || $this->ion_auth->in_group('dosen') ) : ?>
+                <td style="width: 5px;">
+                    <a href="<?= base_url('C_Modul/del_video/'.$vm->id_video) ?>" class="btn btn-danger btn-md"><i class="fa fa-trash"></i></a>
+                </td>
+                <?php endif; ?>
+            </tr>
+            <?php } ?>
+        </tbody>
+    </table>
 </div>
 
-
-	<?php 
-					}
-					?>
+        <?= form_close() ?>
                     <?php }elseif($user->activation_code=='2' ){ ?>
 				<!-- keterangan modul-->
 				 <div class="callout callout-warning">
@@ -57,32 +74,49 @@
 						   <b>Terima kasih telah donasi.</b>
                         </div>
 						
-								<?php 
-            	$no=1;
-            		foreach ($view_video as $vm) {
-            	 ?>
-         <!-- Default box -->
-       <div class="box box-solid">
-         <div class="col-md-12">
-         <div class="col-md-2">
-      <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
-        <a href="<?php echo $vm->url; ?>" target="_blank" title="Lihat Video">
-          <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
-          <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
-        </a>
-    </div>
-  </div>
-  <div class="col-md-10">
-         <a href="<?php echo $vm->url; ?>"><h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4></a><br/>
-        <small><?php echo $vm->judul_video; ?><br/>
-        <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?></small>
-  </div>
-  </div>
+								<div class="table-responsive">
+    <table id="example1" class="w-100 table table-striped table-bordered table-hover" width="100%">
+        <thead>
+            <tr>
+                <th style="width: 1px;">No.</th>
+                <th style="width: 5px;">Video</th>
+                <th>Detail</th>
+                <?php if( $this->ion_auth->is_admin() || $this->ion_auth->in_group('dosen') ) : ?>
+                <th>Aksi</th>
+                <?php endif; ?>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            $no = 1;
+            foreach ($view_video as $vm) {
+            ?>
+            <tr>
+                <td><?= $no++; ?></td>
+                <td>
+                    <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
+                        <a href="<?php echo $vm->url; ?>" target="_blank" title="Lihat Video">
+                            <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
+                            <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <a href="<?php echo $vm->url; ?>"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></a><br/>
+                    <small><?php echo $vm->judul_video; ?><br/>
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>&nbsp;<?php echo $vm->channel_youtube; ?></small>
+                </td>
+                <?php if( $this->ion_auth->is_admin() || $this->ion_auth->in_group('dosen') ) : ?>
+                <td style="width: 5px;">
+                    <a href="<?= base_url('C_Modul/del_video/'.$vm->id_video) ?>" class="btn btn-danger btn-md"><i class="fa fa-trash"></i></a>
+                </td>
+                <?php endif; ?>
+            </tr>
+            <?php } ?>
+        </tbody>
+    </table>
 </div>
-<!-- end box -->
-	<?php 
-					}
-					?>
+
                      <?php }elseif($user->activation_code=='3' ){ ?>
 				<!-- keterangan modul-->
 				 <div class="callout callout-warning">
@@ -90,32 +124,49 @@
 						   <b>Terima kasih telah donasi.</b>
                         </div>
 						
-								<?php 
-            	$no=1;
-            		foreach ($view_video as $vm) {
-            	 ?>
-         <!-- Default box -->
- <div class="box box-solid">
-         <div class="col-md-12">
-         <div class="col-md-2">
-      <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
-        <a href="<?php echo $vm->url; ?>" target="_blank" title="Lihat Video">
-          <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
-          <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
-        </a>
-    </div>
-  </div>
-  <div class="col-md-10">
-         <a href="<?php echo $vm->url; ?>"><h4 class="box-title"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></h4></a><br/>
-        <small><?php echo $vm->judul_video; ?><br/>
-        <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp;<?php echo $vm->channel_youtube; ?></small>
-  </div>
-  </div>
+							<div class="table-responsive">
+    <table id="example1" class="w-100 table table-striped table-bordered table-hover" width="100%">
+        <thead>
+            <tr>
+                <th style="width: 1px;">No.</th>
+                <th style="width: 5px;">Video</th>
+                <th>Detail</th>
+                <?php if( $this->ion_auth->is_admin() || $this->ion_auth->in_group('dosen') ) : ?>
+                <th>Aksi</th>
+                <?php endif; ?>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            $no = 1;
+            foreach ($view_video as $vm) {
+            ?>
+            <tr>
+                <td><?= $no++; ?></td>
+                <td>
+                    <div class="box-tools pull-right" style="width: 150px; height: 100px; overflow: hidden; margin: 10px;">
+                        <a href="<?php echo $vm->url; ?>" target="_blank" title="Lihat Video">
+                            <i class="fa fa-play" aria-hidden="true" style="font-size: 24px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-100%, -50%);"></i>
+                            <img src="../uploads/youtube/<?php echo $vm->foto; ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"/>
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <a href="<?php echo $vm->url; ?>"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;<?php echo $vm->tema; ?></a><br/>
+                    <small><?php echo $vm->judul_video; ?><br/>
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>&nbsp;<?php echo $vm->channel_youtube; ?></small>
+                </td>
+                <?php if( $this->ion_auth->is_admin() || $this->ion_auth->in_group('dosen') ) : ?>
+                <td style="width: 5px;">
+                    <a href="<?= base_url('C_Modul/del_video/'.$vm->id_video) ?>" class="btn btn-danger btn-md"><i class="fa fa-trash"></i></a>
+                </td>
+                <?php endif; ?>
+            </tr>
+            <?php } ?>
+        </tbody>
+    </table>
 </div>
-<!-- end box -->
-	<?php 
-					}
-					?>
+
 					<?php }else{ ?>
 					<style>
 	.center {

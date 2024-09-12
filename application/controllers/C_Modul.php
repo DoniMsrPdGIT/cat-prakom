@@ -135,6 +135,14 @@ public function aksi_video(){
 	    // unlink($path);
 	    redirect('C_Modul','refresh');
 	}
+	public function del_video($id){
+		$id = array('id_video' => $id );
+		$file = $this->uri->segment('4');
+		$this->Modul->deletevideo($id);
+		// $path ='./uploads/modul/'.$file;
+	    // unlink($path);
+	    redirect('C_Modul/video','refresh');
+	}
 	public function berkas(){
 		$data = [
 			'user' => $this->ion_auth->user()->row(),
