@@ -40,7 +40,7 @@
             '9' => ['bg-green', 'PPPK Teknis - Penata Layanan Operasional'],
             '10' => ['bg-green', 'PPPK Teknis - Pengelola Layanan Operasional'],
             '11' => ['bg-green', 'PPPK Teknis - Operator Layanan Operasional'],
-            '12' => ['bg-green', 'PPPK Teknis - Pengelola Umum Operasional'],
+            '12' => ['bg-green', 'PPPK Teknis - Pengadministrasi Perkantoran'],
             '13' => ['bg-green', 'PPPK Teknis - Penelaah Teknis Kebijakan'],
             '14' => ['bg-green', 'PPPK Teknis - Pengolah Data dan Informasi'],
             '16' => ['bg-red', 'CPNS SKB - Penata Kelola Sistem dan Teknologi Informasi'],

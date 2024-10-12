@@ -103,7 +103,7 @@ $(document).ready(function() {
                             </div>`;
                     } else if (data === "12") {
                         return `<div class="text-center">
-                                <span class="badge bg-green">PPPK Teknis - Pengelola Umum Operasional</span>
+                                <span class="badge bg-green">PPPK Teknis - Pengadministrasi Perkantoran</span>
                             </div>`;
                     } else if (data === "13") {
                         return `<div class="text-center">

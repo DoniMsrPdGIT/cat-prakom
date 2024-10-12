@@ -136,6 +136,30 @@
 ✅Android CAT-Prakom download di Playstore</p>
 
                         </div>
+                        <!-- <?php
+$badges = [
+    '1' => ['bg-green', 'PPPK Teknis - Pranata Komputer Ahli Pertama','https://t.me/+udsmtpFv7mM5M2Q1'],
+    '2' => ['bg-yellow', 'PPPK Teknis - Pranata Komputer Terampil','https://t.me/+7f0OCSFdSQ5jNzk1'],
+    '9' => ['bg-green', 'PPPK Teknis - Penata Layanan Operasional','https://t.me/+5TvH50EoMIdjOWQ9'],
+    '10' => ['bg-yellow', 'PPPK Teknis - Pengelola Layanan Operasional','https://t.me/+TGCcCchHOsJiMDll'],
+    '11' => ['bg-red', 'PPPK Teknis - Operator Layanan Operasional','https://t.me/+tJpP2Diz3XY2M2Zl'],
+    '12' => ['bg-red', 'PPPK Teknis - Pengadministrasi Perkantoran','https://t.me/+tSeZMMwgqUlkYTg1'],
+    '13' => ['bg-green', 'PPPK Teknis - Penelaah Teknis Kebijakan','https://t.me/+MD7x0Bd76oYzNGM1'],
+    '14' => ['bg-green', 'PPPK Teknis - Pengolah Data dan Informasi','https://t.me/+rlXkijFUQVsyOTI9'],
+];
+
+if (isset($badges[$users->remember_selector])) {
+    $badgeClass = $badges[$users->remember_selector][0];
+    $badgeText = $badges[$users->remember_selector][1];
+    $badgeUrl = $badges[$users->remember_selector][2];
+} else {
+    $badgeClass = 'bg-primary';
+    $badgeText = 'Formasi Kosong';
+}
+
+echo '<a href="'.$badgeUrl.'"><div class="text-center"><span class="badge '.$badgeClass.'">Klik Join Telegram Grup Khusus <br/>'.$badgeText.'</span></div></a><br/>';
+                        ?> -->
+                     
 						<!--
 						<form method="post"  action="<?php echo "https://t.me/+EF4JX7tHUeI5NmM1"; ?>">
 						<button  type="submit"  class="btn btn-danger btn-sm" >Join Group Private Telegram </button>
