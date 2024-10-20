@@ -95,20 +95,20 @@ class Users extends CI_Controller {
 public function edit_mahasiswa()
 	{
 		$this->is_admin();
-		$this->form_validation->set_rules('status', 'Status', 'required');
+		$this->form_validation->set_rules('jenis_waktu', 'Jenis Waktu', 'required');
 		
 		if($this->form_validation->run()===FALSE){
-			$data['status'] = false;
+			$data['jenis_waktu'] = false;
 			$data['errors'] = [
-				'status' => form_error('status'),
+				'jenis_waktu' => form_error('jenis_waktu'),
 			];
 		}else{
-			$id = $this->input->post('id', true);
+			$email = $this->input->post('email', true);
 			$input = [
 				'jenis_waktu' 		=> $this->input->post('jenis_waktu', true),
 			];
-			$update = $this->master->update('users', $input, 'id', $id);
-			$data['status'] = $update ? true : false;
+			$update = $this->master->update('mahasiswa', $input, 'email', $email);
+			$data['jenis_waktu'] = $update ? true : false;
 		}
 		$this->output_json($data);
 	}

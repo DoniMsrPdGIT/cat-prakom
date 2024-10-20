@@ -79,5 +79,17 @@ $(document).ready(function () {
         msg = "Status user berhasil diupdate";
         submitajax(url, data, msg, btn);
     });
+    $('form#user_zona').on('submit', function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        let btn = $('#btn-zona');
+        btn.attr('disabled', 'disabled').text('Process...');
+
+        url = $(this).attr('action');
+        data = $(this).serialize();
+        msg = "Zona user berhasil diupdate";
+        submitajax(url, data, msg, btn);
+    });
 
 });

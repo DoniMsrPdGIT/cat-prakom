@@ -135,7 +135,7 @@
         </div>
         <?=form_close()?>
 		
-		<?=form_open('users/edit_mahasiswa', array('id'=>'user_status'), array('id'=>$users->id))?>
+		<?=form_open('users/edit_mahasiswa', array('id'=>'user_zona'), array('email'=>$users->email))?>
         <div class="box box-success">
             <div class="box-header with-border">
                 <h3 class="box-title">Data Master</h3>
@@ -155,7 +155,7 @@
                 </div>
             </div>
             <div class="box-footer">
-                <button type="submit" id="btn-status" class="btn btn-success">Simpan</button>
+                <button type="submit" id="btn-zona" class="btn btn-success">Simpan</button>
             </div>
         </div>
         <?=form_close()?>
