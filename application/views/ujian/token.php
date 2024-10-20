@@ -179,13 +179,10 @@ if($donasi == '0' && $trial=='0'){
                             Batas waktu menekan tombol mulai.
                         </div>
                         <?php else : ?>
-                        <div class="callout callout-danger">
-                           Tryout Teknis Belum dibuka untuk Formasi PPPK, Halaman ini akan dibuka saat Pendaftaran PPPK dimulai.
-                        </div>
-                        <!-- <div class="callout callout-danger">
+                      <div class="callout callout-danger">
                             Waktu untuk menekan tombol <strong>"MULAI"</strong> sudah habis.<br/>
-                            Silahkan hubungi dosen anda untuk bisa mengikuti ujian pengganti.
-                        </div> -->
+                            Silahkan hubungi admin.
+                        </div>
                         <?php endif;?>
                     </div>
                 </div>

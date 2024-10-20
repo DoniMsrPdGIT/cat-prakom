@@ -158,8 +158,8 @@
 			</li>
 			<?php }else{ ?>
 				<li class="<?=$page2==='list'?"active":""?>">
-				<a href="#" rel="noopener noreferrer">
-					<i class="fa fa-chrome"></i> <span>Tryout Teknis (Belum dibuka)</span>
+				<a href="<?=base_url('ujian/list')?>" rel="noopener noreferrer">
+					<i class="fa fa-chrome"></i> <span>Tryout Teknis</span>
 				</a>
 			</li>
 			<?php } ?>	
@@ -303,8 +303,8 @@
 			</li>
 			<?php }else{ ?>
 				<li class="<?=$page==='C_Modul'?"active":""?>">
-				<a href="#" rel="noopener noreferrer">
-					<i class="glyphicon glyphicon-book"></i> <span>eBook PDF (Belum dibuka)</span>
+				<a href="<?=base_url('C_Modul')?>" rel="noopener noreferrer">
+					<i class="glyphicon glyphicon-book"></i> <span>eBook PDF</span>
 				</a>
 			</li>
 			<?php } ?>	

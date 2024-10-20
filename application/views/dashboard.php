@@ -136,7 +136,7 @@
 ✅Android CAT-Prakom download di Playstore</p>
 
                         </div>
-                        <!-- <?php
+                       <?php
 $badges = [
     '1' => ['bg-green', 'PPPK Teknis - Pranata Komputer Ahli Pertama','https://t.me/+udsmtpFv7mM5M2Q1'],
     '2' => ['bg-yellow', 'PPPK Teknis - Pranata Komputer Terampil','https://t.me/+7f0OCSFdSQ5jNzk1'],
@@ -158,7 +158,7 @@ if (isset($badges[$users->remember_selector])) {
 }
 
 echo '<a href="'.$badgeUrl.'"><div class="text-center"><span class="badge '.$badgeClass.'">Klik Join Telegram Grup Khusus <br/>'.$badgeText.'</span></div></a><br/>';
-                        ?> -->
+                        ?> 
                      
 						<!--
 						<form method="post"  action="<?php echo "https://t.me/+EF4JX7tHUeI5NmM1"; ?>">
