@@ -94,16 +94,12 @@ $(document).ready(function () {
                 "render": function (data, type, row, meta) {
                     var btn;
 					
-                    if (data.tot_toman <= 9 ) {
-							 btn = `<a class="btn btn-xs btn-default" disabled><i class="fa fa-refresh"></i> Reset</a>`;
-                    } else {
-                        if (data.ada <= 0) {
-							 btn = `<a class="btn btn-xs btn-default" disabled><i class="fa fa-refresh"></i> Reset</a>
+                    if (data.ada > 0) {
+                        btn = `<a class="btn btn-xs btn-warning" href="${base_url}DataPeserta/reset_wawan/01930304023${data.id}49203324"><i class="fa fa-refresh"></i> Reset</a>
 						`;
 						} else {
-                        btn = `<a class="btn btn-xs btn-warning" href="${base_url}DataPeserta/reset_wawan/01930304023${data.mahasiswa_id}49203324"><i class="fa fa-refresh"></i> Reset</a>
-						`;
-                    }
+                            btn = `<a class="btn btn-xs btn-default" disabled><i class="fa fa-refresh"></i> Reset</a>
+                            `;
                     }
                     return `<div class="text-center">
 									${btn}

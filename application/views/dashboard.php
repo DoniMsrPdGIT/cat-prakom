@@ -145,7 +145,7 @@ $badges = [
     '11' => ['bg-red', 'PPPK Teknis - Operator Layanan Operasional','https://t.me/+tJpP2Diz3XY2M2Zl'],
     '12' => ['bg-red', 'PPPK Teknis - Pengadministrasi Perkantoran','https://t.me/+tSeZMMwgqUlkYTg1'],
     '13' => ['bg-green', 'PPPK Teknis - Penelaah Teknis Kebijakan','https://t.me/+MD7x0Bd76oYzNGM1'],
-    '14' => ['bg-green', 'PPPK Teknis - Pengolah Data dan Informasi','https://t.me/+rlXkijFUQVsyOTI9'],
+    '14' => ['bg-green', 'PPPK Teknis - Pengolah Data dan Informasi','https://t.me/+rlXkijFUQVsyOTI9']
 ];
 
 if (isset($badges[$users->remember_selector])) {
@@ -212,10 +212,28 @@ echo '<a href="'.$badgeUrl.'"><div class="text-center"><span class="badge '.$bad
 ✅Android CAT-Prakom download di Playstore</p>
 
                         </div>
-                        <form method="post" action="<?php echo "https://t.me/+nNEOxKLQf-diODc1"; ?>">
+                        <?php
+$badges = [
+    '3' => ['bg-green', 'CPNS SKB - Pranata Komputer Ahli Pertama','https://t.me/+udsmtpFv7mM5M2Q1'],
+    '4' => ['bg-yellow', 'CPNS SKB - Pranata Komputer Terampil','https://t.me/+7f0OCSFdSQ5jNzk1'],
+    '16' => ['bg-green', 'CPNS SKB - Penata Kelola Sistem dan Teknologi Informasi','https://t.me/+9ag4hDejNJU5YmM1'],    
+];
+
+if (isset($badges[$users->remember_selector])) {
+    $badgeClass = $badges[$users->remember_selector][0];
+    $badgeText = $badges[$users->remember_selector][1];
+    $badgeUrl = $badges[$users->remember_selector][2];
+} else {
+    $badgeClass = 'bg-primary';
+    $badgeText = 'Formasi Kosong';
+}
+
+echo '<a href="'.$badgeUrl.'"><div class="text-center"><span class="badge '.$badgeClass.'">Klik Join Telegram Grup Khusus <br/>'.$badgeText.'</span></div></a><br/>';
+                        ?> 
+                        <!--<form method="post" action="<?php echo "https://t.me/+nNEOxKLQf-diODc1"; ?>">
         <button type="submit" class="btn btn-primary btn-sm">Klik untuk Join Group Telegram Bimbel Fokus SKD CPNS 2024</button>
     </form>
-						<!--
+					
 						<form method="post"  action="<?php echo "https://t.me/+EF4JX7tHUeI5NmM1"; ?>">
 						<button  type="submit"  class="btn btn-danger btn-sm" >Join Group Private Telegram </button>
 						<br/>Diskusi dan Membahas Materi Prakom dalam menghadapi Ujian PPPK 2024

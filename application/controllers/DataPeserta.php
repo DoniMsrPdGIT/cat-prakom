@@ -55,9 +55,23 @@ class DataPeserta extends CI_Controller {
 	}
 	
 	function reset_toman($id){
+		$hitung=strlen($id);
+		if($hitung=='24'){
+		$id_hujian=substr($id,11,5);	
+		}elseif($hitung=='23'){
+		$id_hujian=substr($id,11,4);	
+		}elseif($hitung=='22'){
+		$id_hujian=substr($id,11,3);	
+		}elseif($hitung=='21'){
+		$id_hujian=substr($id,11,2);	
+		}elseif($hitung=='20'){
+		$id_hujian=substr($id,11,1);	
+		}
+
 		$mahasiswa_id=substr($id,11,4);
 		$kdunik = array('mahasiswa_id' => $mahasiswa_id );
-		$this->DataPesertaModel->reset_toman($kdunik);
+		$kduniksoal = array('id' => $id_hujian );
+		$this->DataPesertaModel->reset($kduniksoal);
 		$this->session->set_flashdata('message',
 			'<div class="alert alert-white bg-gd-sun alert-dismissible" role="alert" style="background-color:#FF0000">
 		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -70,9 +84,23 @@ class DataPeserta extends CI_Controller {
 	}
 
 	function reset_sosio($id){
+		$hitung=strlen($id);
+		if($hitung=='24'){
+		$id_hujian=substr($id,11,5);	
+		}elseif($hitung=='23'){
+		$id_hujian=substr($id,11,4);	
+		}elseif($hitung=='22'){
+		$id_hujian=substr($id,11,3);	
+		}elseif($hitung=='21'){
+		$id_hujian=substr($id,11,2);	
+		}elseif($hitung=='20'){
+		$id_hujian=substr($id,11,1);	
+		}
+
 		$mahasiswa_id=substr($id,11,4);
 		$kdunik = array('mahasiswa_id' => $mahasiswa_id );
-		$this->DataPesertaModel->reset_sosio($kdunik);
+		$kduniksoal = array('id' => $id_hujian );
+		$this->DataPesertaModel->reset($kduniksoal);
 		$this->session->set_flashdata('message',
 			'<div class="alert alert-white bg-gd-sun alert-dismissible" role="alert" style="background-color:#FF0000">
 		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -84,9 +112,23 @@ class DataPeserta extends CI_Controller {
 		redirect("ujian/list_sosio");
 	}
 	function reset_manaj($id){
+		$hitung=strlen($id);
+		if($hitung=='24'){
+		$id_hujian=substr($id,11,5);	
+		}elseif($hitung=='23'){
+		$id_hujian=substr($id,11,4);	
+		}elseif($hitung=='22'){
+		$id_hujian=substr($id,11,3);	
+		}elseif($hitung=='21'){
+		$id_hujian=substr($id,11,2);	
+		}elseif($hitung=='20'){
+		$id_hujian=substr($id,11,1);	
+		}
+
 		$mahasiswa_id=substr($id,11,4);
 		$kdunik = array('mahasiswa_id' => $mahasiswa_id );
-		$this->DataPesertaModel->reset_manaj($kdunik);
+		$kduniksoal = array('id' => $id_hujian );
+		$this->DataPesertaModel->reset($kduniksoal);
 		$this->session->set_flashdata('message',
 			'<div class="alert alert-white bg-gd-sun alert-dismissible" role="alert" style="background-color:#FF0000">
 		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -98,9 +140,23 @@ class DataPeserta extends CI_Controller {
 		redirect("ujian/list_manaj");
 	}
 	function reset_wawan($id){
+		$hitung=strlen($id);
+		if($hitung=='24'){
+		$id_hujian=substr($id,11,5);	
+		}elseif($hitung=='23'){
+		$id_hujian=substr($id,11,4);	
+		}elseif($hitung=='22'){
+		$id_hujian=substr($id,11,3);	
+		}elseif($hitung=='21'){
+		$id_hujian=substr($id,11,2);	
+		}elseif($hitung=='20'){
+		$id_hujian=substr($id,11,1);	
+		}
+
 		$mahasiswa_id=substr($id,11,4);
 		$kdunik = array('mahasiswa_id' => $mahasiswa_id );
-		$this->DataPesertaModel->reset_wawan($kdunik);
+		$kduniksoal = array('id' => $id_hujian );
+		$this->DataPesertaModel->reset($kduniksoal);
 		$this->session->set_flashdata('message',
 			'<div class="alert alert-white bg-gd-sun alert-dismissible" role="alert" style="background-color:#FF0000">
 		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -112,9 +168,23 @@ class DataPeserta extends CI_Controller {
 		redirect("ujian/list_wawan");
 	}
 	function reset_tiu($id){
+		$hitung=strlen($id);
+		if($hitung=='24'){
+		$id_hujian=substr($id,11,5);	
+		}elseif($hitung=='23'){
+		$id_hujian=substr($id,11,4);	
+		}elseif($hitung=='22'){
+		$id_hujian=substr($id,11,3);	
+		}elseif($hitung=='21'){
+		$id_hujian=substr($id,11,2);	
+		}elseif($hitung=='20'){
+		$id_hujian=substr($id,11,1);	
+		}
+
 		$mahasiswa_id=substr($id,11,4);
 		$kdunik = array('mahasiswa_id' => $mahasiswa_id );
-		$this->DataPesertaModel->reset_tiu($kdunik);
+		$kduniksoal = array('id' => $id_hujian );
+		$this->DataPesertaModel->reset($kduniksoal);
 		$this->session->set_flashdata('message',
 			'<div class="alert alert-white bg-gd-sun alert-dismissible" role="alert" style="background-color:#FF0000">
 		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -126,9 +196,23 @@ class DataPeserta extends CI_Controller {
 		redirect("ujian/list_tiu");
 	}
 	function reset_twk($id){
+		$hitung=strlen($id);
+		if($hitung=='24'){
+		$id_hujian=substr($id,11,5);	
+		}elseif($hitung=='23'){
+		$id_hujian=substr($id,11,4);	
+		}elseif($hitung=='22'){
+		$id_hujian=substr($id,11,3);	
+		}elseif($hitung=='21'){
+		$id_hujian=substr($id,11,2);	
+		}elseif($hitung=='20'){
+		$id_hujian=substr($id,11,1);	
+		}
+
 		$mahasiswa_id=substr($id,11,4);
 		$kdunik = array('mahasiswa_id' => $mahasiswa_id );
-		$this->DataPesertaModel->reset_twk($kdunik);
+		$kduniksoal = array('id' => $id_hujian );
+		$this->DataPesertaModel->reset($kduniksoal);
 		$this->session->set_flashdata('message',
 			'<div class="alert alert-white bg-gd-sun alert-dismissible" role="alert" style="background-color:#FF0000">
 		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -140,9 +224,23 @@ class DataPeserta extends CI_Controller {
 		redirect("ujian/list_twk");
 	}
 	function reset_tkp($id){
+		$hitung=strlen($id);
+		if($hitung=='24'){
+		$id_hujian=substr($id,11,5);	
+		}elseif($hitung=='23'){
+		$id_hujian=substr($id,11,4);	
+		}elseif($hitung=='22'){
+		$id_hujian=substr($id,11,3);	
+		}elseif($hitung=='21'){
+		$id_hujian=substr($id,11,2);	
+		}elseif($hitung=='20'){
+		$id_hujian=substr($id,11,1);	
+		}
+
 		$mahasiswa_id=substr($id,11,4);
 		$kdunik = array('mahasiswa_id' => $mahasiswa_id );
-		$this->DataPesertaModel->reset_tkp($kdunik);
+		$kduniksoal = array('id' => $id_hujian );
+		$this->DataPesertaModel->reset($kduniksoal);
 		$this->session->set_flashdata('message',
 			'<div class="alert alert-white bg-gd-sun alert-dismissible" role="alert" style="background-color:#FF0000">
 		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
