@@ -86,7 +86,7 @@ $html = <<<EOD
 <h2>Data Ujian</h2>
 <table id="data-hasil">
     <tr>
-        <th>Mata Kuliah</th>
+        <th>Formasi</th>
         <td>{$ujian->nama_matkul}</td>
     </tr>
     <tr>

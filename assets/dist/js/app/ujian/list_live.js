@@ -48,26 +48,58 @@ $(document).ready(function () {
                 "render": function (data, type, row, meta) {
                     var btn;
                     if (data.ada > 0) {
-						if (data.nilai >= 270 && (data.matkul_id==28 || data.matkul_id==15 || data.matkul_id==16 || data.matkul_id==17 || data.matkul_id==18) ) {
-							 btn = `
-								
-								<div class="alert alert-success">
-  <strong><i class="fa fa-star"></i> ${data.nilai} </strong> <br/>Selamat, Anda Lulus Passing Grade<br/>
+                        if (data.matkul_id==28 || data.matkul_id==17 || data.matkul_id==18) {
+                            if (data.nilai >= 400) {
+                                btn = `
+                                   
+                                   <div class="alert alert-success">
+     <strong><i class="fa fa-star"></i> ${data.nilai} / <small>450</small> </strong> <br/>Selamat, Nilai anda memasuki Zona Aman Perangkingan<br/>
+    </div>
+    <a class="btn btn-xs btn-warning" href="${base_url}ujian/pembahasan/01930304023${data.id}49203324">
+                                   <i class="fa fa-eye"></i> Jawaban & Pembahasan
+                               </a>`;
+                           } else if (data.nilai >= 270 && data.nilai < 400) {
+                            btn = `
+                               
+                               <div class="alert alert-warning">
+ <strong><i class="fa fa-star"></i> ${data.nilai} / <small>450</small> </strong> <br/>Selangkah lagi, menuju Zona Aman Perangkingan<br/>
 </div>
 <a class="btn btn-xs btn-warning" href="${base_url}ujian/pembahasan/01930304023${data.id}49203324">
-								<i class="fa fa-eye"></i> Jawaban & Pembahasan
-							</a>`;
-						}else{
-							btn = `
-								
-								<div class="alert alert-danger">
-  <strong><i class="fa fa-star"></i> ${data.nilai} </strong> <br/>Maaf, Anda Belum Lulus Passing Grade<br/>
+                               <i class="fa fa-eye"></i> Jawaban & Pembahasan
+                           </a>`;
+                       } else {
+                               btn = `
+                                   
+                                   <div class="alert alert-danger">
+     <strong><i class="fa fa-star"></i> ${data.nilai} / <small>450</small> </strong> <br/>Tidak Lulus, Tingkatkan terus nilainya<br/>
+    </div>
+    <a class="btn btn-xs btn-warning" href="${base_url}ujian/pembahasan/01930304023${data.id}49203324">
+                                   <i class="fa fa-eye"></i> Jawaban & Pembahasan
+                               </a>`;
+                               
+                           }
+                    }else{
+                        if (data.nilai >= 400) {
+                            btn = `
+                               
+                               <div class="alert alert-success">
+ <strong><i class="fa fa-star"></i> ${data.nilai} / <small>450</small> </strong> <br/>Selamat, Nilai anda memasuki Zona Aman Perangkingan<br/>
 </div>
 <a class="btn btn-xs btn-warning" href="${base_url}ujian/pembahasan/01930304023${data.id}49203324">
-								<i class="fa fa-eye"></i> Jawaban & Pembahasan
-							</a>`;
-							
-						}
+                               <i class="fa fa-eye"></i> Jawaban & Pembahasan
+                           </a>`;
+                       } else {
+                           btn = `
+                               
+                               <div class="alert alert-danger">
+ <strong><i class="fa fa-star"></i> ${data.nilai} / <small>450</small> </strong> <br/>Semangat, Tingkatkan terus nilainya<br/>
+</div>
+<a class="btn btn-xs btn-warning" href="${base_url}ujian/pembahasan/01930304023${data.id}49203324">
+                               <i class="fa fa-eye"></i> Jawaban & Pembahasan
+                           </a>`;
+                           
+                       }
+                    }
                        
                     } else {
                         btn = `<a class="btn btn-xs btn-primary" href="${base_url}ujian/token/${data.id_ujian}">

@@ -51,7 +51,7 @@ class Ujian_model extends CI_Model {
         $this->datatables->join('dosen e', 'e.id_dosen = c.dosen_id');
 	   $this->datatables->join('h_ujian h', "a.id_ujian = h.ujian_id AND h.mahasiswa_id = {$id} ",'LEFT');
         $this->datatables->where('d.id_kelas', $kelas);
-        //$this->datatables->where('DATE(a.tgl_mulai)', $tgl);
+        $this->datatables->where('DATE(a.tgl_mulai)<=', $tgl);
 		$this->datatables->where('a.token', 'TOLIV');
 		$this->datatables->group_by('a.id_ujian');
 		$this->db->order_by('a.id_ujian','DESC');

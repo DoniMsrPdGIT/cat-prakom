@@ -69,13 +69,13 @@ $html = <<<EOD
     <tr>
         <th>Nama Ujian</th>
         <td>{$ujian->nama_ujian}</td>
-        <th>Mata Kuliah</th>
+        <th>Formasi</th>
         <td>{$ujian->nama_matkul}</td> 
     </tr>
     <tr>
         <th>Jumlah Soal</th>
         <td>{$ujian->jumlah_soal}</td>
-        <th>Dosen</th>
+        <th>Kode Kelas</th>
         <td>{$ujian->nama_dosen}</td>
     </tr>
     <tr>
@@ -91,7 +91,7 @@ $html = <<<EOD
         <td>{$nilai->max_nilai}</td>
     </tr>
     <tr>
-        <th>Tanggal Selasi</th>
+        <th>Tanggal Selesai</th>
         <td>{$selesai}</td>
         <th>Rata-rata Nilai</th>
         <td>{$nilai->avg_nilai}</td>
@@ -107,7 +107,7 @@ $html .= <<<EOD
             <th width="5%">No.</th>
             <th width="25%">No Peserta</th>
             <th width="35%">Nama</th>
-            <th width="15%">Kelas</th>
+            <th width="15%">Kode Formasi</th>
             <th width="10%">Jumlah Benar</th>
             <th width="10%">Nilai</th>
         </tr>        

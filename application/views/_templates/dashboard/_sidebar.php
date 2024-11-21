@@ -180,7 +180,7 @@
 			</li>
 			<li class="<?=$page2==='list_live'?"active":""?>">
 				<a href="<?=base_url('ujian/list_live')?>" rel="noopener noreferrer">
-					<i class="fa fa-heart"></i> <span>Live Competition </span>
+					<i class="fa fa-heart"></i> <span>TOLI (TO Live) </span>
 				</a>
 			</li>
 			<?php }elseif($user->activation_code=='2' ){ ?>
@@ -222,7 +222,7 @@
 			</li>
 			<li class="<?=$page2==='list_live'?"active":""?>">
 				<a href="<?=base_url('ujian/list_live')?>" rel="noopener noreferrer">
-					<i class="fa fa-heart"></i> <span>Live Competition </span>
+					<i class="fa fa-heart"></i> <span>TOLI (TO Live) </span>
 				</a>
 			</li>
 			<?php }?>
